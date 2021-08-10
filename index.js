@@ -1,15 +1,17 @@
-const express = require("express")
-const app= express()
+const express = require("express");
+const app = express();
+const connectDB=require('./config/db')
 
-const PORT = 5000
 
-app.get("/",(req,res)=>{
-    res.send("hello coders")
-})
+const PORT = 5000;
 
-app.get('/hello',(req,res)=>{
-    res.send("Do well")
-})
-app.listen(PORT,()=>{
-    console.log(`server is running at ${PORT}`)
-})
+// coneect your DB KRNA
+connectDB();
+
+app.get("/api", (req, res) => {
+    res.send("hello coders....");
+});
+
+app.listen(PORT, () => {
+    console.log(`server is running at ${PORT}`);
+});

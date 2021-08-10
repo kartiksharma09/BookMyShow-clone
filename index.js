@@ -7,10 +7,18 @@ const PORT = 5000;
 
 // // coneect your DB KRNA
 connectDB();
+app.use(express.json());
+
+const user = require('./routes/users');
+const admin = require('./routes/admin');
+
+app.use('/api/users', user);
+app.use('/api/admins', admin);
 
 
-app.use('/api/users', require('./routes/users'));
-app.use('/api/admins', require('./routes/admin'));
+app.use((err, req, res, next) => {
+    return res.status(err.status).json({ msg: err.errors });
+});
 
 app.listen(PORT, () => {
     console.log(`server is running at ${PORT}`);

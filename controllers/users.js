@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 const User = require("../models/Users");
 
-const getSignedJwtToken = function (
+const getSignedJwtToken = function(
     payload,
     secret = config.get("jwtsecret"),
     expiresIn = 360000
@@ -12,88 +12,93 @@ const getSignedJwtToken = function (
     return jwt.sign(payload, secret, { expiresIn });
 };
 
-const createUser = async (req, res) => {
+const createUser = async(req, res, next) => {
     // console.log(req)
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return next({
+            status: 400,
+            errors: errors.array()
+        });
     }
 
     const { name, email, password, isAdmin } = req.body;
     // console.log(req.body);
-    try {
-        let user = await User.findOne({ email });
 
-        if (user) {
-            return res
-                .status(400)
-                .json({ errors: [{ msg: "User Already Exists" }] });
-        }
+    let user = await User.findOne({ email });
 
-        user = new User({
-            name,
-            email,
-            password,
-            isAdmin,
+    if (user) {
+        return next({
+            status: 400,
+            errors: "User Already Exists"
         });
-
-        const salt = await bcrypt.genSalt(10);
-
-        user.password = await bcrypt.hash(password, salt);
-
-        await user.save();
-
-        const payload = {
-            user: {
-                id: user.id,
-                isAdmin: user.isAdmin,
-            },
-        };
-        const token = getSignedJwtToken(payload);
-        res.status(200).json({ token });
-    } catch (err) {
-        res.status(500).json({ msg: "server error" });
     }
+
+    user = new User({
+        name,
+        email,
+        password,
+        isAdmin
+    });
+
+    const salt = await bcrypt.genSalt(10);
+
+    user.password = await bcrypt.hash(password, salt);
+
+    await user.save();
+    // console.log(user);
+
+    const payload = {
+        user: {
+            id: user.id,
+            isAdmin: user.isAdmin,
+        },
+    };
+
+    const token = getSignedJwtToken(payload);
+    return res.status(200).json({ token });
 };
 
-const loginUser = async (req, res) => {
+
+const loginUser = async(req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return next({
+            status: 400,
+            errors: errors.array()
+        });
     }
 
     const { email, password } = req.body;
 
-    try {
-        let user = await User.findOne({ email });
-        // console.log(user)
-        if (!user) {
-            return res
-                .status(400)
-                .json({ errors: [{ msg: "Invalid Credentials" }] });
-        }
-
-        const isMatch = await bcrypt.compare(password, user.password);
-
-        if (!isMatch) {
-            return res
-                .status(400)
-                .json({ errors: [{ msg: "Invalid Credentials" }] });
-        }
-
-        const payload = {
-            user: {
-                id: user.id,
-                isAdmin: user.isAdmin,
-            },
-        };
-
-        const token = getSignedJwtToken(payload);
-        res.status(200).json({ token });
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ msg: "server error" });
+    let user = await User.findOne({ email });
+    // console.log(user)
+    if (!user) {
+        return next({
+            status: 400,
+            errors: "Invalid Credentials"
+        });
     }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+        return next({
+            status: 400,
+            errors: "Invalid Credentials"
+        });
+    }
+
+    const payload = {
+        user: {
+            id: user.id,
+            isAdmin: user.isAdmin,
+        },
+    };
+
+    const token = getSignedJwtToken(payload);
+    res.status(200).json({ token });
+
 };
 
 module.exports = { createUser, loginUser };

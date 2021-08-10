@@ -32,6 +32,7 @@ const tickeSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "user",
     },
+
     bookingDate: {
         type: Date,
         required: true,

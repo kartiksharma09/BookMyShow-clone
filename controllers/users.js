@@ -63,7 +63,7 @@ const loginUser = async (req, res) => {
     }
 
     const { email, password } = req.body;
-
+    
     try {
         let user = await User.findOne({ email });
         // console.log(user)
@@ -87,7 +87,6 @@ const loginUser = async (req, res) => {
                 isAdmin: user.isAdmin,
             },
         };
-
         const token = getSignedJwtToken(payload);
         res.status(200).json({ token });
     } catch (err) {

@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 const movieSchema = new mongoose.Schema({
+    adminId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+    },
     movieName: {
         type: String,
         required: true,
@@ -13,11 +17,11 @@ const movieSchema = new mongoose.Schema({
     },
     genre : {
         type: String,
-        enum:[ "Drama","Comedy","Thriller","Action","Horror","Cartoon"]
+        enum:[ "drama","comedy","thriller","action","horror","cartoon"]
     },
     language:{
         type: String,
-        enum:[ "Hindi","English","Punjabi"]
+        enum:[ "hindi","english","punjabi"]
     },
     cast :[{
         actor:{

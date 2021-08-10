@@ -6,19 +6,15 @@ const movieModel = require('../models/Movies');
 const userModel = require('../models/Users');
 const { addMovie } = require('../controllers/addmovie');
 const { adminLogin } = require('../controllers/admin-login');
-<<<<<<< HEAD
-=======
-
->>>>>>> Deepak
 
 
 //@route  POST api/admins/login
 //desc    Login admin
 //access  public
-router.post("/login",[
+router.post("/login", [
     check("email", "please include a valid email").isEmail(),
     check("password", "password is required").exists(),
-],adminLogin)
+], adminLogin)
 
 router.post(
     '/admin/login', [

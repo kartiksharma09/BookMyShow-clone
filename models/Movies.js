@@ -9,44 +9,45 @@ const movieSchema = new mongoose.Schema({
         required: true,
     },
     posterUrl: {
-        data: Buffer, contentType: String
+        data: Buffer,
+        contentType: String
     },
     timeDuration: {
         type: String,
         required: true,
     },
-    genre : {
+    genre: {
         type: String,
-        enum:[ "drama","comedy","thriller","action","horror","cartoon"]
+        enum: ["drama", "comedy", "thriller", "action", "horror", "cartoon"]
     },
-    language:{
+    language: {
         type: String,
-        enum:[ "hindi","english","punjabi"]
+        enum: ["hindi", "english", "punjabi"]
     },
-    cast :[{
-        actor:{
+    cast: [{
+        actor: {
             type: String,
         },
-        character:{
+        character: {
             type: String,
         },
-        characterImg:{
-            data: Buffer, contentType: String
+        characterImg: {
+            data: Buffer,
+            contentType: String
         }
     }],
-    aboutTheMovie:{
+    aboutTheMovie: {
         type: String,
         required: true,
     },
-    price:{
+    price: {
         type: Number,
         required: true,
     }
 
-    
-})
 
-const movies = mongoose.model('Movie', movieSchema);
+});
+
+const movies = mongoose.model('movie', movieSchema);
 
 module.exports = movies;
-

@@ -1,20 +1,27 @@
-const jwt=require('jsonwebtoken')
-const config =require('config')
+const jwt = require('jsonwebtoken');
 
-module.export=(req,res,next)=>{
-    const Token=req.header('x-auth-token')
+const config = require('config');
+
+module.exports = (req, res, next) => {
+    const Token = req.header('x-auth-token');
+    // console.log(Token);
 
     // check if token is not there
-    if (!Token){
-        return res.status(401).json({msg:"Token not found "});
-    }
-    // verifying the token
-    try {
-        const decoded=jwt.verify(token,config.get("jwtsecret"))
-        req.user=decoded.user
-        next();   
-    } catch (err) {
-        res.status(401).json({msg:"your Token is not valid"})
+    if (!Token) {
+        return res.status(401).json({ msg: "Token not found " });
     }
 
-}
+
+    // verifying the token
+    // console.log(config.get("jwtsecret"));
+    try {
+        const decoded = jwt.verify(Token, config.get("jwtsecret"));
+        // console.log(decoded);
+        req.user = decoded.user;
+        next();
+    } catch (err) {
+        console.log(err);
+        res.status(401).json({ msg: "your Token is not valid" });
+    }
+
+};

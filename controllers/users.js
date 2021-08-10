@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 const User = require("../models/Users");
 
-const getSignedJwtToken = function (
+const getSignedJwtToken = function(
     payload,
     secret = config.get("jwtsecret"),
     expiresIn = 360000
@@ -12,11 +12,14 @@ const getSignedJwtToken = function (
     return jwt.sign(payload, secret, { expiresIn });
 };
 
-const createUser = async (req, res) => {
+const createUser = async(req, res, next) => {
     // console.log(req)
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return next({
+            status: 400,
+            errors: errors.array()
+        });
     }
 
     const { name, email, password, isAdmin } = req.body;
@@ -25,9 +28,10 @@ const createUser = async (req, res) => {
         let user = await User.findOne({ email });
 
         if (user) {
-            return res
-                .status(400)
-                .json({ errors: [{ msg: "User Already Exists" }] });
+            return next({
+                status: 400,
+                errors: "User Already Exists"
+            });
         }
 
         user = new User({
@@ -56,7 +60,7 @@ const createUser = async (req, res) => {
     }
 };
 
-const loginUser = async (req, res) => {
+const loginUser = async(req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });

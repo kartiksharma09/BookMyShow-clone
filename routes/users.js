@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { check } = require("express-validator");
-const {createUser,loginUser} = require("../controllers/users");
+const { createUser, loginUser } = require("../controllers/users");
 
 //@route  POST api/users/signup
 //desc    Register user
@@ -12,8 +12,7 @@ router.post(
     [
         check("name", "Name is required").not().isEmpty(),
         check("email", "please include a valid email").isEmail(),
-        check(
-            "password",
+        check("password",
             "please enter a password with 8 or more characters"
         ).isLength({ min: 8 })
     ],
@@ -26,11 +25,11 @@ router.post(
 
 router.post(
     "/login",
-    [check("email", "please include a valid email").isEmail(),
+    [check("email", "please include a valid email").not().isEmail(),
     check(
         "password",
         "please enter a password with 8 or more characters"
-    ).isLength({ min: 8 })],
+    ).not().isLength({ min: 8 })],
     loginUser
 );
 

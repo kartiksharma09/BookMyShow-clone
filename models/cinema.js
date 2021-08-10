@@ -15,7 +15,7 @@ const CinemaSchema = new mongoose.Schema({
         index: true,
         required: true
     },
-    seats: {
+    seats:{
         type: Number,
         default: 50
     },

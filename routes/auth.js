@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/Users");
 const auth = require("../middlewares/auth");
+const { bookTickets } = require('../controllers/tickets');
+
 
 //@route  GET api/auth
 //desc    Test Route
@@ -16,5 +18,13 @@ router.get("/", auth, async (req, res) => {
         res.status(500).send("server error");
     }
 });
+
+router.post("/: movieId /: cinemaId", [auth, [
+    check("Seats", "seats is required").not().isEmpty(),
+    check("watchers", "watchers is Required").not().isEmpty(),
+    check("bookingDate", "bookingDate is required").not().isEmpty()
+]],
+    bookTickets
+)
 
 module.exports = router;

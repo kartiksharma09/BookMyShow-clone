@@ -11,19 +11,6 @@ const { adminLogin } = require('../controllers/admin-login');
 //@route  POST api/admins/login
 //desc    Login admin
 //access  public
-router.post("/login", [
-    check("email", "please include a valid email").isEmail(),
-    check("password", "password is required").exists(),
-], adminLogin)
-
-router.post(
-    '/admin/login', [
-        check("email", "please include a valid email").isEmail(),
-        check(
-            "password",
-            "please enter a password with 8 or more characters"
-        ).isLength({ min: 8 })
-    ], adminLogin);
 
 router.post(
     '/admin/login', [

@@ -5,6 +5,7 @@ const isAdmin = require('../middleware/isAdmin');
 const movieModel = require('../models/Movies');
 const userModel = require('../models/Users');
 const cinemaModel = require('../models/Cinema');
+const { addMovie } = require('../controllers/addmovie');
 
 
 //@route  POST api/admins/addmovie
@@ -23,6 +24,6 @@ Router.post(
         check('cast', 'movie name is required').not().isEmpty(),
         check('aboutTheMovie', 'movie name is required').not().isEmpty(),
         check('price', 'movie name is required').not().isEmpty()
-    ]);
+    ], addMovie);
 
 module.exports = Router;

@@ -24,40 +24,39 @@ const createUser = async(req, res, next) => {
 
     const { name, email, password, isAdmin } = req.body;
     // console.log(req.body);
-    try {
-        let user = await User.findOne({ email });
 
-        if (user) {
-            return next({
-                status: 400,
-                errors: "User Already Exists"
-            });
-        }
+    let user = await User.findOne({ email });
 
-        user = new User({
-            name,
-            email,
-            password,
-            isAdmin,
+    if (user) {
+        return next({
+            status: 400,
+            errors: "User Already Exists"
         });
-
-        const salt = await bcrypt.genSalt(10);
-
-        user.password = await bcrypt.hash(password, salt);
-
-        await user.save();
-
-        const payload = {
-            user: {
-                id: user.id,
-                isAdmin: user.isAdmin,
-            },
-        };
-        const token = getSignedJwtToken(payload);
-        res.status(200).json({ token });
-    } catch (err) {
-        res.status(500).json({ msg: "server error" });
     }
+
+    user = new User({
+        name,
+        email,
+        password,
+        isAdmin
+    });
+
+    const salt = await bcrypt.genSalt(10);
+
+    user.password = await bcrypt.hash(password, salt);
+
+    await user.save();
+    // console.log(user);
+
+    const payload = {
+        user: {
+            id: user.id,
+            isAdmin: user.isAdmin,
+        },
+    };
+
+    const token = getSignedJwtToken(payload);
+    return res.status(200).json({ token });
 };
 
 const loginUser = async(req, res) => {

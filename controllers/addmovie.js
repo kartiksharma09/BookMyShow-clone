@@ -44,3 +44,5 @@ const addMovie = async(req, res) => {
     }
 
 };
+
+module.exports = { addMovie }

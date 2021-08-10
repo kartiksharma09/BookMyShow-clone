@@ -6,8 +6,6 @@ const findMovie = async(moviename) => {
     return movie;
 };
 
-
-
 const addMovie = async(req, res, next) => {
 
     const errors = validationResult(req);

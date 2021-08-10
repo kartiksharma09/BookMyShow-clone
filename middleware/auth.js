@@ -2,7 +2,7 @@ const jwt=require('jsonwebtoken')
 
 const config =require('config')
 
-module.export=(req,res,next)=>{
+module.exports=(req,res,next)=>{
     const Token=req.header('x-auth-token')
 
     // check if token is not there

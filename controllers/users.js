@@ -91,7 +91,6 @@ const loginUser = async (req, res) => {
         const token = getSignedJwtToken(payload);
         res.status(200).json({ token });
     } catch (err) {
-        console.error(err);
         res.status(500).json({ msg: "server error" });
     }
 };

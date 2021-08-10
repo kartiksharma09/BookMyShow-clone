@@ -9,6 +9,7 @@ let mongoServer;
 const opts = {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useCreateIndex: true
 };
 
 // Provide connection to a new in-memory database server.

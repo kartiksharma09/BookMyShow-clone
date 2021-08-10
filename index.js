@@ -7,6 +7,10 @@ app.get("/api", (req, res) => {
     res.send("hello coders");
 });
 
+app.get('/api/msg', (req, res) => {
+    res.send("hello farziyo");
+});
+
 app.listen(PORT, () => {
     console.log(`server is running at ${PORT}`);
 });

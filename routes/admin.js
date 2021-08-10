@@ -6,10 +6,21 @@ const movieModel = require('../models/Movies');
 const userModel = require('../models/Users');
 const cinemaModel = require('../models/Cinema');
 const { addMovie } = require('../controllers/addmovie');
+const { adminLogin } = require('../controllers/admin-login');
+
 
 //@route POST api/admins/admin/login
 // desc log in for admin
 //access private
+
+router.post(
+    '/admin/login', [
+        check("email", "please include a valid email").isEmail(),
+        check(
+            "password",
+            "please enter a password with 8 or more characters"
+        ).isLength({ min: 8 })
+    ], adminLogin);
 
 
 //@route  POST api/admins/addmovie

@@ -14,7 +14,8 @@ const getSignedJwtToken = function(
 
 const adminLogin = async(req, res, next) => {
     const errors = validationResult(req);
-    if (errors) {
+    if (!errors.isEmpty()) {
+
         return next({
             status: 400,
             errors: errors.array()

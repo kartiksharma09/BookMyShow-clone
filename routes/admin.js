@@ -32,12 +32,12 @@ router.post(
         isAdmin,
         check('movieName', 'movie name is required').not().isEmpty(),
         check('posterUrl', 'posterUrl is required').not().isEmpty(),
-        check('timeDuration', 'movie name is required').not().isEmpty(),
-        check('genre', 'movie name is required').not().isEmpty(),
-        check('language', 'movie name is required').not().isEmpty(),
-        check('cast', 'movie name is required').not().isEmpty(),
-        check('aboutTheMovie', 'movie name is required').not().isEmpty(),
-        check('price', 'movie name is required').not().isEmpty()
+        check('timeDuration', 'timeDuration is required').not().isEmpty(),
+        check('genre', 'genre is required').not().isEmpty(),
+        check('language', 'language is required').not().isEmpty(),
+        check('cast', 'cast is required').not().isEmpty(),
+        check('aboutTheMovie', 'aboutTheMovie is required').not().isEmpty(),
+        check('price', 'price is required').not().isEmpty()
     ], addMovie);
 
 module.exports = router;

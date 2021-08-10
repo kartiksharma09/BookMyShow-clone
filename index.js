@@ -12,12 +12,12 @@ app.use(express.json());
 app.use(express.json({ extended: false }))
 
 
-const user = require('./routes/users')
+const user = require('./routes/users');
 
-// const admin = require('./routes/admin')
+const admin = require('./routes/admin');
 
-app.use('/api/users',user);
-// app.use('/api/admins', admin);
+app.use('/api/users', user);
+app.use('/api/admins', admin);
 
 app.use((err, req, res, next) => {
     return res.status(err.status).json({ msg: err.errors });

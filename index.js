@@ -7,6 +7,9 @@ app.get("/",(req,res)=>{
     res.send("hello coders")
 })
 
+app.get('/hello',(req,res)=>{
+    res.send("Do well")
+})
 app.listen(PORT,()=>{
     console.log(`server is running at ${PORT}`)
 })

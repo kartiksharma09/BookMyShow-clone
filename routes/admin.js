@@ -7,6 +7,10 @@ const userModel = require('../models/Users');
 const cinemaModel = require('../models/Cinema');
 const { addMovie } = require('../controllers/addmovie');
 
+//@route POST api/admins/admin/login
+// desc log in for admin
+//access private
+
 
 //@route  POST api/admins/addmovie
 //desc    Add a movie

@@ -6,7 +6,7 @@ const CinemaSchema = new mongoose.Schema({
         ref: 'user',
         required: true
     },
-    cinameName: {
+    cinemaName: {
         type: String,
         required: true
     },

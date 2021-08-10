@@ -17,6 +17,7 @@ const createUser = async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
+        console.log("no problem")
     }
 
     const { name, email, password, isAdmin } = req.body;
@@ -52,6 +53,7 @@ const createUser = async (req, res) => {
         const token = getSignedJwtToken(payload);
         res.status(200).json({ token });
     } catch (err) {
+        console.log("yes,................")
         res.status(500).json({ msg: "server error" });
     }
 };

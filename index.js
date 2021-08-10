@@ -9,14 +9,8 @@ const PORT = 5000;
 connectDB();
 
 
-
-app.get("/api", (req, res) => {
-    res.send("hello coders....");
-});
-
-app.get('/api/msg', (req, res) => {
-    res.send("hello farziyo");
-});
+app.use('/api/users', require('./routes/users'));
+app.use('/api/admins', require('./routes/admin'));
 
 app.listen(PORT, () => {
     console.log(`server is running at ${PORT}`);

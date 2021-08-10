@@ -55,11 +55,12 @@ const createUserTests = () =>
           isAdmin: true,
         },
       };
+
+      const next = jest.fn()
       const res = mockResponse();
 
-      await createUser(req, res);
-      expect(res.status).toHaveBeenCalledWith(400);
-      expect(res.json).toHaveBeenCalled();
+      await createUser(req, res,next);
+      expect(next.mock.calls[0][0]).toEqual({status: 400,errors: "User Already Exists"})
     });
 
     it("It should be called with status 400 as there is no body passed in reqest", async () => {
@@ -69,28 +70,13 @@ const createUserTests = () =>
           { email: "please include a valid email" },
         ],
       };
+      const next = jest.fn()
 
-      await createUser(req, res);
-      expect(res.status).toHaveBeenCalledWith(400);
-      expect(res.json).toHaveBeenCalled();
-    });
-
-    it("it should give server error, finding difficulty in adding data as there is no email", async () => {
-      let req = {
-        body: {
-          name: "sonu",
-          email: "",
-          password: "111111111",
-          isAdmin: true,
-        },
-      };
-      const res = mockResponse();
-
-      await createUser(req, res);
-      expect(res.status).toHaveBeenCalledWith(500);
-      expect(res.json).toHaveBeenCalled();
+      await createUser(req, res, next);
+      expect(next.mock.calls[0][0].status).toBe(400)
     });
   });
+
 
 const loginUserTests = () =>
   describe("Test suite loginUser in users file in controller", () => {
@@ -104,6 +90,7 @@ const loginUserTests = () =>
         },
       };
       const res = mockResponse();
+      
 
       await loginUser(req, res);
       expect(res.status).toHaveBeenCalledWith(200);
@@ -118,10 +105,11 @@ const loginUserTests = () =>
         },
       };
       const res = mockResponse();
+      const next = jest.fn()
 
-      await loginUser(req, res);
-      expect(res.status).toHaveBeenCalledWith(400);
-      expect(res.json).toHaveBeenCalled();
+      await loginUser(req, res,next);
+      expect(next.mock.calls[0][0].status).toBe(400)
+      
     });
 
     it("It should be called with status 400 as there is no body passed in reqest", async () => {
@@ -132,23 +120,11 @@ const loginUserTests = () =>
         ],
       };
 
-      await createUser(req, res);
-      expect(res.status).toHaveBeenCalledWith(400);
-      expect(res.json).toHaveBeenCalled();
-    });
+      const next = jest.fn()
 
-    it("it should give server error, there is no email", async () => {
-      let req = {
-        body: {
-          email: "",
-          password: "111111111",
-        },
-      };
-      const res = mockResponse();
-
-      await createUser(req, res);
-      expect(res.status).toHaveBeenCalledWith(500);
-      expect(res.json).toHaveBeenCalled();
+      await createUser(req, res, next);
+      expect(next.mock.calls[0][0].status).toBe(400)
+      
     });
   });
 

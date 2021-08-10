@@ -5,12 +5,11 @@ const validations = (req) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return errors
-    }
-    else {
+    } else {
         return false
     }
-}
+};
 
-const Tickets = async (req, res) => {
-    
-}
+const Tickets = async(req, res) => {
+
+};

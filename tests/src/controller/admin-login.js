@@ -33,10 +33,11 @@ const adminLoginTests = () =>
         },
       };
       const res = mockResponse();
+      const next = jest.fn()
 
-      await adminLogin(req, res);
-      expect(res.status).toHaveBeenCalledWith(400);
-      expect(res.json).toHaveBeenCalled();
+      await adminLogin(req, res,next);
+      expect(next.mock.calls[0][0].status).toBe(400)
+
     });
 
     it("test should return status code 400, if the password is not valid", async () => {
@@ -47,10 +48,10 @@ const adminLoginTests = () =>
           },
         };
         const res = mockResponse();
+        const next = jest.fn()
   
-        await adminLogin(req, res);
-        expect(res.status).toHaveBeenCalledWith(400);
-        expect(res.json).toHaveBeenCalled();
+        await adminLogin(req, res, next);
+        expect(next.mock.calls[0][0]).toEqual({status: 400,errors: "Invalid Credentials"})
       });
 
     it("test, if the user is not exits with code 400", async () => {
@@ -61,10 +62,10 @@ const adminLoginTests = () =>
         },
       };
       const res = mockResponse();
+      const next = jest.fn()
 
-      await adminLogin(req, res);
-      expect(res.status).toHaveBeenCalledWith(400);
-      expect(res.json).toHaveBeenCalled();
+      await adminLogin(req, res, next);
+      expect(next.mock.calls[0][0]).toEqual({status: 400,errors: "Invalid Credentials"})
     });
 
     it("It should be called with status 400 as there is no body passed in reqest", async () => {
@@ -74,10 +75,10 @@ const adminLoginTests = () =>
           { email: "please include a valid email" },
         ],
       };
+      const next = jest.fn()
 
-      await adminLogin(req, res);
-      expect(res.status).toHaveBeenCalledWith(400);
-      expect(res.json).toHaveBeenCalled();
+      await adminLogin(req, res, next);
+      expect(next.mock.calls[0][0].status).toBe(400)
     });
 
   });

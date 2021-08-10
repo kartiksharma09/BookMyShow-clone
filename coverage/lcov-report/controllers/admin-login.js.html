@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.29% </span>
+                <span class="strong">95.83% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>25/28</span>
+                <span class='fraction'>23/24</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">89.29% </span>
+                <span class="strong">95.83% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>25/28</span>
+                <span class='fraction'>23/24</span>
             </div>
         
             
@@ -106,7 +106,13 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -125,21 +131,31 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -149,10 +165,6 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const bcrypt = require("bcryptjs");
@@ -161,7 +173,7 @@ const jwt = require("jsonwebtoken");
 const config = require("config");
 const User = require("../models/Users");
 &nbsp;
-const getSignedJwtToken = function (
+const getSignedJwtToken = function(
     payload,
     secret = config.get("jwtsecret"),
     expiresIn = 360000
@@ -169,49 +181,55 @@ const getSignedJwtToken = function (
     return jwt.sign(payload, secret, { expiresIn });
 };
 &nbsp;
-const adminLogin = async (req, res) =&gt; {
+const adminLogin = async(req, res, next) =&gt; {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-    console.log(errors)
-&nbsp;
-      return res.status(400).json({ errors: errors.array() });
+        return next({
+            status: 400,
+            errors: errors.array()
+        });
     }
     const { email, password } = req.body;
-    try {
-      let user = await User.findOne({ email });
-      if (!user) {
-        return res.status(400).json({ errors: [{ msg: "Invalid Credentials" }] });
-      }
-      else if(user.isAdmin !==true){
-        return res.status(400).json({ errors: [{ msg: "Invalid Credentials" }] });
-      }
-      const isMatch = await bcrypt.compare(password, user.password);
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (!isMatch) {
-<span class="cstat-no" title="statement not covered" >        return res.status(400).json({ errors: [{ msg: "Invalid Credentials" }] });</span>
-      }
-      const payload = {
-        user: {
-          id: user.id,
-          isAdmin: user.isAdmin,
-        },
-      };
-      const token = getSignedJwtToken(payload);
-  
-      return res.status(200).json({ token });
-    } catch (err) {
-<span class="cstat-no" title="statement not covered" >      console.error(err);</span>
-<span class="cstat-no" title="statement not covered" >      res.status(500).json({ msg: "server error" });</span>
-    }
-  };
 &nbsp;
-  module.exports = {adminLogin};</pre></td></tr></table></pre>
+    let user = await User.findOne({ email });
+    if (!user) {
+        return next({
+            status: 400,
+            errors: "Invalid Credentials"
+        });
+    } else if (user.isAdmin !== true) {
+&nbsp;
+        return next({
+            status: 400,
+            errors: "Invalid Credentials"
+        });
+    }
+    const isMatch = await bcrypt.compare(password, user.password);
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (!isMatch) {
+<span class="cstat-no" title="statement not covered" >        return next({</span>
+            status: 400,
+            errors: "Invalid Credentials"
+        });
+    }
+    const payload = {
+        user: {
+            id: user.id,
+            isAdmin: user.isAdmin,
+        },
+    };
+    const token = getSignedJwtToken(payload);
+&nbsp;
+    return res.status(200).json({ token });
+};
+&nbsp;
+module.exports = { adminLogin };</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Aug 10 2021 23:13:44 GMT+0530 (India Standard Time)
+                at Wed Aug 11 2021 00:02:02 GMT+0530 (India Standard Time)
             </div>
         </div>
         <script src="../prettify.js"></script>

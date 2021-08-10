@@ -8,11 +8,14 @@ const findMovie = async(moviename) => {
 
 
 
-const addMovie = async(req, res) => {
+const addMovie = async(req, res, next) => {
 
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return next({
+            status: 400,
+            errors: errors.array()
+        });
     }
 
 
@@ -28,21 +31,31 @@ const addMovie = async(req, res) => {
     } = req.body;
 
 
-    try {
+    let movie = await findMovie(movieName);
 
-        let movie = await findMovie(movieName);
-
-        if (!movie) {
-            return res.status(400).json({ msg: "cannot add movie is already exists" })
-        }
-
-
-
-
-    } catch (err) {
-        res.status(500).json({ msg: "server error" });
+    if (!movie) {
+        return next({
+            status: 400,
+            errors: "cannot add movie is already exists"
+        });
     }
+
+    movie = new movieModel({
+        adminId: req.user.id,
+        movieName,
+        posterUrl,
+        timeDuration,
+        genre,
+        language,
+        aboutTheMovie,
+        price,
+        cast
+    });
+
+    await movie.save();
+
+    res.status(200).json({ msg: "movie has added succefully" });
 
 };
 
-module.exports = { addMovie }
+module.exports = { addMovie };

@@ -10,6 +10,6 @@ const validations = (req) => {
     }
 };
 
-const Tickets = async(req, res) => {
+// const Tickets = async(req, res) => {
 
-};
+// };

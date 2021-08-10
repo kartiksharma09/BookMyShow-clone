@@ -1,4 +1,4 @@
-const Router = require('express').Router();
+const router = require('express').Router();
 const { check } = require('express-validator');
 const isVerify = require('../middleware/auth');
 const isAdmin = require('../middleware/isAdmin');
@@ -16,7 +16,7 @@ const { addMovie } = require('../controllers/addmovie');
 //desc    Add a movie
 //access private
 
-Router.post(
+router.post(
     '/movies/addmovie', [
         isVerify,
         isAdmin,
@@ -30,4 +30,4 @@ Router.post(
         check('price', 'movie name is required').not().isEmpty()
     ], addMovie);
 
-module.exports = Router;
+module.exports = router;

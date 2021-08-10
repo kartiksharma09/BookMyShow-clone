@@ -5,8 +5,8 @@ const {createUserTests, loginUserTests} = require('./users')
 
 
 beforeAll(async () => await connect())
-afterAll(async () => await clear())
-// afterAll(async () => await close())
+// afterAll(async () => await clear())
+afterAll(async () => await close())
 
 
 describe("Test suite for full backend",()=>{

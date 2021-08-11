@@ -96,5 +96,10 @@ const bookTickets = async (req, res, next) => {
     }
 }
 
+const cancelTicket = async (req, res) => {
+    console.log("cancel tickets")
+}
+
+
 module.exports = { bookTickets }
 

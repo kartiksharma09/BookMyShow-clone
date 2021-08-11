@@ -6,8 +6,6 @@ const findMovie = async(moviename) => {
     return movie;
 };
 
-
-
 const addMovie = async(req, res, next) => {
 
     const errors = validationResult(req);
@@ -32,8 +30,8 @@ const addMovie = async(req, res, next) => {
 
 
     let movie = await findMovie(movieName);
-
-    if (!movie) {
+    console.log(movie, "movie");
+    if (movie) {
         return next({
             status: 400,
             errors: "cannot add movie is already exists"

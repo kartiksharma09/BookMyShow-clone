@@ -6,11 +6,21 @@ const movieModel = require('../models/Movies');
 const userModel = require('../models/Users');
 const cinemaModel = require('../models/cinema');
 const { addMovie } = require('../controllers/addmovie');
+const { adminLogin } = require('../controllers/admin-login');
+const {cinema}=require('../controllers/cinema')
 
-//@route POST api/admins/admin/login
-// desc log in for admin
-//access private
+//@route  POST api/admins/login
+//desc    Login admin
+//access  public
 
+router.post(
+    '/admin/login', [
+        check("email", "please include a valid email").isEmail(),
+        check(
+            "password",
+            "please enter a password with 8 or more characters"
+        ).isLength({ min: 8 })
+], adminLogin);
 
 //@route  POST api/admins/addmovie
 //desc    Add a movie
@@ -22,12 +32,24 @@ router.post(
         isAdmin,
         check('movieName', 'movie name is required').not().isEmpty(),
         check('posterUrl', 'posterUrl is required').not().isEmpty(),
-        check('timeDuration', 'movie name is required').not().isEmpty(),
-        check('genre', 'movie name is required').not().isEmpty(),
-        check('language', 'movie name is required').not().isEmpty(),
-        check('cast', 'movie name is required').not().isEmpty(),
-        check('aboutTheMovie', 'movie name is required').not().isEmpty(),
-        check('price', 'movie name is required').not().isEmpty()
-    ], addMovie);
+        check('timeDuration', 'timeDuration is required').not().isEmpty(),
+        check('genre', 'genre is required').not().isEmpty(),
+        check('language', 'language is required').not().isEmpty(),
+        check('cast', 'cast is required').not().isEmpty(),
+        check('aboutTheMovie', 'aboutTheMovie is required').not().isEmpty(),
+        check('price', 'price is required').not().isEmpty()
+], addMovie);
+
+//@route  POST api/admins/addCinema
+//desc    Add cinema
+//access private
+
+router.post('/admin/add-cinema',[
+    isVerify,isAdmin,[
+        check('cinemaName', 'cinema name is required').not().isEmpty(),
+        check('locationOfCinema', 'location is required').not().isEmpty(),
+        check('seats', 'seats is required').not().isEmpty(),
+    ]
+],cinema)
 
 module.exports = router;

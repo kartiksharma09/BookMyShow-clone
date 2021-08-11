@@ -6,16 +6,16 @@ const CinemaSchema = new mongoose.Schema({
         ref: 'user',
         required: true
     },
-    cinameName: {
+    cinemaName: {
         type: String,
         required: true
     },
-    locationOfCiname: {
+    locationOfCinema: {
         type: String,
         index: true,
         required: true
     },
-    seats: {
+    seats:{
         type: Number,
         default: 50
     },

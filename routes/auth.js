@@ -7,7 +7,7 @@ const auth = require("../middlewares/auth");
 //desc    Test Route
 //access  public
 
-router.get("/", auth, async (req, res) => {
+router.get("/", auth, async (req, res) =>{
     try {
         const user = await User.findById(req.user.id).select("-password");
         res.json(user);
@@ -16,5 +16,6 @@ router.get("/", auth, async (req, res) => {
         res.status(500).send("server error");
     }
 });
+
 
 module.exports = router;

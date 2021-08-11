@@ -14,7 +14,7 @@ const getSignedJwtToken = function(
 
 const adminLogin = async(req, res, next) => {
     const errors = validationResult(req);
-    if (errors) {
+    if (!errors.isEmpty()) {
         return next({
             status: 400,
             errors: errors.array()
@@ -28,7 +28,7 @@ const adminLogin = async(req, res, next) => {
             status: 400,
             errors: "Invalid Credentials"
         });
-    } else if (user.isAdmin !== true) {
+    } else if (user.isAdmin !== true){
 
         return next({
             status: 400,
@@ -49,7 +49,6 @@ const adminLogin = async(req, res, next) => {
         },
     };
     const token = getSignedJwtToken(payload);
-
     return res.status(200).json({ token });
 };
 

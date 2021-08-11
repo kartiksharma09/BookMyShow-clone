@@ -98,7 +98,6 @@ const loginUser = async(req, res, next) => {
 
     const token = getSignedJwtToken(payload);
     res.status(200).json({ token });
-
 };
 
 module.exports = { createUser, loginUser };

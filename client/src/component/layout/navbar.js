@@ -9,7 +9,7 @@ const NavBar = () => {
         <nav className='navbar sticky-top '>
         <h1>
           <Link to='/'>
-            <img src="" alt="nav" className='nav-item1 mb-2' />
+            <img src="" alt="nav" className='nav-item1 mb-2'/>
           </Link>
         </h1>
         <p className='nav-Links-item '>
@@ -17,7 +17,6 @@ const NavBar = () => {
             Book tickets
           </Link>
         </p>
-
         <div className='dropdown nav-Links'>
         <AccountCircleIcon style={{ fontSize: 50 }} />
           

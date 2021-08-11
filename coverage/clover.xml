@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1628620322799" clover="3.2.0">
-  <project timestamp="1628620322799" name="All files">
-    <metrics statements="183" coveredstatements="176" conditionals="24" coveredconditionals="20" methods="30" coveredmethods="29" elements="237" coveredelements="225" complexity="0" loc="183" ncloc="183" packages="5" files="7" classes="7"/>
+<coverage generated="1628660760925" clover="3.2.0">
+  <project timestamp="1628660760925" name="All files">
+    <metrics statements="202" coveredstatements="195" conditionals="28" coveredconditionals="24" methods="32" coveredmethods="31" elements="262" coveredelements="250" complexity="0" loc="202" ncloc="202" packages="6" files="9" classes="9"/>
     <package name="config">
       <metrics statements="18" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="3"/>
       <file name="testDb.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/config/testDb.js">
@@ -96,6 +96,34 @@
         <line num="104" count="1" type="stmt"/>
       </file>
     </package>
+    <package name="middleware">
+      <metrics statements="19" coveredstatements="19" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="auth.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/middleware/auth.js">
+        <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+      </file>
+      <file name="isAdmin.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/middleware/isAdmin.js">
+        <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
     <package name="models">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="Users.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/models/Users.js">
@@ -103,7 +131,7 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
       </file>
     </package>
     <package name="tests">

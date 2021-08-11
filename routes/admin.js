@@ -6,6 +6,7 @@ const movieModel = require('../models/Movies');
 const userModel = require('../models/Users');
 const { addMovie } = require('../controllers/addmovie');
 const { adminLogin } = require('../controllers/admin-login');
+const {cinema}=require('../controllers/cinema')
 
 //@route  POST api/admins/login
 //desc    Login admin
@@ -37,5 +38,17 @@ router.post(
         check('aboutTheMovie', 'aboutTheMovie is required').not().isEmpty(),
         check('price', 'price is required').not().isEmpty()
 ], addMovie);
+
+//@route  POST api/admins/addCinema
+//desc    Add cinema
+//access private
+
+router.post('/admin/add-cinema',[
+    isVerify,isAdmin,[
+        check('cinemaName', 'cinema name is required').not().isEmpty(),
+        check('locationOfCinema', 'location is required').not().isEmpty(),
+        check('seats', 'seats is required').not().isEmpty(),
+    ]
+],cinema)
 
 module.exports = router;

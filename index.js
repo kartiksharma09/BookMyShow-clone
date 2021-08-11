@@ -7,7 +7,7 @@ const PORT = 5000;
 connectDB();
 app.use(express.json());
 
-app.use(express.json({ extended: false }))
+app.use(express.json({ extended: false }));
 
 const user = require('./routes/users');
 

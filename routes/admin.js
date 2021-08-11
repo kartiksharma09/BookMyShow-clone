@@ -4,7 +4,7 @@ const isVerify = require('../middleware/auth');
 const isAdmin = require('../middleware/isAdmin');
 const movieModel = require('../models/Movies');
 const userModel = require('../models/Users');
-const { addMovie } = require('../controllers/addmovie');
+const { addMovie } = require('../controllers/movies');
 const { adminLogin } = require('../controllers/admin-login');
 const { cinema, assignMovieToCinema } = require('../controllers/cinema');
 
@@ -22,7 +22,7 @@ router.post(
     ], adminLogin);
 
 
-//@route  POST api/admins/addmovie
+//@route  POST api/admins/movies/addmovie
 //desc    Add a movie
 //access private
 
@@ -53,6 +53,11 @@ router.post('/admin/add-cinema', [
     ]
 ], cinema);
 
+
+
+//@route  POST api/admins/addCinema
+//desc    Add cinema
+//access private
 
 router
     .post(

@@ -10,7 +10,7 @@ const CinemaSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    locationOfCiname: {
+    locationOfCinema: {
         type: String,
         index: true,
         required: true

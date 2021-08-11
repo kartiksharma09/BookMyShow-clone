@@ -22,7 +22,7 @@ const bookTickets = async (req, res, next) => {
             errors: errors.array()
         });
     }
-    
+
     const cinemaId = req.params.cinemaId
     const movieId = req.params.movieId
 
@@ -59,7 +59,7 @@ const bookTickets = async (req, res, next) => {
     isBooked = seats.filter((bookedTicket) => {
         return bookedTickets.includes(bookedTicket);
     })
-    
+
     var responce = false
     for (let index = 0; index < selected_tickets.length; index++) {
         if (seats[index].includes(selected_tickets[index])) {
@@ -96,10 +96,28 @@ const bookTickets = async (req, res, next) => {
     }
 }
 
-const cancelTicket = async (req, res) => {
-    console.log("cancel tickets")
+// const cancel tickets
+const cancelTicket = async (req, res, next) =>{
+    const ticket = await Ticket.findOne({ _id: req.params.ticketId, userId: req.user.id });
+
+    if (!ticket){
+        return res.status(400).json({ msg: "ticket not found" });
+    }
+    
+    const response = await Tickets.findOneAndDelete({ _id: req.params.ticketId });
+    if (!response){
+        return nex({
+            status: 404,
+            errors:"Tickets Not found"
+        })
+    }
+
+    return next({
+        status: 200,
+        errors: "ticket cancel"
+    })
 }
 
+module.exports = { bookTickets, cancelTicket }
 
-module.exports = { bookTickets }
 

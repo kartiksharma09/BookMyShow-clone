@@ -15,7 +15,7 @@ const CinemaSchema = new mongoose.Schema({
         index: true,
         required: true
     },
-    seats:{
+    seats: {
         type: Number,
         default: 50
     },
@@ -30,19 +30,18 @@ const CinemaSchema = new mongoose.Schema({
         },
         to: {
             type: String,
-            required:true
+            required: true
         },
         startDate: {
             type: Date,
-            required:true
+            required: true
         },
         endDate: {
             type: Date,
-            required:true
+            required: true
         }
     }]
 });
-
 
 const Cinema = mongoose.model('cinema', CinemaSchema);
 module.exports = Cinema;

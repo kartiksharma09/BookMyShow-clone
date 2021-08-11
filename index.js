@@ -17,13 +17,11 @@ app.use('/api/users', user);
 app.use('/api/admins', admin);
 
 app.use((err, req, res, next) => {
+    // console.log(err);
     return res.status(err.status).json({ msg: err.errors });
 });
 
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`server is running at ${PORT}`);
 });
-
-
-

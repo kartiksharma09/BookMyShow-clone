@@ -6,7 +6,7 @@ const movieModel = require('../models/Movies');
 const userModel = require('../models/Users');
 const { addMovie } = require('../controllers/addmovie');
 const { adminLogin } = require('../controllers/admin-login');
-const {cinema}=require('../controllers/cinema')
+const { cinema, assignMovieToCinema } = require('../controllers/cinema');
 
 //@route  POST api/admins/login
 //desc    Login admin
@@ -19,7 +19,8 @@ router.post(
             "password",
             "please enter a password with 8 or more characters"
         ).isLength({ min: 8 })
-], adminLogin);
+    ], adminLogin);
+
 
 //@route  POST api/admins/addmovie
 //desc    Add a movie
@@ -37,18 +38,30 @@ router.post(
         check('cast', 'cast is required').not().isEmpty(),
         check('aboutTheMovie', 'aboutTheMovie is required').not().isEmpty(),
         check('price', 'price is required').not().isEmpty()
-], addMovie);
+    ], addMovie);
+
 
 //@route  POST api/admins/addCinema
 //desc    Add cinema
 //access private
 
-router.post('/admin/add-cinema',[
-    isVerify,isAdmin,[
+router.post('/admin/add-cinema', [
+    isVerify, isAdmin, [
         check('cinemaName', 'cinema name is required').not().isEmpty(),
         check('locationOfCinema', 'location is required').not().isEmpty(),
         check('seats', 'seats is required').not().isEmpty(),
     ]
-],cinema)
+], cinema);
+
+
+router
+    .post(
+        '/cinema/addmovie/:cinemaId', [
+            isVerify,
+            isAdmin,
+            check('movieName', 'movie name is required').not().isEmpty(),
+            check('from', 'from is required').not().isEmpty(),
+            check('to', 'to time is required').not().isEmpty(),
+        ], assignMovieToCinema);
 
 module.exports = router;

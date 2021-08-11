@@ -95,10 +95,8 @@ const loginUser = async(req, res, next) => {
             isAdmin: user.isAdmin,
         },
     };
-
     const token = getSignedJwtToken(payload);
     res.status(200).json({ token });
-
 };
 
 module.exports = { createUser, loginUser };

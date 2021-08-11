@@ -2,7 +2,9 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "parser": "babel-eslint",
   "dependencies": {
+    "@material-ui/icons": "^4.11.2",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -24,10 +26,19 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
+    "root": true,
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-import-resolver-meteor": "^0.3.4",
+    "eslint-plugin-graphql": "^0.4.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-meteor": "^4.0.1",
+    "eslint-plugin-react": "^7.5.1"
   },
   "browserslist": {
     "production": [

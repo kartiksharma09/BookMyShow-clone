@@ -1,11 +1,12 @@
-import react, { Fragment } from 'react';
+import React, { Fragment } from 'react';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { Link } from 'react-router-dom';
-// import Icon from '../../images/Bookmyshow'
 
-const Navbar = () => {
+const NavBar = () => {
+
   return (
-      <Fragment>
-    <nav className='navbar sticky-top '>
+    <Fragment>
+        <nav className='navbar sticky-top '>
         <h1>
           <Link to='/'>
             <img src="" alt="nav" className='nav-item1 mb-2' />
@@ -33,4 +34,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar
+export default NavBar;

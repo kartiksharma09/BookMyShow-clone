@@ -16,21 +16,17 @@ const cinema=async(req,res,next)=>{
     const cinemas=new Cinema(req.body)
 
     console.log(cinemas)
-    try {
+    
        
 
-        cinemas.adminId=req.user.id
-        
-        await cinemas.save()
-        res.status(200).json({msg:"your cinemaHall is added..."})
+    cinemas.adminId=req.user.id
+    
+    await cinemas.save()
+    res.status(200).json({msg:"your cinemaHall is added..."})
         
        
        
-    } catch (err) {
-        console.log(err)
-        
-        res.status(500).json({ msg: "server error....." })
-    }
+   
 }
 
 

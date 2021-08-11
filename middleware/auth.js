@@ -10,8 +10,7 @@ module.exports = (req, res, next) => {
     if (!Token) {
         return res.status(401).json({ msg: "Token not found " });
     }
-
-
+    
     // verifying the token
     // console.log(config.get("jwtsecret"));
     try {

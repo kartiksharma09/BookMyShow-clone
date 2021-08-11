@@ -7,7 +7,6 @@ const userModel = require('../models/Users');
 const { addMovie } = require('../controllers/addmovie');
 const { adminLogin } = require('../controllers/admin-login');
 
-
 //@route  POST api/admins/login
 //desc    Login admin
 //access  public
@@ -19,8 +18,7 @@ router.post(
             "password",
             "please enter a password with 8 or more characters"
         ).isLength({ min: 8 })
-    ], adminLogin);
-
+], adminLogin);
 
 //@route  POST api/admins/addmovie
 //desc    Add a movie
@@ -38,6 +36,6 @@ router.post(
         check('cast', 'cast is required').not().isEmpty(),
         check('aboutTheMovie', 'aboutTheMovie is required').not().isEmpty(),
         check('price', 'price is required').not().isEmpty()
-    ], addMovie);
+], addMovie);
 
 module.exports = router;

@@ -27,7 +27,7 @@ const bookTickets = async (req, res, next) => {
     const movieId = req.params.movieId
 
     // Initializing from the req.body
-    const { Seats, watchers, userId, bookingDate } = req.body
+    const { Seats, watchers, bookingDate } = req.body
 
     const TicketInfo = {
         Seats: Seats,
@@ -49,14 +49,14 @@ const bookTickets = async (req, res, next) => {
     const bookedTickets = await ticketsBooked(req.params.cinemaId);
     console.log(bookedTickets)
 
-    const cinema = await Cinema.findOne({ cinemaId: cinemaId })
+    const cinema = await Cinema.findById(cinemaId)
     console.log(cinema)
 
     // Not available seats
     let seats = cinema.seats;
     console.log(seats)
     const selected_tickets = Seats
-    isBooked = seats.filter((bookedTicket) => {
+    let isBooked = seats.filter((bookedTicket) => {
         return bookedTickets.includes(bookedTicket);
     })
 
@@ -98,13 +98,8 @@ const bookTickets = async (req, res, next) => {
 
 // const cancel tickets
 const cancelTicket = async (req, res, next) =>{
-    const ticket = await Ticket.findOne({ _id: req.params.ticketId, userId: req.user.id });
-
-    if (!ticket){
-        return res.status(400).json({ msg: "ticket not found" });
-    }
-    
-    const response = await Tickets.findOneAndDelete({ _id: req.params.ticketId });
+  
+    const response = await Tickets.findOneAndDelete({ _id: req.params.ticketId , userId: req.user.id  });
     if (!response){
         return nex({
             status: 404,

@@ -20,7 +20,4 @@ const cinema=async(req,res,next)=>{
     res.status(200).json({msg:"your cinemaHall is added..."})
     
 }
-
-
-
 module.exports={cinema}

@@ -1,16 +1,21 @@
-import React from 'react'
 import './App.css';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import Navbar from './component/layout/navbar'
+import {
+  BrowserRouter as Router,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <Fragment>
+    
     <div className="App">
-
       <Router>
-      <Navbar />
+        <Navbar/>
+      </Router>
     </div>
-    </Fragment>
+    
   );
 }
 

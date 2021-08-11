@@ -39,7 +39,6 @@ router.post(
         check('price', 'price is required').not().isEmpty()
 ], addMovie);
 
-<<<<<<< HEAD
 //@route  POST api/admins/addCinema
 //desc    Add cinema
 //access private
@@ -53,6 +52,3 @@ router.post('/admin/add-cinema',[
 ],cinema)
 
 module.exports = router;
-=======
-module.exports = router;
->>>>>>> 8a7116222e736e2c93c30868f11f16adda1e3250

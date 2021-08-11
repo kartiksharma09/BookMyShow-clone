@@ -88,14 +88,14 @@ const loginUser = async(req, res, next) => {
             errors: "Invalid Credentials"
         });
     }
-    
+
     const payload = {
         user: {
             id: user.id,
             isAdmin: user.isAdmin,
         },
     };
-
+    
     const token = getSignedJwtToken(payload);
     res.status(200).json({ token });
 };

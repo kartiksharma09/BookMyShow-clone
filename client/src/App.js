@@ -6,8 +6,7 @@ function App() {
   return (
     <Fragment>
     <div className="App">
-
-      <Router>
+      <Router />
       <Navbar />
     </div>
     </Fragment>

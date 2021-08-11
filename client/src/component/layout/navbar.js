@@ -1,6 +1,6 @@
 import react, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../../images/Bookmyshow'
+// import Icon from '../../images/Bookmyshow'
 
 const Navbar = () => {
   return (
@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className='navbar sticky-top '>
         <h1>
           <Link to='/'>
-            <img src={Icon} alt="nav" className='nav-item1 mb-2' />
+            <img src="" alt="nav" className='nav-item1 mb-2' />
           </Link>
         </h1>
 
@@ -32,3 +32,5 @@ const Navbar = () => {
     </Fragment>
   );
 };
+
+export default Navbar

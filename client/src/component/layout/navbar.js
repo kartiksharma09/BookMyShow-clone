@@ -1,16 +1,15 @@
 import React, { Fragment } from 'react';
-// import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { Link } from 'react-router-dom';
-import Icon from '../../images/icon.jpg';
 
 const NavBar = () => {
 
   return (
     <Fragment>
-      <nav className='navbar sticky-top '>
+        <nav className='navbar sticky-top '>
         <h1>
           <Link to='/'>
-            <img src={Icon} alt="nav" className='nav-item1 mb-2' />
+            <img src="" alt="nav" className='nav-item1 mb-2' />
           </Link>
         </h1>
 
@@ -21,7 +20,7 @@ const NavBar = () => {
         </p>
 
         <div className='dropdown nav-Links'>
-        {/* <AccountCircleIcon style={{ fontSize: 50 }} /> */}
+        <AccountCircleIcon style={{ fontSize: 50 }} />
           
           <div className='dropdown-content'>
             <p><Link to='/register' className='text-dark text-decoration-none'>Register</Link></p>

@@ -78,8 +78,5 @@ const searchMovie = async(req, res, next) => {
 
     const searchedMovie = await movieModel.find({ movieName: movieName });
 
-
-
-
 };
 module.exports = { addMovie, getAllMovies, searchMovie };

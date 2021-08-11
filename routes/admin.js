@@ -8,7 +8,6 @@ const { addMovie } = require('../controllers/addmovie');
 const { adminLogin } = require('../controllers/admin-login');
 const {cinema}=require('../controllers/cinema')
 
-
 //@route  POST api/admins/login
 //desc    Login admin
 //access  public
@@ -20,8 +19,7 @@ router.post(
             "password",
             "please enter a password with 8 or more characters"
         ).isLength({ min: 8 })
-    ], adminLogin);
-
+], adminLogin);
 
 //@route  POST api/admins/addmovie
 //desc    Add a movie
@@ -39,8 +37,9 @@ router.post(
         check('cast', 'cast is required').not().isEmpty(),
         check('aboutTheMovie', 'aboutTheMovie is required').not().isEmpty(),
         check('price', 'price is required').not().isEmpty()
-    ], addMovie);
+], addMovie);
 
+<<<<<<< HEAD
 //@route  POST api/admins/addCinema
 //desc    Add cinema
 //access private
@@ -54,3 +53,6 @@ router.post('/admin/add-cinema',[
 ],cinema)
 
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> 8a7116222e736e2c93c30868f11f16adda1e3250

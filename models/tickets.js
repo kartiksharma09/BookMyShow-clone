@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+
 const tickeSchema = new mongoose.Schema({
     cinemaId: {
         type: mongoose.Schema.Types.ObjectId,
@@ -32,7 +33,7 @@ const tickeSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "user",
     },
-
+    
     bookingDate: {
         type: Date,
         required: true,

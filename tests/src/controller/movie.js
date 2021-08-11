@@ -1,4 +1,4 @@
-const { addMovie } = require("../../../controllers/movies");
+const { addMovie, searchMovie } = require("../../../controllers/movies");
 
 const mockResponse = () => {
   const res = {};

@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+import React,{Fragment} from 'react'
+>>>>>>> ef79def8b2bb399b55457db4752183ab7aaabdbe
 import './App.css';
 import Navbar from './component/layout/navbar'
 import {

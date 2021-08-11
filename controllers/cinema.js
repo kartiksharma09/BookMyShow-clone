@@ -20,10 +20,7 @@ const cinema=async(req,res,next)=>{
     
     await cinemas.save()
     res.status(200).json({msg:"your cinemaHall is added..."})
-        
-       
-       
-   
+    
 }
 
 

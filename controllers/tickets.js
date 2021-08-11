@@ -14,7 +14,6 @@ const validations = (req) => {
 };
 
 const bookTickets = async (req, res, next) =>{
-    // valodation 
     const errors = validations(req);
     if (errors) {
         return next({
@@ -42,16 +41,15 @@ const bookTickets = async (req, res, next) =>{
     let seats = cinema.seats;
 
     const Tickets = await Ticket.findOne({ cinemaId })
-    if (Tickets) {
+    if (Tickets){
         const BookedTickets = Tickets.Seats
-        for (var index = 0; index < seats.length; index++) {
+        for (var index = 0; index < seats.length; index++){
             if (BookedTicket.includes(Seats[index])) {
                 return next({
                     status: 400,
                     errors: ["These tickets are already book", Seats[index]]
                 })
             }
-
             if (Seats[index]>seats){
                 return next({
                     status: 404,
@@ -60,6 +58,7 @@ const bookTickets = async (req, res, next) =>{
             }
         }
     }
+
     const TicketInfo = {
         Seats: Seats,
         watchers: watchers,

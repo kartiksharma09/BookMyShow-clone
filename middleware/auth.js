@@ -7,7 +7,6 @@ module.exports = (req, res, next) => {
     // console.log(Token);
 
     // check if token is not there
-    console.log(!Token)
     if (!Token) {
         return res.status(401).json({ msg: "Token not found " });
     }
@@ -20,7 +19,6 @@ module.exports = (req, res, next) => {
 
         next();
     } catch (err) {
-        console.log(err);
         res.status(401).json({ msg: "your Token is not valid" });
     }
 

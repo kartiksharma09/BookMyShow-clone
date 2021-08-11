@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{Fragment} from 'react'
 import './App.css';
 import Navbar from './component/layout/navbar'
 
@@ -7,7 +7,7 @@ function App() {
     <Fragment>
     <div className="App">
 
-      <Router>
+      <Router/>
       <Navbar />
     </div>
     </Fragment>

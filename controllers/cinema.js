@@ -1,5 +1,21 @@
 const Cinema = require('../models/cinema');
 const User = require('../models/Users');
+const ObjectId = require('mongoose').Types.ObjectId;
+const movieModel = require('../models/Movies');
+
+const findMovie = async(movieName) => {
+    const movie = await movieModel.findOne({ movieName: movieName });
+    console.log(movie);
+    return movie;
+};
+
+
+const findCinema = async(id) => {
+    const cinema = await Cinema.findOne({ _id: id });
+    return cinema;
+};
+
+
 const { validationResult } = require('express-validator');
 
 const cinema = async(req, res) => {
@@ -134,8 +150,7 @@ const assignMovieToCinema = async(req, res, next) => {
     await cinema.save();
 
     res.status(200).json({ msg: "movie has added succefully" });
-
-
 };
+
 
 module.exports = { cinema, assignMovieToCinema };

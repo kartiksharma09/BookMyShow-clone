@@ -1,5 +1,6 @@
 const { validationResult } = require('express-validator');
 const movieModel = require('../models/Movies');
+const cinemaModel = require('../models/cinema');
 
 const findMovie = async(moviename) => {
     const movie = await movieModel.findOne({ movieName: moviename });
@@ -65,6 +66,19 @@ const getAllMovies = async(req, res, next) => {
 
 
 const searchMovie = async(req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return next({
+            status: 400,
+            errors: errors.array()
+        });
+    }
 
-}
+    const { movieName } = req.body;
+
+    const searchedMovie = await movieModel.find({ movieName: movieName });
+
+
+
+};
 module.exports = { addMovie, getAllMovies, searchMovie };

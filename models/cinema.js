@@ -31,6 +31,5 @@ const CinemaSchema = new mongoose.Schema({
     }]
 });
 
-
 const Cinema = mongoose.model('cinema', CinemaSchema);
 module.exports = Cinema;

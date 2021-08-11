@@ -4,7 +4,7 @@ const { check } = require("express-validator");
 const { createUser, loginUser } = require("../controllers/users");
 const { bookTickets } = require('../controllers/tickets');
 const isVerify = require('../middleware/auth');
-const { cancelTicket} = require('../controllers/tickets');
+const { cancelTicket, GetTickets} = require('../controllers/tickets');
 
 //@route  POST api/users/signup
 //desc    Register user
@@ -53,5 +53,6 @@ router.post("/tickets/:cinemaId/:movieId", isVerify,[
 //access  public
 
 router.delete("/tickets/:ticketId", isVerify, cancelTicket)
+router.get("/tickets", isVerify, GetTickets)
 
 module.exports = router;

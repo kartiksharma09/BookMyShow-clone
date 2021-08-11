@@ -2,7 +2,7 @@ const Ticket = require("../models/tickets");
 const Movie = require("../models/Movies");
 const Cinema = require("../models/cinema");
 const { validationResult } = require("express-validator");
-const { ticketsBooked } = require("../Surches/BookTickets");
+const { ticketsBooked } = require("../utils/BookTickets");
 
 const validations = (req) => {
     const errors = validationResult(req);
@@ -54,9 +54,9 @@ const bookTickets = async (req, res, next) => {
 
     // Not available seats
     let seats = cinema.seats;
-    console.log(seats)
+
     const selected_tickets = Seats
-    isBooked = seats.filter((bookedTicket) => {
+    let isBooked = seats.filter((bookedTicket) =>{
         return bookedTickets.includes(bookedTicket);
     })
 
@@ -98,26 +98,27 @@ const bookTickets = async (req, res, next) => {
 
 // const cancel tickets
 const cancelTicket = async (req, res, next) =>{
-    const ticket = await Ticket.findOne({ _id: req.params.ticketId, userId: req.user.id });
-
-    if (!ticket){
-        return res.status(400).json({ msg: "ticket not found" });
-    }
-    
-    const response = await Tickets.findOneAndDelete({ _id: req.params.ticketId });
+    const response = await Ticket.findOneAndDelete({ _id: req.params.ticketId, userId: req.user.id });
     if (!response){
         return nex({
             status: 404,
             errors:"Tickets Not found"
         })
     }
-
     return next({
         status: 200,
         errors: "ticket cancel"
     })
 }
 
-module.exports = { bookTickets, cancelTicket }
+// get Booked Tikets
+const GetTickets = async(req, res, next) => {
+    const tickets = await Ticket.find({ userId: req.user.id }).populate('cinemaId');
+    if (!tickets.length){
+        return next({ status: 400, errors: "You have not booked any ticket" });
+    }
+    res.status(200).json(tickets);
+};
 
+module.exports = { bookTickets, cancelTicket, GetTickets }
 

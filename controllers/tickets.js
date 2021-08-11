@@ -23,7 +23,6 @@ const bookTickets = async (req, res, next) =>{
 
     const cinemaId = req.params.cinemaId
     const movieId = req.params.movieId
-    console.log(cinemaId,movieId)
 
     // Initializing from the req.body
     const { Seats, watchers, bookingDate } = req.body
@@ -40,12 +39,10 @@ const bookTickets = async (req, res, next) =>{
 
     const cinema = await Cinema.findById(cinemaId)
     let seats = cinema.seats;
-    console.log(seats)
 
     const Tickets = await Ticket.findOne({ cinemaId })
     if (Tickets){
         const BookedTickets = Tickets.Seats
-        console.log(BookedTickets)
         for (var index = 0; index < seats; index++){
             if (BookedTickets.includes(Seats[index])){
                 return next({

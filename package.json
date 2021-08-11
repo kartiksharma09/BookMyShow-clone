@@ -24,11 +24,6 @@
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-validator": "^6.12.1",
-<<<<<<< HEAD
-=======
-    "jest": "^26.6.0",
-    "express-validator": "^6.12.1",
->>>>>>> 879ccb96644a2e62fe0843f0ef397e7439cb30af
     "jsonwebtoken": "^8.5.1",
     "mongodb-memory-server": "^7.3.6",
     "mongoose": "^5.13.6",

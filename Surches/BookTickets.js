@@ -1,7 +1,7 @@
 const Ticket = require("../models/tickets");
 
-const ticketsBooked = async (movieId) => {
-    let tickets = await Ticket.find({ busId });
+const ticketsBooked = async (cinemaId) => {
+    let tickets = await Ticket.find({ cinemaId });
     tickets = tickets.map((ticket) => ticket.seats);
     let bookedTickets = [].concat.apply([], tickets);
     return bookedTickets;

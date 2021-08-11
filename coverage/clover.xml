@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1628665557445" clover="3.2.0">
-  <project timestamp="1628665557445" name="All files">
-    <metrics statements="248" coveredstatements="241" conditionals="32" coveredconditionals="28" methods="40" coveredmethods="39" elements="320" coveredelements="308" complexity="0" loc="248" ncloc="248" packages="6" files="12" classes="12"/>
+<coverage generated="1628669306606" clover="3.2.0">
+  <project timestamp="1628669306607" name="All files">
+    <metrics statements="249" coveredstatements="242" conditionals="32" coveredconditionals="28" methods="40" coveredmethods="39" elements="321" coveredelements="309" complexity="0" loc="249" ncloc="249" packages="6" files="12" classes="12"/>
     <package name="config">
       <metrics statements="18" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="3"/>
-      <file name="testDb.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/config/testDb.js">
+      <file name="testDb.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/config/testDb.js">
         <metrics statements="18" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -28,27 +28,27 @@
     </package>
     <package name="controllers">
       <metrics statements="78" coveredstatements="75" conditionals="26" coveredconditionals="23" methods="7" coveredmethods="7"/>
-      <file name="addmovie.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/controllers/addmovie.js">
+      <file name="addmovie.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/controllers/addmovie.js">
         <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="5" count="2" type="stmt"/>
         <line num="6" count="2" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="13" count="3" type="stmt"/>
-        <line num="14" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
-        <line num="34" count="2" type="stmt"/>
-        <line num="35" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
         <line num="54" count="1" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
+        <line num="58" count="1" type="stmt"/>
       </file>
-      <file name="admin-login.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/controllers/admin-login.js">
+      <file name="admin-login.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/controllers/admin-login.js">
         <metrics statements="24" coveredstatements="23" conditionals="10" coveredconditionals="9" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -72,10 +72,10 @@
         <line num="40" count="0" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
         <line num="51" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="56" count="1" type="stmt"/>
+        <line num="52" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
       </file>
-      <file name="users.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/controllers/users.js">
+      <file name="users.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/controllers/users.js">
         <metrics statements="37" coveredstatements="35" conditionals="12" coveredconditionals="10" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -117,22 +117,23 @@
       </file>
     </package>
     <package name="middleware">
-      <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
-      <file name="auth.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/middleware/auth.js">
-        <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="18" coveredstatements="18" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
+      <file name="auth.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/middleware/auth.js">
+        <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
-        <line num="10" count="3" type="cond" truecount="2" falsecount="0"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
+        <line num="9" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
       </file>
-      <file name="isAdmin.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/middleware/isAdmin.js">
+      <file name="isAdmin.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/middleware/isAdmin.js">
         <metrics statements="6" coveredstatements="6" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="2" type="stmt"/>
@@ -144,14 +145,14 @@
     </package>
     <package name="models">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="Movies.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/models/Movies.js">
+      <file name="Movies.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/models/Movies.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="51" count="1" type="stmt"/>
         <line num="53" count="1" type="stmt"/>
       </file>
-      <file name="Users.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/models/Users.js">
+      <file name="Users.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/models/Users.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -161,7 +162,7 @@
     </package>
     <package name="tests">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <file name="demo.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/tests/demo.js">
+      <file name="demo.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/tests/demo.js">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -169,7 +170,7 @@
     </package>
     <package name="tests.src.controller">
       <metrics statements="125" coveredstatements="125" conditionals="0" coveredconditionals="0" methods="26" coveredmethods="26"/>
-      <file name="addmovie.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/tests/src/controller/addmovie.js">
+      <file name="addmovie.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/tests/src/controller/addmovie.js">
         <metrics statements="29" coveredstatements="29" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -201,7 +202,7 @@
         <line num="85" count="1" type="stmt"/>
         <line num="89" count="1" type="stmt"/>
       </file>
-      <file name="admin-login.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/tests/src/controller/admin-login.js">
+      <file name="admin-login.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/tests/src/controller/admin-login.js">
         <metrics statements="40" coveredstatements="40" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -244,7 +245,7 @@
         <line num="81" count="1" type="stmt"/>
         <line num="86" count="1" type="stmt"/>
       </file>
-      <file name="users.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/tests/src/controller/users.js">
+      <file name="users.js" path="/home/rohit/Desktop/BookMyshow/HVA_Hackathon_BookMyShow/tests/src/controller/users.js">
         <metrics statements="56" coveredstatements="56" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="12"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>

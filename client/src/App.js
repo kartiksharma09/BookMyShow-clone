@@ -1,7 +1,11 @@
 import React,{Fragment} from 'react'
 import './App.css';
+import ReactDOM from 'react-dom'
 import Navbar from './component/layout/navbar'
-import Tickets from './component/TicketLayout/ticket';
+import AdminRegister from "./component/admin-auth/AdminRegister"
+import AdminLogin from './component/admin-auth/AdminLogin';
+import UserLogin from './component/user-auth/UserLogin';
+import UserSignup from './component/user-auth/UserSignup';
 import {
   BrowserRouter as Router,
   Route,
@@ -11,12 +15,11 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Navbar />
-        <section className="container">
-          <switch>
-            <Route exact path="/tickets" component={Tickets}/>
-          </switch>
-        </section>
+      <Route exact path='/admin-register' component={AdminRegister} />
+      <Route exact path='/admin-login' component={AdminLogin} />
+      <Route exact path='/user-login' component={UserLogin} />
+      <Route exact path='/user-register' component={UserSignup} />
+        <Navbar/>
       </Router>
       </div>
   );

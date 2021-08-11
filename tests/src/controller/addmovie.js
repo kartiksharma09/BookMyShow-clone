@@ -1,5 +1,4 @@
 const { addMovie } = require("../../../controllers/addmovie");
-// const movieModel = require('../models/Movies');
 
 const mockResponse = () => {
   const res = {};

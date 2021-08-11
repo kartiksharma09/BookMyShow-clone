@@ -3,7 +3,7 @@ import { useHistory, Link } from 'react-router-dom';
 import PropTypes from "prop-types";
 import './seat.css'
 
-const Tickets = () => {
+const Tickets = ()=>{
     return (
         <div class="plane">
             <link rel="stylesheet" >

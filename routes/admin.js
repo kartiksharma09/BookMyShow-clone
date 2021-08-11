@@ -4,7 +4,7 @@ const isVerify = require('../middleware/auth');
 const isAdmin = require('../middleware/isAdmin');
 const movieModel = require('../models/Movies');
 const userModel = require('../models/Users');
-const cinemaModel = require('../models/Cinema');
+const cinemaModel = require('../models/cinema');
 const { addMovie } = require('../controllers/addmovie');
 
 //@route POST api/admins/admin/login

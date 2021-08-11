@@ -40,7 +40,7 @@ router.post(
 //desc    Book tickets 
 //access  public
 
-router.post("/tickets", isVerify,[
+router.post("/tickets/:cinemaId/:movieId", isVerify,[
     check("Seats", "seats is required").not().isEmpty(),
     check("watchers", "watchers is Required").not().isEmpty(),
     check("bookingDate", "bookingDate is required").not().isEmpty()

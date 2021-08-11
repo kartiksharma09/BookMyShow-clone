@@ -10,7 +10,7 @@ const tickeSchema = new mongoose.Schema({
         ref: "Movie",
     },
     Seats: [{
-        type: String,
+        type: Number,
         required: true
     }],
     watchers: [

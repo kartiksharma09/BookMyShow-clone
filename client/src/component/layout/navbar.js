@@ -13,7 +13,6 @@ const NavBar = () => {
             <img src={Icon} alt="nav" className='nav-item1 mb-2' />
           </Link>
         </h1>
-
         <p className='nav-Links-item '>
           <Link to='/ticket' className='text-light nav-text nav-text-right'>
             Book tickets

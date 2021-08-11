@@ -20,7 +20,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "root":true,
+    "root": true,
     "extends": [
       "react-app",
       "react-app/jest"

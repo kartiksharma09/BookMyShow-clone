@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-=======
 import React,{Fragment} from 'react'
->>>>>>> ef79def8b2bb399b55457db4752183ab7aaabdbe
 import './App.css';
 import Navbar from './component/layout/navbar'
+import Tickets from './component/TicketLayout/ticket';
 import {
   BrowserRouter as Router,
   Route,
@@ -11,13 +9,16 @@ import {
 
 function App() {
   return (
-    
     <div className="App">
       <Router>
-        <Navbar/>
+        <Navbar />
+        <section className="container">
+          <switch>
+            <Route exact path="/tickets" component={Tickets}/>
+          </switch>
+        </section>
       </Router>
-    </div>
-    
+      </div>
   );
 }
 

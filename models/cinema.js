@@ -15,17 +15,29 @@ const CinemaSchema = new mongoose.Schema({
         index: true,
         required: true
     },
-    seats:{
+    seats: {
         type: Number,
         default: 50
     },
     Movies: [{
         movieId: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: ""
+            ref: "movie"
         },
-        time: {
+        from: {
             type: String,
+            required: true
+        },
+        to: {
+            type: String,
+            required: true
+        },
+        startDate: {
+            type: Date,
+            required: true
+        },
+        endDate: {
+            type: Date,
             required: true
         }
     }]

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1628671779055" clover="3.2.0">
-  <project timestamp="1628671779055" name="All files">
+<coverage generated="1628704256144" clover="3.2.0">
+  <project timestamp="1628704256144" name="All files">
     <metrics statements="287" coveredstatements="280" conditionals="34" coveredconditionals="30" methods="46" coveredmethods="45" elements="367" coveredelements="355" complexity="0" loc="287" ncloc="287" packages="6" files="15" classes="15"/>
     <package name="config">
       <metrics statements="18" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="3"/>
@@ -88,7 +88,7 @@
         <line num="17" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
       </file>
       <file name="users.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/controllers/users.js">
         <metrics statements="37" coveredstatements="35" conditionals="12" coveredconditionals="10" methods="3" coveredmethods="3"/>
@@ -177,8 +177,8 @@
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
       </file>
     </package>
     <package name="tests">

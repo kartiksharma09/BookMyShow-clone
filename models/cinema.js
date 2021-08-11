@@ -30,7 +30,7 @@ const CinemaSchema = new mongoose.Schema({
         },
         to: {
             type: String,
-            required
+            required:true
         },
         startDate: {
             type: Date,

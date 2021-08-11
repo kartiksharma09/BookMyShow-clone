@@ -30,7 +30,6 @@ const addMovie = async(req, res, next) => {
 
 
     let movie = await findMovie(movieName);
-    console.log(movie, "movie");
     if (movie) {
         return next({
             status: 400,

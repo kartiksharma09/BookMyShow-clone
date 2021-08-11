@@ -1,6 +1,6 @@
-const request = require("supertest");
+// const request = require("supertest");
 const express = require("express");
-const app = express();
+// const app = express();
 const { createUser, loginUser } = require("../../../controllers/users");
 
 const mockResponse = () => {

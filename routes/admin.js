@@ -4,6 +4,7 @@ const isVerify = require('../middleware/auth');
 const isAdmin = require('../middleware/isAdmin');
 const movieModel = require('../models/Movies');
 const userModel = require('../models/Users');
+const cinemaModel = require('../models/cinema');
 const { addMovie } = require('../controllers/addmovie');
 const { adminLogin } = require('../controllers/admin-login');
 const {cinema}=require('../controllers/cinema')

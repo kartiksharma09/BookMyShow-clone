@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1628670136194" clover="3.2.0">
-  <project timestamp="1628670136195" name="All files">
-    <metrics statements="248" coveredstatements="241" conditionals="32" coveredconditionals="28" methods="40" coveredmethods="39" elements="320" coveredelements="308" complexity="0" loc="248" ncloc="248" packages="6" files="12" classes="12"/>
+<coverage generated="1628671779055" clover="3.2.0">
+  <project timestamp="1628671779055" name="All files">
+    <metrics statements="287" coveredstatements="280" conditionals="34" coveredconditionals="30" methods="46" coveredmethods="45" elements="367" coveredelements="355" complexity="0" loc="287" ncloc="287" packages="6" files="15" classes="15"/>
     <package name="config">
       <metrics statements="18" coveredstatements="14" conditionals="2" coveredconditionals="1" methods="4" coveredmethods="3"/>
       <file name="testDb.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/config/testDb.js">
@@ -27,7 +27,7 @@
       </file>
     </package>
     <package name="controllers">
-      <metrics statements="78" coveredstatements="75" conditionals="26" coveredconditionals="23" methods="7" coveredmethods="7"/>
+      <metrics statements="90" coveredstatements="87" conditionals="28" coveredconditionals="25" methods="8" coveredmethods="8"/>
       <file name="addmovie.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/controllers/addmovie.js">
         <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -74,6 +74,21 @@
         <line num="51" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
         <line num="55" count="1" type="stmt"/>
+      </file>
+      <file name="cinema.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/controllers/cinema.js">
+        <metrics statements="12" coveredstatements="12" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
       </file>
       <file name="users.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/controllers/users.js">
         <metrics statements="37" coveredstatements="35" conditionals="12" coveredconditionals="10" methods="3" coveredmethods="3"/>
@@ -143,7 +158,7 @@
       </file>
     </package>
     <package name="models">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="Movies.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/models/Movies.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -158,6 +173,13 @@
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
       </file>
+      <file name="cinema.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/models/cinema.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+      </file>
     </package>
     <package name="tests">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -168,38 +190,38 @@
       </file>
     </package>
     <package name="tests.src.controller">
-      <metrics statements="125" coveredstatements="125" conditionals="0" coveredconditionals="0" methods="26" coveredmethods="26"/>
+      <metrics statements="148" coveredstatements="148" conditionals="0" coveredconditionals="0" methods="31" coveredmethods="31"/>
       <file name="addmovie.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/tests/src/controller/addmovie.js">
         <metrics statements="29" coveredstatements="29" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="3" type="stmt"/>
         <line num="5" count="3" type="stmt"/>
         <line num="6" count="3" type="stmt"/>
         <line num="7" count="3" type="stmt"/>
-        <line num="8" count="3" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
         <line num="54" count="1" type="stmt"/>
-        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
         <line num="57" count="1" type="stmt"/>
-        <line num="58" count="1" type="stmt"/>
+        <line num="59" count="1" type="stmt"/>
         <line num="60" count="1" type="stmt"/>
         <line num="61" count="1" type="stmt"/>
-        <line num="62" count="1" type="stmt"/>
+        <line num="64" count="1" type="stmt"/>
         <line num="65" count="1" type="stmt"/>
-        <line num="66" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
         <line num="68" count="1" type="stmt"/>
-        <line num="69" count="1" type="stmt"/>
+        <line num="70" count="1" type="stmt"/>
         <line num="71" count="1" type="stmt"/>
-        <line num="72" count="1" type="stmt"/>
+        <line num="74" count="1" type="stmt"/>
         <line num="75" count="1" type="stmt"/>
         <line num="76" count="1" type="stmt"/>
-        <line num="77" count="1" type="stmt"/>
-        <line num="81" count="1" type="stmt"/>
-        <line num="83" count="1" type="stmt"/>
-        <line num="85" count="1" type="stmt"/>
-        <line num="89" count="1" type="stmt"/>
+        <line num="80" count="1" type="stmt"/>
+        <line num="82" count="1" type="stmt"/>
+        <line num="84" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
       </file>
       <file name="admin-login.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/tests/src/controller/admin-login.js">
         <metrics statements="40" coveredstatements="40" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="8"/>
@@ -243,6 +265,32 @@
         <line num="80" count="1" type="stmt"/>
         <line num="81" count="1" type="stmt"/>
         <line num="86" count="1" type="stmt"/>
+      </file>
+      <file name="cinema.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/tests/src/controller/cinema.js">
+        <metrics statements="23" coveredstatements="23" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="5" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="2" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="33" count="1" type="stmt"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="48" count="1" type="stmt"/>
       </file>
       <file name="users.js" path="/home/sonu/Documents/HVA_Hackathon_BookMyShow/tests/src/controller/users.js">
         <metrics statements="56" coveredstatements="56" conditionals="0" coveredconditionals="0" methods="12" coveredmethods="12"/>

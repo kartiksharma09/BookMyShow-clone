@@ -1,9 +1,8 @@
 const Cinema=require('../models/cinema')
-const User=require('../models/Users')
+
 const {validationResult}=require('express-validator')
 
 const cinema=async(req,res,next)=>{
-    console.log(req.body,"djkjd")
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       console.log(errors)
@@ -15,7 +14,6 @@ const cinema=async(req,res,next)=>{
 
     const cinemas=new Cinema(req.body)
 
-    console.log(cinemas)
     cinemas.adminId=req.user.id
     
     await cinemas.save()

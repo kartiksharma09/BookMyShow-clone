@@ -2,7 +2,7 @@ const Ticket = require("../models/tickets");
 const Movie = require("../models/Movies");
 const Cinema = require("../models/cinema");
 const { validationResult } = require("express-validator");
-const { ticketsBooked } = require("../utils/BookTickets");
+
 
 const validations = (req) => {
     const errors = validationResult(req);
@@ -13,7 +13,7 @@ const validations = (req) => {
     }
 };
 
-const bookTickets = async (req, res, next) => {
+const bookTickets = async (req, res, next) =>{
     // valodation 
     const errors = validations(req);
     if (errors) {
@@ -27,82 +27,66 @@ const bookTickets = async (req, res, next) => {
     const movieId = req.params.movieId
 
     // Initializing from the req.body
-    const { Seats, watchers, userId, bookingDate } = req.body
-
-    const TicketInfo = {
-        Seats: Seats,
-        watchers: watchers,
-        bookingDate: bookingDate
-    }
+    const { Seats, watchers, bookingDate } = req.body
 
     // Find the movie is available or not
     const movie = await Movie.findOne({ movieId });
-    console.log(movie)
-    if (!movie) {
+    if (!movie){
         return next({
             status: 404,
             errors: errors.array()
         })
     }
 
-    // Insure the tickets is booked
-    const bookedTickets = await ticketsBooked(req.params.cinemaId);
-    console.log(bookedTickets)
-
-    const cinema = await Cinema.findOne({ cinemaId: cinemaId })
-    console.log(cinema)
-
-    // Not available seats
+    const cinema = await Cinema.findOne({ cinemaId })
     let seats = cinema.seats;
 
-    const selected_tickets = Seats
-    let isBooked = seats.filter((bookedTicket) =>{
-        return bookedTickets.includes(bookedTicket);
-    })
+    const Tickets = await Ticket.findOne({ cinemaId })
+    if (Tickets) {
+        const BookedTickets = Tickets.Seats
+        for (var index = 0; index < seats.length; index++) {
+            if (BookedTicket.includes(Seats[index])) {
+                return next({
+                    status: 400,
+                    errors: ["These tickets are already book", Seats[index]]
+                })
+            }
 
-    var responce = false
-    for (let index = 0; index < selected_tickets.length; index++) {
-        if (seats[index].includes(selected_tickets[index])) {
-            responce = true
-        } else {
-            responce = false
-            return next({
-                status: 404,
-                errors: ["Theses seats are not found", selected_tickets[index]]
-            })
-        }
-
-        if (isBooked.length > 0) {
-            return next({
-                status: 400,
-                errors: "These tickets are already book"
-            })
+            if (Seats[index]>seats){
+                return next({
+                    status: 404,
+                    errors: ["These seat not Found", Seats[index]]
+                })
+            }
         }
     }
+    const TicketInfo = {
+        Seats: Seats,
+        watchers: watchers,
+        bookingDate: bookingDate,
+        userId :req.user.id,
+        movieId : movieId,
+        cinemaId : cinemaId,
+    }
 
-    if (responce === true) {
-        TicketInfo.userId = req.user.user.id
-        TicketInfo.movieId = movieId
-        TicketInfo.cinemaId = cinemaId
+    const tickets = new Ticket(TicketInfo);
+    const response = await tickets.save();
 
-        const Tickets = new Ticket(TicketInfo);
-        console.log(Tickets)
-
-        await Tickets.save();
+    if (response) {
         return next({
             status: 200,
-            errors: Tickets
+            errors: response
         })
     }
 }
 
 // const cancel tickets
-const cancelTicket = async (req, res, next) =>{
+const cancelTicket = async (req, res, next) => {
     const response = await Ticket.findOneAndDelete({ _id: req.params.ticketId, userId: req.user.id });
-    if (!response){
+    if (!response) {
         return nex({
             status: 404,
-            errors:"Tickets Not found"
+            errors: "Tickets Not found"
         })
     }
     return next({
@@ -112,9 +96,9 @@ const cancelTicket = async (req, res, next) =>{
 }
 
 // get Booked Tikets
-const GetTickets = async(req, res, next) => {
+const GetTickets = async (req, res, next) => {
     const tickets = await Ticket.find({ userId: req.user.id }).populate('cinemaId');
-    if (!tickets.length){
+    if (!tickets.length) {
         return next({ status: 400, errors: "You have not booked any ticket" });
     }
     res.status(200).json(tickets);

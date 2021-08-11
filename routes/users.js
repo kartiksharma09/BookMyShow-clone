@@ -5,7 +5,7 @@ const { createUser, loginUser } = require("../controllers/users");
 const { bookTickets } = require('../controllers/tickets');
 const isVerify = require('../middleware/auth');
 const { cancelTicket, GetTickets } = require('../controllers/tickets');
-const { getAllMovies } = require('../controllers/movies');
+const { getAllMovies, searchMovie } = require('../controllers/movies');
 
 //@route  POST api/users/signup
 //desc    Register user
@@ -65,4 +65,16 @@ router
         '/movies/allmovies',
         getAllMovies
     );
+
+
+//@route  POST /api/users/movies/searchMovie
+//desc    get movies
+//access public
+
+router
+    .get(
+        '/movies/searchMovie',
+        searchMovie
+    );
+
 module.exports = router;

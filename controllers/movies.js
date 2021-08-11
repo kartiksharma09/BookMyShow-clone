@@ -62,4 +62,9 @@ const getAllMovies = async(req, res, next) => {
         msg: movies
     });
 };
-module.exports = { addMovie, getAllMovies };
+
+
+const searchMovie = async(req, res, next) => {
+
+}
+module.exports = { addMovie, getAllMovies, searchMovie };

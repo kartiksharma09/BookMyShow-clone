@@ -80,5 +80,6 @@ const searchMovie = async(req, res, next) => {
 
 
 
+
 };
 module.exports = { addMovie, getAllMovies, searchMovie };

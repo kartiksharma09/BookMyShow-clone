@@ -116,6 +116,7 @@ const assignMovieToCinema = async(req, res, next) => {
 
     const currentDuration = endingTimeToMinutes - startingTimeToMinutes;
 
+
     const movieDuration = movie.timeDuration.split(':');
     const movieDurationToMinutes = Number(movieDuration[0]) * 60 + Number(movieDuration[1]);
 

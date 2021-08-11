@@ -56,7 +56,7 @@ router.delete("/tickets/:ticketId", isVerify, cancelTicket)
 router.get("/tickets", isVerify, GetTickets)
 
 
-//@route  POST /api/users/movies/allmovies
+//@route  GET /api/users/movies/allmovies
 //desc    get all movies
 //access public
 
@@ -72,9 +72,10 @@ router
 //access public
 
 router
-    .get(
-        '/movies/searchMovie',
-        searchMovie
+    .post(
+        '/movies/searchMovie', [
+            check('movieName', 'movie name is required').not().isEmpty()
+        ], searchMovie
     );
 
 module.exports = router;

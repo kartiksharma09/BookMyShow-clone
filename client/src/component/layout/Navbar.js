@@ -1,6 +1,6 @@
 import react, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
-import Icon from '../../images/Bookmyshow'
+import Icon from '../../images/Bookmyshow.jpg'
 
 const Navbar = () => {
   return (
@@ -32,3 +32,5 @@ const Navbar = () => {
     </Fragment>
   );
 };
+
+export default Navbar;

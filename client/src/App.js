@@ -1,16 +1,17 @@
 import React from 'react'
 import './App.css';
-import Navbar from './component/layout/navbar'
+import Navbar from './component/layout/Navbar'
 
 function App() {
   return (
-    <Fragment>
+    
     <div className="App">
 
       <Router>
       <Navbar />
+      </Router>
     </div>
-    </Fragment>
+    
   );
 }
 

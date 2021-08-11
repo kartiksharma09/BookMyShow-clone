@@ -88,7 +88,7 @@ const loginUser = async(req, res, next) => {
             errors: "Invalid Credentials"
         });
     }
-
+    
     const payload = {
         user: {
             id: user.id,

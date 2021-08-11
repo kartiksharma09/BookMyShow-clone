@@ -16,9 +16,6 @@ const cinema=async(req,res,next)=>{
     const cinemas=new Cinema(req.body)
 
     console.log(cinemas)
-    
-       
-
     cinemas.adminId=req.user.id
     
     await cinemas.save()

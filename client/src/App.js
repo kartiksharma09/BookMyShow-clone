@@ -8,6 +8,8 @@ import Footer from './component/layout/footer';
 import { AdminDashBoard } from './component/Admin/adminDashBoard';
 
 import { Adminlanding } from './component/Admin/Adminlandin';
+import  AdminRegister  from './component/Admin-auth/AdminRegister'
+import AdminLogin from './component/Admin-auth/AdminLogin';
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
         <Switch>
           <Route exact path='/adminDashBoard' component={AdminDashBoard} />
           <Route exact path='/admin-landing' component={Adminlanding} />
+          <Route exact path='/admin-register' component={AdminRegister} />
+          <Route exact path='/admin-login' component={AdminLogin} />
+
         </Switch>
       </Fragment>
     </Router>

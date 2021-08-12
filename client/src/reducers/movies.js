@@ -12,4 +12,6 @@ initialState = {
 
 const movies = (state = initialState, action) => {
 
+    const { type , payload} = action;
+
 }

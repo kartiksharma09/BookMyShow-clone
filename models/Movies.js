@@ -9,8 +9,8 @@ const movieSchema = new mongoose.Schema({
         required: true,
     },
     posterUrl: {
-        data: Buffer,
-        contentType: String
+        type: String,
+        required: true
     },
     timeDuration: {
         type: String,
@@ -32,8 +32,8 @@ const movieSchema = new mongoose.Schema({
             type: String,
         },
         characterImg: {
-            data: Buffer,
-            contentType: String
+            type: String,
+            required: true
         }
     }],
     aboutTheMovie: {

@@ -16,8 +16,10 @@ import Alerts from "./component/layout/Alerts";
 import  Adminlanding  from './component/Admin/Adminlandin';
 import  AdminRegister  from './component/Admin-auth/AdminRegister'
 import AdminLogin from './component/Admin-auth/AdminLogin';
+import AddMovie from './component/Admin/AddMovie';
 
 import AdminRoute from "./component/routing/AdminRoute";
+
 
 
 if(localStorage.token){
@@ -42,10 +44,11 @@ function App() {
 
 
         <Switch>
-          <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />
           <Route exact path='/admin-landing' component={Adminlanding} />
           <Route exact path='/admin-register' component={AdminRegister} />
           <Route exact path='/admin-login' component={AdminLogin} />
+          <AdminRoute exact path='/addMovie' component={AddMovie} />
+          <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />
 
         </Switch>
       </Fragment>

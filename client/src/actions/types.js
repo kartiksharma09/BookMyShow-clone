@@ -9,3 +9,5 @@ export const LOGIN_FAIL = 'LOGIN_FAIL';
 export const LOGOUT = 'LOGOUT';
 export const BOOKING_SUCCESS = 'BOOKING_SUCCESS';
 export const BOOKING_FAIL = 'BOOKING_FAIL';
+export const GET_MOVIE = 'GET_MOVIE';
+export const MOVIE_ERROR = 'MOVIE_ERROR';

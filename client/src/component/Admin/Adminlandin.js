@@ -11,10 +11,10 @@ export const Adminlanding = () => {
               <img src={theater}/>
           </div>
           <div className="admin-landing-main ">
-              <Link className="btn btn-danger Admin-auth mx-2">
+              <Link to="/admin-login" className="btn btn-danger Admin-auth mx-2">
                 Login
               </Link>
-              <Link className="btn btn-danger Admin-auth">
+              <Link to="/admin-register" className="btn btn-danger Admin-auth">
                 Register
               </Link>
           </div>

@@ -4,7 +4,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import { Link } from 'react-router-dom';
 import Icon from '../../images/icon2.png';
 
-
 const NavBar = () => {
   return (
     <Fragment>

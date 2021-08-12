@@ -11,7 +11,7 @@ const Movie = props => {
                             <div className="card movie-image my-3" style={{backgroundImage: `url("https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/avengers-age-of-ultron-et00024757-09-03-2017-07-09-00.jpg")`}}>
                                 <div className="card-body"></div>
                                 <div className="card-footer">
-                                    <h5 className="movie-title">Avengers Age of Ulton</h5>
+                                    <h5 className="movie-title">Avengers Age of Ultron</h5>
                                     <p className="card-text movie-genro">Action,Advanture</p>
                                 </div>
                             </div>

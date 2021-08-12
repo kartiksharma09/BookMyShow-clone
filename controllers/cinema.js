@@ -167,4 +167,4 @@ const searchCinema = async(req, res, next) => {
 
 };
 
-module.exports = { cinema, assignMovieToCinema };
+module.exports = { cinema,searchCinema, assignMovieToCinema };

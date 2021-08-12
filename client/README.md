@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+"eslint": "^3.19.0",
+"eslint-config-airbnb": "^13.0.0",
+"eslint-import-resolver-meteor": "^0.3.4",
+"eslint-plugin-graphql": "^0.4.0",
+"eslint-plugin-import": "^2.2.0",
+"eslint-plugin-jsx-a11y": "^2.2.3",
+"eslint-plugin-meteor": "^4.0.1",
+"eslint-plugin-react": "^7.5.1"

@@ -150,5 +150,19 @@ const assignMovieToCinema = async(req, res, next) => {
     res.status(200).json({ msg: "movie has added succefully" });
 };
 
+const searchCinema = async(req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return next({
+            status: 400,
+            errors: errors.array()
+        });
+    }
+
+    const { cinemaName } = req.body;
+
+    const searchedCinema = await Cinema.find({ movieName: cinemaName });
+
+};
 
 module.exports = { cinema, assignMovieToCinema };

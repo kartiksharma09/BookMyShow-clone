@@ -26,6 +26,15 @@ const bookTickets = async (req, res, next) =>{
 
     // Initializing from the req.body
     const { Seats, watchers, bookingDate } = req.body
+<<<<<<< HEAD
+
+    const TicketInfo = {
+        Seats: Seats,
+        watchers: watchers,
+        bookingDate: bookingDate
+    }
+=======
+>>>>>>> 2c2ee59c9468352625bba828160b3896ef305c05
 
     // Find the movie is available or not
     const movie = await Movie.findById(movieId);
@@ -37,8 +46,37 @@ const bookTickets = async (req, res, next) =>{
         })
     }
 
+<<<<<<< HEAD
+    // Insure the tickets is booked
+    const bookedTickets = await ticketsBooked(req.params.cinemaId);
+    console.log(bookedTickets)
+
+    const cinema = await Cinema.findById(cinemaId)
+    console.log(cinema)
+
+    // Not available seats
+    let seats = cinema.seats;
+    console.log(seats)
+    const selected_tickets = Seats
+    let isBooked = seats.filter((bookedTicket) => {
+        return bookedTickets.includes(bookedTicket);
+    })
+
+    var responce = false
+    for (let index = 0; index < selected_tickets.length; index++) {
+        if (seats[index].includes(selected_tickets[index])) {
+            responce = true
+        } else {
+            responce = false
+            return next({
+                status: 404,
+                errors: ["Theses seats are not found", selected_tickets[index]]
+            })
+        }
+=======
     const cinema = await Cinema.findById(cinemaId)
     let seats = cinema.seats;
+>>>>>>> 2c2ee59c9468352625bba828160b3896ef305c05
 
     const Tickets = await Ticket.findOne({ cinemaId })
     if (Tickets){

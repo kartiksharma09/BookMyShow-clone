@@ -4,6 +4,7 @@ const User = require("../../../models/Users");
 const {createUserTests, loginUserTests} = require('./users')
 const { adminLoginTests } = require("./admin-login")
 const {addMovieTests} = require('./addmovie')
+const { addCinemaTests } = require("./cinema")
 
 
 beforeAll(async () => await connect())
@@ -19,4 +20,6 @@ describe("Test suite for full backend",()=>{
     adminLoginTests()
 
     addMovieTests()
+
+    addCinemaTests()
 })

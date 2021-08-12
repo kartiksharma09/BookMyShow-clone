@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import {Link} from 'react-router-dom'
 import AddCinema from './AddCineme'
+import AddMovie from './AddMovie'
 
 export const AdminDashBoard = () => {
   return (
@@ -69,7 +70,7 @@ export const AdminDashBoard = () => {
                   role='tabpanel'
                   aria-labelledby='v-pills-home-tab'
                 >
-                  
+                  1111
                 </div>
                 <div
                   className='tab-pane fade'
@@ -77,7 +78,7 @@ export const AdminDashBoard = () => {
                   role='tabpanel'
                   aria-labelledby='v-pills-profile-tab'
                 >
-                  ...
+                  <AddMovie/>
                 </div>
                 <div
                   className='tab-pane fade'

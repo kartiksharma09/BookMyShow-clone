@@ -17,7 +17,6 @@ const Landing = () => {
                   filmmaker intended: inside a large movie theater with great
                   sound and pristine picture.
                 </p>
-
                 {/* <Route exact path='/' component={ticket} /> */}
               </div>
               <div className='form-group mt-1 d-flex justify-content-center'>
@@ -27,7 +26,6 @@ const Landing = () => {
                   className='form-control nav-search'
                   id='usr'
                 />
-
                 <p className='btn btn-danger ml-1'>submit</p>
               </div>
             </div>

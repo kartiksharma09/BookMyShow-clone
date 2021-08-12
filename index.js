@@ -2,10 +2,17 @@ const express = require("express");
 const app = express();
 const connectDB = require('./config/db');
 const PORT = 5000;
+const cors = require("cors")
 
 // coneect your DB KRNA
 connectDB();
+
+app.use(cors())
+
+
 app.use(express.json());
+
+
 
 app.use(express.json({ extended: false }));
 

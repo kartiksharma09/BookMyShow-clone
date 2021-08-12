@@ -12,6 +12,7 @@ import Footer from './component/layout/footer';
 import { AdminDashBoard } from './component/Admin/adminDashBoard';
 import {Ticket} from "./component/layout/ticket";
 import { Adminlanding } from './component/Admin/Adminlandin';
+import Movie from './component/movies/Movie';
 
 
 if(localStorage.token){
@@ -23,6 +24,7 @@ function App() {
   //   store.dispatch(loadUser());
   // },[])
 
+  
   return (
     <Provider store={store}>
     <Router>

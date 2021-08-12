@@ -9,8 +9,8 @@ export const Ticket = () => {
                 <p className='cinema'>ODEON CINEMA PRESENTS</p>
                 <p className='movie-title'>ONLY GOD FORGIVES</p>
             </div>
-            <div className='poster'>
-                <img
+            <div class='poster'>
+                <img className="img-ticket"
                     src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/25240/only-god-forgives.jpg'
                     alt='Movie: Only God Forgives'
                 />

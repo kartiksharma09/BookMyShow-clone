@@ -10,7 +10,7 @@ export const Ticket = () => {
                 <p class='movie-title'>ONLY GOD FORGIVES</p>
             </div>
             <div class='poster'>
-                <img
+                <img className="img-ticket"
                     src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/25240/only-god-forgives.jpg'
                     alt='Movie: Only God Forgives'
                 />

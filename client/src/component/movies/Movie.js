@@ -198,4 +198,5 @@ Movie.propTypes = {
 
 }
 
+
 export default Movie

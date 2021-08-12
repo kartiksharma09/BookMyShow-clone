@@ -5,7 +5,6 @@ const movieModel = require('../models/Movies');
 
 const findMovie = async(movieName) => {
     const movie = await movieModel.findOne({ movieName: movieName });
-    console.log(movie);
     return movie;
 };
 
@@ -19,16 +18,13 @@ const findCinema = async(id) => {
 const { validationResult } = require('express-validator');
 
 const cinema = async(req, res) => {
-    console.log(req.body, "djkjd");
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        console.log(errors)
         return res.status(400).json({ msg: "checking" });
     }
 
     const cinemas = new Cinema(req.body);
 
-    console.log(cinemas);
     try {
 
 
@@ -40,7 +36,6 @@ const cinema = async(req, res) => {
 
 
     } catch (err) {
-        console.log(err)
         res.status(500).json({ msg: "server error....." });
     }
 };
@@ -66,7 +61,6 @@ const assignMovieToCinema = async(req, res, next) => {
     const { movieName, from, to, startDate, endDate } = req.body;
 
     const movie = await findMovie(movieName);
-
     if (!movie) {
         return next({
             status: 400,
@@ -80,14 +74,6 @@ const assignMovieToCinema = async(req, res, next) => {
         return next({
             status: 400,
             errors: "cinema does not exists"
-        });
-    }
-
-
-    if (from.length !== to.length) {
-        return next({
-            status: 400,
-            errors: "format of timings should be same"
         });
     }
 
@@ -124,7 +110,7 @@ const assignMovieToCinema = async(req, res, next) => {
     if (movieDurationToMinutes + 20 > currentDuration) {
         return next({
             status: 400,
-            errors: "Give duration does matches to movie"
+            errors: "Given movie duration does matches to movie"
         });
     }
 
@@ -152,19 +138,5 @@ const assignMovieToCinema = async(req, res, next) => {
     res.status(200).json({ msg: "movie has added succefully" });
 };
 
-const searchCinema = async(req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return next({
-            status: 400,
-            errors: errors.array()
-        });
-    }
 
-    const { cinemaName } = req.body;
-
-    const searchedCinema = await Cinema.find({ movieName: cinemaName });
-
-};
-
-module.exports = { cinema,searchCinema, assignMovieToCinema };
+module.exports = { cinema, assignMovieToCinema };

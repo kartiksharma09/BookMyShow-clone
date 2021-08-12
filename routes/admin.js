@@ -8,7 +8,7 @@ const { addMovie } = require('../controllers/movies');
 const { adminLogin } = require('../controllers/admin-login');
 const { cinema, assignMovieToCinema } = require('../controllers/cinema');
 
-//@route  POST api/admins/admin/login
+//@route  POST api/admins/login
 //desc    Login admin
 //access  public
 

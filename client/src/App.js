@@ -10,6 +10,7 @@ import UserSignup from './component/user-auth/UserSignup';
 import Landing from './component/layout/landing'
 import Cards from './component/layout/card'
 import Footer from './component/layout/footer'
+import {AdminDashBoard} from './component/Admin/adminDashBoard'
 
 import { Adminlanding } from './component/Admin/Adminlandin';
 
@@ -31,13 +32,11 @@ function App() {
         <Route exact path="/" component={Footer}/>
         
         <Switch>
+            <Route exact path="/adminDashBoard" component={AdminDashBoard}/>
             <Route exact path="/admin-landing" component={Adminlanding }/>
         </Switch>
       </Fragment>
       </Router>
-      
-    
-
     
   );
 }

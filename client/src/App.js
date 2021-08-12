@@ -6,10 +6,7 @@ import AdminRegister from "./component/admin-auth/AdminRegister"
 import AdminLogin from './component/admin-auth/AdminLogin';
 import UserLogin from './component/user-auth/UserLogin';
 import UserSignup from './component/user-auth/UserSignup';
-import {
-  BrowserRouter as Router,
-  Route,
-} from "react-router-dom";
+
 import Landing from './component/layout/landing'
 import Cards from './component/layout/card'
 import Footer from './component/layout/footer'

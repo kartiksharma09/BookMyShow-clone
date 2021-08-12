@@ -23,6 +23,4 @@ const cinema=async(req,res,next)=>{
     
 }
 
-
-
 module.exports={cinema}

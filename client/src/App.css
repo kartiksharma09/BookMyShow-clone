@@ -184,3 +184,10 @@ footer{
   border-radius: 1rem;
 }
 
+/* vertical line */
+
+.vl {
+  border-left: 6px solid green;
+  height: 100vh;
+}
+

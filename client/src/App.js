@@ -10,10 +10,14 @@ import { loadUser } from './actions/auth'
 import setAuthToken from './utils/setAuthToken'
 import Footer from './component/layout/footer';
 import { AdminDashBoard } from './component/Admin/adminDashBoard';
+import Alerts from "./component/layout/Alerts";
 
-import { Adminlanding } from './component/Admin/Adminlandin';
+
+import  Adminlanding  from './component/Admin/Adminlandin';
 import  AdminRegister  from './component/Admin-auth/AdminRegister'
 import AdminLogin from './component/Admin-auth/AdminLogin';
+
+import AdminRoute from "./component/routing/AdminRoute";
 
 
 if(localStorage.token){
@@ -29,14 +33,16 @@ function App() {
     <Provider store={store}>
     <Router>
       <Fragment className='App'>
+      <Alerts />
         <Navbar />
-
+        
         <Route exact path='/' component={Landing} />
         <Route exact path='/' component={Cards} />
         <Route exact path='/' component={Footer} />
 
+
         <Switch>
-          <Route exact path='/adminDashBoard' component={AdminDashBoard} />
+          <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />
           <Route exact path='/admin-landing' component={Adminlanding} />
           <Route exact path='/admin-register' component={AdminRegister} />
           <Route exact path='/admin-login' component={AdminLogin} />

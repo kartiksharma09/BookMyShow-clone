@@ -20,8 +20,11 @@ const user = require('./routes/users');
 
 const admin = require('./routes/admin');
 
+const auth = require("./routes/auth")
+
 app.use('/api/users', user);
 app.use('/api/admins', admin);
+app.use("/api/auth", auth)
 
 app.use((err, req, res, next) => {
     // console.log(err);

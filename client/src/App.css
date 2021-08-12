@@ -191,3 +191,12 @@ footer{
   height: 100vh;
 }
 
+
+
+/* alerts css */
+.alerts {
+  width: 100%;
+  position: absolute;
+  top: 3rem;
+  opacity: 0.9;
+}

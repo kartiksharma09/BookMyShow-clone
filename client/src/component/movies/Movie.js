@@ -177,9 +177,7 @@ const Movie = props => {
                                         <div>
                                             2021-08-14
                                         </div>
-                                        
                                         to
-                                        
                                         <div>
                                             2021-08-16
                                         </div>

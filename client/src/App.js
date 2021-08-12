@@ -10,7 +10,7 @@ import store from './store';
 import setAuthToken from './utils/setAuthToken'
 import Footer from './component/layout/footer';
 import { AdminDashBoard } from './component/Admin/adminDashBoard';
-
+import {Ticket} from "./component/layout/ticket";
 import { Adminlanding } from './component/Admin/Adminlandin';
 
 
@@ -34,6 +34,7 @@ function App() {
         <Route exact path='/' component={Footer} />
 
         <Switch>
+          <Route exact path='/final-ticket' component={Ticket}/>
           <Route exact path='/adminDashBoard' component={AdminDashBoard} />
           <Route exact path='/admin-landing' component={Adminlanding} />
         </Switch>

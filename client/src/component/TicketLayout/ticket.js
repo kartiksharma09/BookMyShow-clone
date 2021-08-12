@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import { useHistory, Link } from 'react-router-dom';
 import PropTypes from "prop-types";
-import './seat.css'; 
 
 const Tickets = ()=>{
     return (

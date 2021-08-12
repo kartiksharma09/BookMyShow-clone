@@ -73,7 +73,7 @@ router
 
 router
     .post(
-        '/movies/searchMovie', [
+        '/movies/searchmovie', [
             check('movieName', 'movie name is required').not().isEmpty()
         ], searchMovie
     );

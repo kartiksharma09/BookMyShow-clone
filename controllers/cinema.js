@@ -138,8 +138,6 @@ const assignMovieToCinema = async(req, res, next) => {
         }
     }
 
-
-
     cinema.Movies.push({
         movieId: movie.id,
         from: from,

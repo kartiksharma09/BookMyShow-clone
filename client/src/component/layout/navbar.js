@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import SearchIcon from '@material-ui/icons/Search';
 import { Link } from 'react-router-dom';
-import Icon from '../../images/icon2.png';
 
 const NavBar = () => {
   return (

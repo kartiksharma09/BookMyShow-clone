@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for models/Movies.js</title>
+    <title>Code coverage report for models/cinema.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">models</a> Movies.js</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">models</a> cinema.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -104,18 +104,9 @@
 <a name='L45'></a><a href='#L45'>45</a>
 <a name='L46'></a><a href='#L46'>46</a>
 <a name='L47'></a><a href='#L47'>47</a>
-<a name='L48'></a><a href='#L48'>48</a>
-<a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a>
-<a name='L52'></a><a href='#L52'>52</a>
-<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L48'></a><a href='#L48'>48</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -160,60 +151,54 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const mongoose = require('mongoose');
-const movieSchema = new mongoose.Schema({
+&nbsp;
+const CinemaSchema = new mongoose.Schema({
     adminId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'user',
+        required: true
     },
-    movieName: {
+    cinemaName: {
         type: String,
-        required: true,
+        required: true
     },
-    posterUrl: {
-        data: Buffer,
-        contentType: String
-    },
-    timeDuration: {
+    locationOfCinema: {
         type: String,
-        required: true,
+        index: true,
+        required: true
     },
-    genre: {
-        type: String,
-        enum: ["drama", "comedy", "thriller", "action", "horror", "cartoon"]
-    },
-    language: {
-        type: String,
-        enum: ["hindi", "english", "punjabi"]
-    },
-    cast: [{
-        actor: {
-            type: String,
-        },
-        character: {
-            type: String,
-        },
-        characterImg: {
-            data: Buffer,
-            contentType: String
-        }
-    }],
-    aboutTheMovie: {
-        type: String,
-        required: true,
-    },
-    price: {
+    seats:{
         type: Number,
-        required: true,
-    }
-&nbsp;
-&nbsp;
+        default: 50
+    },
+    Movies: [{
+        movieId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "movie"
+        },
+        from: {
+            type: String,
+            required: true
+        },
+        to: {
+            type: String,
+            required:true
+        },
+        startDate: {
+            type: Date,
+            required:true
+        },
+        endDate: {
+            type: Date,
+            required:true
+        }
+    }]
 });
 &nbsp;
-const movies = mongoose.model('movie', movieSchema);
 &nbsp;
-module.exports = movies;</pre></td></tr></table></pre>
+const Cinema = mongoose.model('cinema', CinemaSchema);
+module.exports = Cinema;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

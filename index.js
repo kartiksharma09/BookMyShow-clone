@@ -7,7 +7,7 @@ const PORT = 5000;
 connectDB();
 app.use(express.json());
 
-app.use(express.json({ extended: false }))
+app.use(express.json({ extended: false }));
 
 const user = require('./routes/users');
 
@@ -17,13 +17,11 @@ app.use('/api/users', user);
 app.use('/api/admins', admin);
 
 app.use((err, req, res, next) => {
+    // console.log(err);
     return res.status(err.status).json({ msg: err.errors });
 });
 
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`server is running at ${PORT}`);
 });
-
-
-

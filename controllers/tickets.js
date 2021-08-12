@@ -25,7 +25,7 @@ const bookTickets = async (req, res, next) =>{
     const movieId = req.params.movieId
 
     // Initializing from the req.body
-    const { Seats, watchers, bookingDate } = req.body
+    const { Seats, watchers, bookingDate } = req.body;
 
     // Find the movie is available or not
     const movie = await Movie.findById(movieId);
@@ -67,7 +67,6 @@ const bookTickets = async (req, res, next) =>{
         movieId : movieId,
         cinemaId : cinemaId,
     }
-
     const tickets = new Ticket(TicketInfo);
     const response = await tickets.save();
 

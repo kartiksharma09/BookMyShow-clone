@@ -1,12 +1,18 @@
-import React,{Fragment} from 'react'
+import React, { Fragment } from 'react'
+import { Link, Switch } from 'react-router-dom';
 import './App.css';
-<<<<<<< HEAD
 import ReactDOM from 'react-dom'
+import { Adminlanding } from './component/Admin/Adminlandin'
 import Navbar from './component/layout/navbar'
+import Footer from './component/layout/footer';
+import Cards from './component/layout/card';
 import AdminRegister from "./component/admin-auth/AdminRegister"
 import AdminLogin from './component/admin-auth/AdminLogin';
 import UserLogin from './component/user-auth/UserLogin';
 import UserSignup from './component/user-auth/UserSignup';
+import Landing from './component/layout/landing';
+import Tickets from './component/TicketLayout/ticket';
+
 import {
   BrowserRouter as Router,
   Route,
@@ -16,46 +22,20 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <Route exact path='/admin-register' component={AdminRegister} />
-      <Route exact path='/admin-login' component={AdminLogin} />
-      <Route exact path='/user-login' component={UserLogin} />
-      <Route exact path='/user-register' component={UserSignup} />
-=======
-import React , { Fragment }from 'react'
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from './component/layout/navbar'
-import Landing from './component/layout/landing'
-import Cards from './component/layout/card'
-import Footer from './component/layout/footer'
-
-import { Adminlanding } from './component/Admin/Adminlandin';
-
-function App() {
-  return (
-    
-   
-      <Router>
-         <Fragment className="App">
->>>>>>> 6ef1b0159fe8c35104d9fbd0d32667d3718ce2af
-        <Navbar/>
-       
-        <Route exact path="/" component={Landing}/>
+        <Route exact path='/admin-register' component={AdminRegister} />
+        <Route exact path='/admin-login' component={AdminLogin} />
+        <Route exact path='/user-login' component={UserLogin} />
+        <Route exact path='/user-register' component={UserSignup} />
+        <Route exat path='/tickets' component={Tickets}/>
+        <Navbar />
+        <Route exact path="/" component={Landing} />
         <Route exact path="/" component={Cards} />
-        <Route exact path="/" component={Footer}/>
-        
+        <Route exact path="/" component={Footer} />
         <Switch>
-            <Route exact path="/admin-landing" component={Adminlanding }/>
+          <Route exact path="/admin-landing" component={Adminlanding} />
         </Switch>
-      </Fragment>
       </Router>
-<<<<<<< HEAD
-      </div>
-=======
-      
-    
-
-    
->>>>>>> 6ef1b0159fe8c35104d9fbd0d32667d3718ce2af
+    </div>
   );
 }
 

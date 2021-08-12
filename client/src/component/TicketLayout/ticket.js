@@ -1,12 +1,12 @@
 import React, { Fragment } from "react";
 import { useHistory, Link } from 'react-router-dom';
 import PropTypes from "prop-types";
-import './seat.css'
+import './seat.css'; 
 
 const Tickets = ()=>{
     return (
         <div class="plane">
-            <link rel="stylesheet" >
+            <link rel="stylesheet">
                 <h1>Please select a seat</h1>
                 <div class="exit exit--front fuselage">
                 </div>
@@ -14,11 +14,11 @@ const Tickets = ()=>{
                     <li class="row row--1">
                         <ol class="seats" type="A">
                             <li class="seat">
-                                <input type="checkbox" id="1" />
-                                <label for="2">1</label>
+                                <input type="checkbox" id="1"/>
+                                <label for="1">1</label>
                             </li>
                             <li class="seat">
-                                <input type="checkbox" id="2" />
+                                <input type="checkbox" id="2"/>
                                 <label for="2">2</label>
                             </li>
                             <li class="seat">
@@ -26,15 +26,15 @@ const Tickets = ()=>{
                                 <label for="3">3</label>
                             </li>
                             <li class="seat">
-                                <input type="checkbox" disabled id="4" />
+                                <input type="checkbox" id="4"/>
                                 <label for="4">4</label>
                             </li>
                             <li class="seat">
-                                <input type="checkbox" id="5" />
+                                <input type="checkbox" id="5"/>
                                 <label for="5">5</label>
                             </li>
                             <li class="seat">
-                                <input type="checkbox" id="1F" />
+                                <input type="checkbox" id="6" />
                                 <label for="6">6</label>
                             </li>
                         </ol>

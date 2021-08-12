@@ -28,18 +28,17 @@ function App() {
   return (
     <Provider store={store}>
     <Router>
-      <Fragment className='App'>
-        <Navbar />
-
+      <Fragment>
+        <Navbar/>
         <Route exact path='/' component={Landing} />
         <Route exact path='/' component={Cards} />
-        <Route exact path='/' component={Footer} />
-
         <Switch>
           <Route exact path='/final-ticket' component={Ticket}/>
           <Route exact path='/adminDashBoard' component={AdminDashBoard} />
           <Route exact path='/admin-landing' component={Adminlanding} />
+          <Route exact path="/movie" component={Movie}/>
         </Switch>
+        <Footer/>
       </Fragment>
     </Router>
     </Provider>

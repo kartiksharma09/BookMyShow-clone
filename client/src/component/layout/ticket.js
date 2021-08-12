@@ -3,29 +3,27 @@ import "../../css/ticket.scss"
 
 export const Ticket = () => {
     return (
-        <div class='ticket'>
-            <div class='holes-top'></div>
-            <div class='title'>
-                <p class='cinema'>ODEON CINEMA PRESENTS</p>
-                <p class='movie-title'>ONLY GOD FORGIVES</p>
+        <div className='ticket'>
+            <div className='holes-top'></div>
+            <div className='title'>
+                <p className='cinema'>ODEON CINEMA PRESENTS</p>
+                <p className='movie-title'>ONLY GOD FORGIVES</p>
             </div>
-            <div class='poster'>
+            <div className='poster'>
                 <img
                     src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/25240/only-god-forgives.jpg'
                     alt='Movie: Only God Forgives'
                 />
             </div>
-            <div class='info'>
+            <div className='info'>
                 <table>
                     <tr>
                         <th>SCREEN</th>
-                        <th>ROW</th>
-                        <th>SEAT</th>
+                        <th>No of Seats</th>
                     </tr>
                     <tr>
-                        <td class='bigger'>18</td>
-                        <td class='bigger'>H</td>
-                        <td class='bigger'>24</td>
+                        <td className='bigger seats-bigger'>1</td>
+                        <td className='bigger seats-bigger'>3</td>
                     </tr>
                 </table>
                 <table>
@@ -41,12 +39,12 @@ export const Ticket = () => {
                     </tr>
                 </table>
             </div>
-            <div class='holes-lower'></div>
-            <div class='serial'>
-                <table class='barcode'>
+            <div className='holes-lower'></div>
+            <div className='serial'>
+                <table className='barcode'>
                     <tr></tr>
                 </table>
-                {/* <table class='numbers'>
+                {/* <table className='numbers'>
                     <tr>
                         <td>9</td>
                         <td>1</td>

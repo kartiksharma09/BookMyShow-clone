@@ -1,16 +1,30 @@
-import React, { Fragment } from 'react';
+import React, { Fragment,useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './component/layout/navbar';
 import Landing from './component/layout/landing';
 import Cards from './component/layout/card';
+import {Provider} from 'react-redux';
+import store from './store';
+// import { loadUser } from './actions/auth'
+import setAuthToken from './utils/setAuthToken'
 import Footer from './component/layout/footer';
 import { AdminDashBoard } from './component/Admin/adminDashBoard';
 import { Adminlanding } from './component/Admin/Adminlandin';
 import Movie from './component/movies/Movie';
 
+
+if(localStorage.token){
+  setAuthToken(localStorage.token);
+}
+
 function App() {
+  // useEffect(() => {
+  //   store.dispatch(loadUser());
+  // },[])
+
   return (
+    <Provider store={store}>
     <Router>
       <Fragment>
         <div className='App'>
@@ -26,6 +40,7 @@ function App() {
         </div>
       </Fragment>
     </Router>
+    </Provider>
   );
 }
 

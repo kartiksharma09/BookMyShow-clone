@@ -37,7 +37,7 @@ const addMovie = async(req, res, next) => {
             errors: "cannot add movie is already exists"
         });
     }
-
+    // console.log();
     movie = new movieModel({
         adminId: req.user.id,
         movieName,

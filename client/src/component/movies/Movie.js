@@ -12,7 +12,7 @@ const Movie = props => {
                                 <div className="card-body"></div>
                                 <div className="card-footer">
                                     <h5 className="movie-title">Avengers Age of Ultron</h5>
-                                    <p className="card-text movie-genro">Action,Advanture</p>
+                                    <p className="card-text movie-genro">Action ,Advanture</p>
                                 </div>
                             </div>
                         </div>
@@ -178,7 +178,7 @@ const Movie = props => {
                                             2021-08-14
                                         </div>
                                         
-                                        to
+                                         to
                                         
                                         <div>
                                             2021-08-16

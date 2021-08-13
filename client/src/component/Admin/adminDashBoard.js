@@ -53,7 +53,7 @@ const AdminDashBoard = ({ auth: { user }, Mycinema: { cinema, loading, movies },
                    <MovieCard />
                   </div>
                   <div class="collapse mt-4" id="collapseExample2">
-                   <AssignMovieCinema />
+                   <AssignMovieCinema cinemaId={cinema._id} />
                   </div>
 
                 </div>

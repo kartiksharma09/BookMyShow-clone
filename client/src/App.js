@@ -13,11 +13,10 @@ import { AdminDashBoard } from './component/Admin/adminDashBoard';
 import Alerts from "./component/layout/Alerts";
 
 
-import  Adminlanding  from './component/Admin/Adminlandin';
-import  AdminRegister  from './component/Admin-auth/AdminRegister'
-import AdminLogin from './component/Admin-auth/AdminLogin';
+import Adminlanding  from './component/Admin/Adminlandin';
+import AdminRegister  from './component/admin-auth/AdminRegister'
+import AdminLogin from './component/admin-auth/AdminLogin';
 import AddMovie from './component/Admin/AddMovie';
-
 import AdminRoute from "./component/routing/AdminRoute";
 
 

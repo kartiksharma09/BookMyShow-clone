@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import {Link} from 'react-router-dom'
-import AddCinema from './AddCineme'
+
 
 export const AdminDashBoard = () => {
   return (
@@ -82,7 +82,7 @@ export const AdminDashBoard = () => {
                   role='tabpanel'
                   aria-labelledby='v-pills-messages-tab'
                 >
-                 <AddCinema/>
+                 
                 </div>
                 <div
                   className='tab-pane fade'

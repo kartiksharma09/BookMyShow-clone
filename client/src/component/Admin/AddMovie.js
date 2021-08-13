@@ -11,9 +11,10 @@ const AddMovie = ({setAlert,addMovieAction}) => {
     movieName: "",
     timeDuration: "",
     posterUrl: "",
-    about: "",
+    aboutTheMovie: "",
     language: "",
     genre: "",
+    price:""
   });
 
   const [actors, setActor] = useState([]);
@@ -26,7 +27,7 @@ const AddMovie = ({setAlert,addMovieAction}) => {
 
   const { actor, character, characterImg } = actorData;
 
-  const { about, language, movieName, posterUrl, genre, timeDuration } =
+  const { aboutTheMovie, language, movieName, posterUrl, price, timeDuration } =
     formData;
 
   const onChange = (e) =>
@@ -126,6 +127,21 @@ const AddMovie = ({setAlert,addMovieAction}) => {
                 />
               </div>
               <div className="form-group">
+                <label for="formGroupExampleInput2">
+                  <strong>Price</strong>
+                </label>
+                <input
+                  type="text"
+                  className="form-control"
+                  id="formGroupExampleInput2"
+                  placeholder="Enter The Price of movie"
+                  name="price"
+                  value={price}
+                  onChange={(e) => onChange(e)}
+                  required
+                />
+              </div>
+              <div className="form-group">
                 <label for="formGroupExampleInput2" className="pr-2">
                   <strong>Movie Genre :</strong>
                 </label>
@@ -213,8 +229,8 @@ const AddMovie = ({setAlert,addMovieAction}) => {
               <div className="form-group">
                 <textarea
                   placeholder="write the discription of your movie"
-                  name="about"
-                  value={about}
+                  name="aboutTheMovie"
+                  value={aboutTheMovie}
                   onChange={(e) => onChange(e)}
                 ></textarea>
                 <small className="form-text">Tell us about the movie</small>
@@ -320,6 +336,11 @@ const AddMovie = ({setAlert,addMovieAction}) => {
 AddMovie.propTypes = {
     setAlert:PropTypes.func.isRequired,
     addMovieAction:PropTypes.func.isRequired,
+    auth:PropTypes.object,
   };
 
-export default connect(null,{setAlert,addMovieAction})(AddMovie);
+const mapStateToProps = state => ({
+  auth:state.auth,
+})
+
+export default connect(mapStateToProps,{setAlert,addMovieAction})(AddMovie);

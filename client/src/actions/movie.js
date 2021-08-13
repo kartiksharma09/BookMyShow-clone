@@ -18,7 +18,7 @@ export const addMovieAction =
     };
 
     const body = JSON.stringify(data);
-
+console.log(body);
     try {
       const res = await axios.post("api/admins/movies/addmovie", body, config);
       dispatch({

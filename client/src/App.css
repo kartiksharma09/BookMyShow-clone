@@ -41,8 +41,6 @@ p.auth-links :hover{
   margin-top: 15rem;
   text-shadow: 2px 1px #d40b04;
 }
-
-
 /* scroll-bar */
 
 ::-webkit-scrollbar {
@@ -60,15 +58,14 @@ p.auth-links :hover{
   border-radius: 8px;
 }
 
-/* Handle on hover
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
-} */
+  background: #f34646; 
+}
 
 /* footer */
 footer{ 
   background-color: #1b2330;
-  
 }
 .footer_info{
   color: #fff;
@@ -176,9 +173,9 @@ footer{
 .admin-landing-main{
   object-fit: cover;
   background-repeat: no-repeat;
- position:absolute;
- top:15rem;
- left:39rem;
+  position:absolute;
+  top:15rem;
+  left:39rem;
 }
 .Admin-auth{
   border-radius: 1rem;

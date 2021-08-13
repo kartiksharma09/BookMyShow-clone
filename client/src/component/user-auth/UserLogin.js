@@ -23,7 +23,7 @@ const UserLogin = () => {
             />
             <p className='form-submit text-center btn btn-danger'>LOGIN</p>
             <p className='text-white'>
-              Don't have an account?{' '}
+              Don't have an account?
               <Link className='text-warning' to='/admin-register'>
                 SignUp
               </Link>
@@ -32,7 +32,8 @@ const UserLogin = () => {
         </div>
       </div>
     </Fragment>
-  );
+  )
 };
+
 
 export default UserLogin;

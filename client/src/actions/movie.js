@@ -4,7 +4,9 @@ import {
     GET_MOVIE,
     MOVIE_ERROR,
     SEARCH_MOVIES,
-    SEARCH_MOVIES_FAIL
+    SEARCH_MOVIES_FAIL,
+    SEARCH_MOVIE,
+    NO_MOVIE
 } from "./types";
 
 
@@ -76,7 +78,9 @@ export const getAllMovies = () => async dispatch => {
 
 
 
-export const searchMovieByName = ({ movieName }) => async dispatch => {
+export const searchMovieByName = (
+    movieName
+) => async dispatch => {
 
     const config = {
         headers: {
@@ -84,11 +88,17 @@ export const searchMovieByName = ({ movieName }) => async dispatch => {
         },
     };
 
-    const body = JSON.stringify(movieName);
+    const body = JSON.stringify({
+        movieName
+    });
 
-
+    console.log(body);
     try {
         const res = await axios.post("/api/users/movies/searchmovie", body, config);
+        dispatch({
+            type: SEARCH_MOVIE,
+            payload: res.data
+        });
 
     } catch (err) {
         console.log(err);
@@ -98,9 +108,9 @@ export const searchMovieByName = ({ movieName }) => async dispatch => {
                 dispatch(setAlert(error.msg, "danger"));
             });
         }
-
+        dispatch({
+            type: NO_MOVIE,
+            payload: { msg: err.response.statusText, status: err.response.status }
+        });
     }
-
-
-
 };

@@ -42,7 +42,7 @@ function App() {
           <Route exact path='/admin-landing' component={Adminlanding} />
           <Route exact path='/admin-register' component={AdminRegister} />
           <Route exact path='/admin-login' component={AdminLogin} />
-          <Route exact path="/movie" component={Movie} />
+          <Route exact path="/movie/:movieName" component={Movie} />
           <AdminRoute exact path='/addMovie' component={AddMovie} />
           <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />
         </Switch>

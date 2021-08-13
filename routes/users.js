@@ -73,7 +73,7 @@ router
 router
     .post(
         '/movies/searchmovie', [
-            isVerify,
+            // isVerify,
             check('movieName', 'movie name is required').not().isEmpty()
         ], searchMovie
     );

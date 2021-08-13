@@ -13,3 +13,5 @@ export const BOOKING_SUCCESS = 'BOOKING_SUCCESS';
 export const BOOKING_FAIL = 'BOOKING_FAIL';
 export const GET_MOVIE = 'GET_MOVIE';
 export const MOVIE_ERROR = 'MOVIE_ERROR';
+export const SEARCH_MOVIE = 'SEARCH_MOVIE';
+export const NO_MOVIE = 'NO_MOVIE';

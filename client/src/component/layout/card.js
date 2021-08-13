@@ -8,12 +8,12 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import lead from '../../images/lead.webp'
 
-const Cards = ({movie,loading}) => {
-
-  return movie !== null  && !loading ? (   
+const Cards = ({movie:{movies,loading}}) => {
+const  a = 0;
+  console.log(movies)
+  return movies !== null  && !loading ? (   
     <Fragment>
       <div className='col-12'>
-        
         <div className='container my-3'>
           <Link to="" class='card bg-dark text-white'>
               <img src={lead}/>
@@ -65,7 +65,7 @@ const Cards = ({movie,loading}) => {
             Recommanded Movies
           </div>
           <div className="row">
-            {movie.movies.map(
+            {movies[0].movies.map(
               movies=>
               (<Fragment>
                    <div className="col-3">
@@ -93,6 +93,6 @@ Cards.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  movie: state.movie.movie
+  movie: state.movie
 })
 export default connect(mapStateToProps)(Cards);

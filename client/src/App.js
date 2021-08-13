@@ -1,4 +1,4 @@
-import React, { Fragment,useEffect } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './component/layout/navbar';
@@ -10,9 +10,16 @@ import store from './store';
 import setAuthToken from './utils/setAuthToken'
 import Footer from './component/layout/footer';
 import { AdminDashBoard } from './component/Admin/adminDashBoard';
-import {Ticket} from "./component/layout/ticket";
-import { Adminlanding } from './component/Admin/Adminlandin';
-import Movie from './component/movies/Movie';
+import Alerts from "./component/layout/Alerts";
+
+
+import  Adminlanding  from './component/Admin/Adminlandin';
+import  AdminRegister  from './component/Admin-auth/AdminRegister'
+import AdminLogin from './component/Admin-auth/AdminLogin';
+import AddMovie from './component/Admin/AddMovie';
+
+import AdminRoute from "./component/routing/AdminRoute";
+
 
 
 if(localStorage.token){
@@ -29,14 +36,16 @@ function App() {
     <Provider store={store}>
     <Router>
       <Fragment>
-        <Navbar/>
+      <Alerts />
+        <Navbar />
         <Route exact path='/' component={Landing} />
         <Route exact path='/' component={Cards} />
         <Switch>
-          <Route exact path='/final-ticket' component={Ticket}/>
-          <Route exact path='/adminDashBoard' component={AdminDashBoard} />
           <Route exact path='/admin-landing' component={Adminlanding} />
-          <Route exact path="/movie" component={Movie}/>
+          <Route exact path='/admin-register' component={AdminRegister} />
+          <Route exact path='/admin-login' component={AdminLogin} />
+          <AdminRoute exact path='/addMovie' component={AddMovie} />
+          <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />
         </Switch>
         <Footer/>
       </Fragment>

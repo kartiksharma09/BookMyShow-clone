@@ -23,7 +23,8 @@ const bookTickets = async(req, res, next) => {
     const cinemaId = req.params.cinemaId;
     const movieId = req.params.movieId;
     // Initializing from the req.body
-    const { Seats, watchers, bookingDate } = req.body;
+    const { Seats, watchers, bookingDate } = req.body
+
     // Find the movie is available or not
     const movie = await Movie.findById(movieId);
     // console.log(movie)
@@ -33,11 +34,13 @@ const bookTickets = async(req, res, next) => {
             errors: "Movie Not Found"
         })
     }
-    const cinema = await Cinema.findById(cinemaId);
+
+    const cinema = await Cinema.findById(cinemaId)
     let seats = cinema.seats;
-    const Tickets = await Ticket.findOne({ cinemaId });
+
+    const Tickets = await Ticket.findOne({ cinemaId })
     if (Tickets) {
-        const BookedTickets = Tickets.Seats;
+        const BookedTickets = Tickets.Seats
         for (var index = 0; index < seats; index++) {
             if (BookedTickets.includes(Seats[index])) {
                 return next({

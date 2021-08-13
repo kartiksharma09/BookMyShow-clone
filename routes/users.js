@@ -6,7 +6,6 @@ const { bookTickets } = require('../controllers/tickets');
 const isVerify = require('../middleware/auth');
 const { cancelTicket, GetTickets } = require('../controllers/tickets');
 const { getAllMovies, searchMovie } = require('../controllers/movies');
-const { searchCinema } = require('../controllers/cinema');
 
 //@route  POST api/users/signup
 //desc    Register user

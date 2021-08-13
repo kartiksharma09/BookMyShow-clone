@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import {connect} from "react-redux"
 import AddCinema from './AddCineme'
 
-const AdminDashBoard = () => {
+const AdminDashBoard = ({auth,cinema}) => {
   return (
     <Fragment>
       <div className='col-12 '>

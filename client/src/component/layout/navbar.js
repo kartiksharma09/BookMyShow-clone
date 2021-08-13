@@ -48,7 +48,7 @@ const NavBar = ({ auth: { isAuthenticated }, logout }) => {
       <div className="dropdown-menu mr-5">
         <p className="ml-5 auth-links">
           <Link
-            to="/register"
+            to="/user-register"
             className="text-dark text-center text-decoration-none"
           >
             Register
@@ -56,7 +56,7 @@ const NavBar = ({ auth: { isAuthenticated }, logout }) => {
         </p>
         <p className="ml-5 auth-links">
           <Link
-            to="/register"
+            to="/user-login"
             className="text-dark text-center text-decoration-none"
           >
             Login
@@ -64,7 +64,7 @@ const NavBar = ({ auth: { isAuthenticated }, logout }) => {
         </p>
         <p className="ml-5 auth-links">
           <Link
-            to="/register"
+            to="/user-register"
             className="text-dark text-center text-decoration-none"
           >
             About us

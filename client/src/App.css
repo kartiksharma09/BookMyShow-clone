@@ -202,7 +202,33 @@ footer{
   z-index: 1;
 }
 
+/* user form css */
+.user_form .userFormGroup {
+  margin: 1.2rem 0;
+}
+.user_form .form-text{display: block;
+    margin-top: 0.3rem;
+    color: #888;}
 
+    .user_form input[type='text'],
+    .user_form input[type='email'],
+    .user_form input[type='password'],
+    .user_form input[type='date'],
+    .user_form select,
+    .user_form textarea {
+      display: block;
+      width: 100%;
+      padding: 0.4rem;
+      font-size: 1.2rem;
+      border: 1px solid #ccc;
+    }
+    
+    .user_form input[type='submit'],
+    button {
+      font: inherit;
+    }
+    
+  
 /* moviecard css */
 
 .admin_movies_card:hover {

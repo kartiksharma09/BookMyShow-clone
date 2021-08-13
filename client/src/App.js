@@ -21,7 +21,8 @@ import AddCinema from './component/Admin/AddCineme';
 
 import AdminRoute from "./component/routing/AdminRoute";
 
-
+import UserSignup from './component/user-auth/UserSignup';
+import UserLogin from './component/user-auth/UserLogin'
 
 if(localStorage.token){
   setAuthToken(localStorage.token);
@@ -48,6 +49,8 @@ function App() {
           <Route exact path='/admin-landing' component={Adminlanding} />
           <Route exact path='/admin-register' component={AdminRegister} />
           <Route exact path='/admin-login' component={AdminLogin} />
+          <Route exact path='/user-register' component={UserSignup} />
+          <Route exact path='/user-login' component={UserLogin} />
           <AdminRoute exact path='/addMovie' component={AddMovie} />
           <AdminRoute exact path='/addCinema' component={AddCinema} />
           <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />

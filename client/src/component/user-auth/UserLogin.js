@@ -7,7 +7,7 @@ const UserLogin = () => {
     <Fragment>
       <div className='col-12 forms-row'>
         <div class='row p-4 h-100 justify-content-center align-items-center'>
-          <form className='login'>
+          <form className='login user-auth'>
             <h3 className='text-center'>Log In</h3>
             <input
               className='form-inputs'
@@ -24,7 +24,7 @@ const UserLogin = () => {
             <p className='form-submit text-center btn btn-danger'>LOGIN</p>
             <p className='text-white'>
               Don't have an account?
-              <Link className='text-warning' to='/admin-register'>
+              <Link className='text-danger' to='/admin-register'>
                 SignUp
               </Link>
             </p>

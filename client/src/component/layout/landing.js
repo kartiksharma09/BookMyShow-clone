@@ -6,10 +6,10 @@ const Landing = () => {
     <Fragment>
       <div className='col-12'>
         <div className='row'>
-          <section className='landing '>
+          <section className='landing'>
             <div className='dark-overlay'>
               <div className='landing-inner  text-center'>
-                <h1 className='landing-head '>
+                <h1 className='landing-head'>
                   𝙺𝚎𝚎𝚙 C𝚊𝚕𝚖 A𝚗𝚍 Watch Movie at Our theaters
                 </h1>
                 <p className='lead text-light large'>

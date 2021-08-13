@@ -1,6 +1,8 @@
-import {REGISTER_FAIL,
+import {
     MOVIE_ERROR,
     GET_MOVIE,
+    SEARCH_MOVIES,
+    SEARCH_MOVIES_FAIL
 } from "../actions/types";
 
 const initialState = {
@@ -16,12 +18,14 @@ const movie = (state = initialState, action) => {
     
     switch (type) {
         case GET_MOVIE:
+        case SEARCH_MOVIES:
             return { 
                 ...state,
                 movie: payload,
                 loading: false
             }
         case MOVIE_ERROR:
+        case SEARCH_MOVIES_FAIL:
             return {
                 ...state,
                 error: payload,

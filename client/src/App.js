@@ -6,7 +6,7 @@ import Landing from './component/layout/landing';
 import Cards from './component/layout/card';
 import {Provider} from 'react-redux';
 import store from './store';
-// import { loadUser } from './actions/auth'
+import { loadUser } from './actions/auth'
 import setAuthToken from './utils/setAuthToken'
 import Footer from './component/layout/footer';
 import { AdminDashBoard } from './component/Admin/adminDashBoard';
@@ -18,7 +18,7 @@ import AdminRegister  from './component/admin-auth/AdminRegister'
 import AdminLogin from './component/admin-auth/AdminLogin';
 import AddMovie from './component/Admin/AddMovie';
 import AdminRoute from "./component/routing/AdminRoute";
-
+import Movie from './component/movies/Movie';
 
 
 if(localStorage.token){
@@ -26,11 +26,10 @@ if(localStorage.token){
 }
 
 function App() {
-  // useEffect(() => {
-  //   store.dispatch(loadUser());
-  // },[])
+  useEffect(() => {
+    store.dispatch(loadUser());
+  },[])
 
-  
   return (
     <Provider store={store}>
     <Router>
@@ -43,6 +42,7 @@ function App() {
           <Route exact path='/admin-landing' component={Adminlanding} />
           <Route exact path='/admin-register' component={AdminRegister} />
           <Route exact path='/admin-login' component={AdminLogin} />
+          <Route exact path="/movie" component={Movie} />
           <AdminRoute exact path='/addMovie' component={AddMovie} />
           <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />
         </Switch>

@@ -1,17 +1,19 @@
 import React, { Fragment } from 'react';
 import { Link ,useHistory} from 'react-router-dom';
+import propTypes from 'prop-types'
+import { connect } from 'react-redux';
+import {Spinner} from '../layout/Spinner';
 
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import lead from '../../images/lead.webp'
 
-const Cards = () => {
+const Cards = ({movie,loading}) => {
 
-let history = useHistory();
-
-  return (
+  return movie !== null  && !loading ? (   
     <Fragment>
       <div className='col-12'>
+        
         <div className='container my-3'>
           <Link to="" class='card bg-dark text-white'>
               <img src={lead}/>
@@ -59,26 +61,38 @@ let history = useHistory();
       </div>
       <div className="col-12">
         <div className="container">
-          <div>
+          <div className="h2">
             Recommanded Movies
           </div>
           <div className="row">
-            <div className="col-3">
-                <div className="card movie-image my-3" style={{backgroundImage: `url("https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/avengers-age-of-ultron-et00024757-09-03-2017-07-09-00.jpg")`}} onClick={()=>history.push('/movie')}>
-                  {/* <img className="card-img-top" src="https://in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/avengers-age-of-ultron-et00024757-09-03-2017-07-09-00.jpg" alt="Card image cap"/> */}
-                    <div className="card-body">
+            {movie.movies.map(
+              movies=>
+              (<Fragment>
+                   <div className="col-3">
+                      <div className="card movie-image my-3" style={{backgroundImage: `url(${movies.posterUrl})`}}>
+                          <div className="card-body"></div>
+                          <div className="card-footer">
+                            <h5 className="movie-title">{movies.movieName}</h5>
+                            <p className="card-text movie-genro">{movies.genre}</p>
+                          </div>
+                      </div>
                     </div>
-                    <div className="card-footer">
-                      <h5 className="movie-title">Avengers Age of Ulton</h5>
-                      <p className="card-text movie-genro">Action,Advanture</p>
-                    </div>
-                </div>
-            </div>
+            </Fragment>)
+            )
+            }
+           
           </div>
         </div>
       </div>
     </Fragment>
-  );
+  ) : (<Fragment><Spinner/></Fragment>);
 };
 
-export default Cards;
+Cards.propTypes = {
+  movie: propTypes.object
+}
+
+const mapStateToProps = state => ({
+  movie: state.movie.movie
+})
+export default connect(mapStateToProps)(Cards);

@@ -9,7 +9,7 @@ const Cards = () => {
       <div className='col-12'>
         <div className='container my-3'>
           <Link to="" class='card bg-dark text-white'>
-              <img src={lead}/>
+              <img src={lead} alt="lead" />
           </Link>
         </div>
       </div>

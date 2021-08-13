@@ -9,13 +9,11 @@ import PropTypes from 'prop-types'
 
 const NavBar = ({ auth: { isAuthenticated }, logout }) => {
   const authLinks = (
-    <ul>
-      <li>
+    <div className="mb-4">
         <Link onClick={logout} to="/" className="btn btn-danger">
           Logout
         </Link>
-      </li>
-    </ul>
+    </div>
   );
 
   const guestLink = (

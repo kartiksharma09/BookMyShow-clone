@@ -170,8 +170,14 @@ const getCinema = async(req,res) => {
         if (!cinema) {
             return res.status(400).json({ msg: "There is no cinema for this user" });
         }
-
-        res.json(cinema);
+        const movieList = []
+        for(var i of cinema.Movies){
+            const movie = await movieModel.findById(i.movieId)
+            movieList.push(movie)
+        }
+        const newData = {...cinema}
+        newData.Movies = movieList
+        res.json(newData);
     } catch (err) {
         res.status(500).send("Server error")
     }

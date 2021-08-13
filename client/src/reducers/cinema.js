@@ -21,12 +21,13 @@ export default (state = initialState, action) => {
             return { 
                 ...state,
                 cinema: payload,
+                movies:[...payload.Movies],
                 loading: false
             }
         case MOVIE_ASSIGNED:
             return {
                 ...state,
-                movies: [payload,...state.movies],
+                movies: [payload,...state.cinema.Movies],
                 loading: false
             }
         case ASSIGN_ERROR:

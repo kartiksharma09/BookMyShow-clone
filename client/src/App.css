@@ -204,6 +204,11 @@ footer{
 
 
 /* moviecard css */
+
+.admin_movies_card:hover {
+  cursor: pointer;
+}
+
 .movie-image {
   background-repeat: no-repeat;
   background-size: 100% 100%;

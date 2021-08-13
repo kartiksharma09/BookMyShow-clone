@@ -14,7 +14,7 @@ const Adminlanding = ({isAuthenticated}) => {
       <div className='col-12'>
         <div className='container my-3'>
           <div className="d-flex justify-content-center align-item-center">
-              <img src={theater}/>
+              <img src={theater} alt="threater" />
           </div>
           <div className="admin-landing-main ">
               <Link className="btn btn-danger Admin-auth mx-2" to="/admin-login">

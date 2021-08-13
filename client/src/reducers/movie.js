@@ -18,12 +18,18 @@ const movie = (state = initialState, action) => {
     
     switch (type) {
         case GET_MOVIE:
-        case SEARCH_MOVIES:
             return { 
                 ...state,
                 movie: payload,
                 loading: false
             }
+        case SEARCH_MOVIES:
+            return {
+                ...state,
+                movies: [payload],
+                loading: false
+            }
+        
         case MOVIE_ERROR:
         case SEARCH_MOVIES_FAIL:
             return {

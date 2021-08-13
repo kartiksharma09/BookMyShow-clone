@@ -47,14 +47,14 @@ router.post("/tickets/:cinemaId/:movieId", isVerify, [
         check("bookingDate", "bookingDate is required").not().isEmpty()
     ],
     bookTickets
-)
+);
 
 //@route  DELETE /api/users/tickets/ticketId
 //desc    cancel tickets
 //access  public
 
-router.delete("/tickets/:ticketId", isVerify, cancelTicket)
-router.get("/tickets", isVerify, GetTickets)
+router.delete("/tickets/:ticketId", isVerify, cancelTicket);
+router.get("/tickets", isVerify, GetTickets);
 
 
 //@route  GET /api/users/movies/allmovies
@@ -63,9 +63,7 @@ router.get("/tickets", isVerify, GetTickets)
 
 router
     .get(
-        '/movies/allmovies',
-        getAllMovies
-    );
+        '/movies/allmovies', getAllMovies);
 
 
 //@route  POST /api/users/movies/searchMovie
@@ -75,6 +73,7 @@ router
 router
     .post(
         '/movies/searchmovie', [
+            isVerify,
             check('movieName', 'movie name is required').not().isEmpty()
         ], searchMovie
     );

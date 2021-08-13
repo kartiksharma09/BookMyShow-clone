@@ -35,7 +35,7 @@ function App() {
   return (
     <Provider store={store}>
     <Router>
-      <Fragment className='App'>
+      <Fragment>
       <Alerts />
         <Navbar />
         

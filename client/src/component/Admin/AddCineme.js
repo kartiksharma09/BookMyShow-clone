@@ -13,7 +13,7 @@ const AddCinema = () => {
                   type='text'
                   className='form-control'
                   id='formGroupExampleInput'
-                  placeholder='Example input'
+                  placeholder='Enter the Cinema Name'
                 />
               </div>
               <div className='form-group'>
@@ -22,7 +22,7 @@ const AddCinema = () => {
                   type='text'
                   className='form-control'
                   id='formGroupExampleInput2'
-                  placeholder='locationOfCinema'
+                  placeholder='Enter the Location of Cinema'
                 />
               </div>
               <div className='form-group'>
@@ -31,7 +31,7 @@ const AddCinema = () => {
                   type='dropdown'
                   className='form-control'
                   id='formGroupExampleInput2'
-                  placeholder='Seats'
+                  placeholder='NO. Of Seats Of Your Cinema'
                 />
               </div>
               <div className='text-ligh'>

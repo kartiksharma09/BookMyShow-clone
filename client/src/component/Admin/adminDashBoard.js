@@ -37,6 +37,7 @@ export const AdminDashBoard = () => {
                   AddMovie
                 </Link>
                 <Link
+                to="addCinema"
                   className='nav-link btn btn-danger my-1'
                   id='v-pills-messages-tab'
                   data-toggle='pill'

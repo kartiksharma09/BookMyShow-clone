@@ -17,22 +17,19 @@ export const addMovieAction =
       },
     };
 
+    console.log(data,"from action")
     const body = JSON.stringify(data);
 
     try {
-      const res = await axios.post("api/admins/movies/addmovie", body, config);
+      const res = await axios.post("/api/admins/movies/addmovie", body, config);
       dispatch({
         type: GET_MOVIE,
         payload: res.data,
       });
       dispatch(setAlert("Movie Added Successfully", "success"));
     } catch (err) {
-      const errors = err.response.data.errors;
-      if (errors) {
-        errors.forEach((error) => {
-          dispatch(setAlert(error.msg, "danger"));
-        });
-      }
+      const errors = err.response.data;
+      dispatch(setAlert(errors.msg, "danger"));
 
       dispatch({
         type: MOVIE_ERROR,

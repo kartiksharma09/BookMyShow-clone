@@ -1,7 +1,13 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types'
 
-const Landing = () => {
+
+const Landing = ({isAuthenticated}) => {
+  if(isAuthenticated){
+    return <Redirect to="/adminDashBoard" />
+  }
   return (
     <Fragment>
       <div className='col-12'>
@@ -17,16 +23,6 @@ const Landing = () => {
                   filmmaker intended: inside a large movie theater with great
                   sound and pristine picture.
                 </p>
-                {/* <Route exact path='/' component={ticket} /> */}
-              </div>
-              <div className='form-group mt-1 d-flex justify-content-center'>
-                <input
-                  placeholder='search by movie name'
-                  type='text'
-                  className='form-control nav-search'
-                  id='usr'
-                />
-                <p className='btn btn-danger ml-1'>submit</p>
               </div>
             </div>
           </section>
@@ -36,4 +32,13 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+Landing.propTypes = {
+  isAuthenticated:PropTypes.bool,
+}
+
+
+const mapStateToProps = state => ({
+  isAuthenticated:state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps)(Landing);

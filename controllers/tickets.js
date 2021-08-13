@@ -12,7 +12,8 @@ const validations = (req) => {
     }
 };
 
-const bookTickets = async (req, res, next) =>{
+const bookTickets = async(req, res, next) => {
+    console.log(req.body)
     const errors = validations(req);
     if (errors) {
         return next({
@@ -36,7 +37,6 @@ const bookTickets = async (req, res, next) =>{
             errors: "Movie Not Found"
         })
     }
-    
     const cinema = await Cinema.findById(cinemaId)
     let seats = cinema.seats;
 
@@ -91,7 +91,7 @@ const cancelTicket = async (req, res, next) => {
 }
 
 // get Booked Tikets
-const GetTickets = async (req, res, next) => {
+const GetTickets = async (req, res, next)=>{
     const tickets = await Ticket.find({ userId: req.user.id }).populate('cinemaId');
     if (!tickets.length) {
         return next({ status: 400, errors: "You have not booked any ticket" });

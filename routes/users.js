@@ -55,7 +55,6 @@ router.post("/tickets/:cinemaId/:movieId", isVerify, [
 router.delete("/tickets/:ticketId", isVerify, cancelTicket)
 router.get("/tickets", isVerify, GetTickets)
 
-
 //@route  GET /api/users/movies/allmovies
 //desc    get all movies
 //access public

@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import YouTubeIcon from '@material-ui/icons/YouTube';
 
 const Footer = () => {
   return (
@@ -164,12 +167,12 @@ const Footer = () => {
               <ul className='list-unstyled'>
                 <li>
                   <Link to='#!' className='footer_info'>
-                    Goibibo
+                    Paytm
                   </Link>
                 </li>
                 <li>
                   <Link to='#!' className='footer_info'>
-                    Makemytrip
+                    Imdb
                   </Link>
                 </li>
               </ul>
@@ -179,9 +182,12 @@ const Footer = () => {
               <p className="text-light">
               There is no definition of beauty, but when you can see someone's spirit coming through, something unexplainable, that's beautiful to me.
               </p>
-              <div className=''>
+              <div className='d-flex justify-content-between'>
                 <FacebookIcon style={{ fontSize: 40,fill:"white" }} />
                 <TwitterIcon style={{ fontSize: 40,fill:"white"  }} />
+                <InstagramIcon style={{ fontSize: 40,fill:"white"  }} />
+                <YouTubeIcon  style={{ fontSize: 40,fill:"white"  }} />
+                <GitHubIcon  style={{ fontSize: 40,fill:"white"  }} />
               </div>
             </div>
           </div>

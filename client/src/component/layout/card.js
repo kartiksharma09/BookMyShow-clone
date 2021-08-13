@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import lead from '../../images/lead.webp'
+// import lead from '../../images/lead.webp'
 
-const Cards = () => {
+const Cards = () =>{
   return (
     <Fragment>
       <div className='col-12'>
         <div className='container my-3'>
           <Link to="" class='card bg-dark text-white'>
-              <img src={lead}/>
+              {/* <img src={lead}/> */}
           </Link>
         </div>
       </div>
-
+      
       <div className='col-12'>
         <div className='container my-4'>
           <div class='container-fluid'>

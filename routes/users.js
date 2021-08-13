@@ -28,11 +28,11 @@ router.post(
 //access  public
 
 router.post(
-    "/login", [check("email", "please include a valid email").not().isEmail(),
+    "/login", [check("email", "please include a valid email").isEmail(),
         check(
             "password",
             "please enter a password with 8 or more characters"
-        ).not().isLength({ min: 8 })
+        ).isLength({ min: 8 })
     ],
     loginUser
 );

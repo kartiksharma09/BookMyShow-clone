@@ -1,14 +1,14 @@
-import { Link, Switch } from 'react-router-dom';
 import React, { Fragment, useEffect } from 'react';
+import { Link,BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import { Adminlanding } from './component/Admin/Adminlandin'
+import  Adminlanding from './component/Admin/Adminlandin'
 import Navbar from './component/layout/navbar'
 import Footer from './component/layout/footer';
 import Cards from './component/layout/card';
 import AdminRegister from "./component/admin-auth/AdminRegister"
 import AdminLogin from './component/admin-auth/AdminLogin';
-import UserLogin from './component/user-auth/UserLogin';
-import UserSignup from './component/user-auth/UserSignup';
+import AddMovie from './component/Admin/AddMovie'
+
 import Landing from './component/layout/landing';
 import Tickets from './component/TicketLayout/ticket';
 import Movie from './component/movies/Movie'
@@ -17,17 +17,11 @@ import {Provider} from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth'
 import setAuthToken from './utils/setAuthToken'
-import Footer from './component/layout/footer';
+
 import { AdminDashBoard } from './component/Admin/adminDashBoard';
 import Alerts from "./component/layout/Alerts";
-
-
-import Adminlanding  from './component/Admin/Adminlandin';
-import AdminRegister  from './component/admin-auth/AdminRegister'
-import AdminLogin from './component/admin-auth/AdminLogin';
-import AddMovie from './component/Admin/AddMovie';
 import AdminRoute from "./component/routing/AdminRoute";
-import Movie from './component/movies/Movie';
+
 
 
 if(localStorage.token){

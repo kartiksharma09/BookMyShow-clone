@@ -1,6 +1,11 @@
 import React,{Fragment,useState} from 'react'
+import { setAlert } from '../../actions/alerts'
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types'
+import {assignMovie} from "../../actions/cinema"
 
-export const AssignMovieCinema = () => {
+
+export const AssignMovieCinema = ({setAlert,cinemaId, assignMovie}) => {
     const [formData, setFormData] = useState({
         movieName: "",
         from: "",
@@ -17,7 +22,16 @@ export const AssignMovieCinema = () => {
       
       const onSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData,"data is coming")
+        let today = new Date().toISOString().slice(0, 10);
+        if(startDate >= endDate || startDate<today ){
+            setAlert("Please select the correct dates","danger")
+        }
+        assignMovie(cinemaId,formData)
+        setFormData({movieName: "",
+        from: "",
+        to:"",
+        startDate:"",
+        endDate:""})
       };
     
       return (
@@ -26,7 +40,7 @@ export const AssignMovieCinema = () => {
             <div className="container  my-5">
                 <form onSubmit={e=>onSubmit(e)}>
                   <div className="form-group">
-                    <label for="formGroupExampleInput">Movie Name</label>
+                    <label for="formGroupExampleInput"><strong>Movie Name</strong></label>
                     <input
                       type="text"
                       className="form-control"
@@ -38,7 +52,7 @@ export const AssignMovieCinema = () => {
                     />
                   </div>
                   <div className="form-group">
-                    <label for="formGroupExampleInput2"><storng>Movie Start Time</storng></label>
+                    <label for="formGroupExampleInput2"><strong>Movie Start Time</strong></label>
                     <input
                       type="text"
                       className="form-control"
@@ -64,7 +78,7 @@ export const AssignMovieCinema = () => {
                   <div className="form-group">
                     <label for="formGroupExampleInput2"><strong>From</strong></label>
                     <input
-                      type="text"
+                      type="date"
                       className="form-control"
                       name="startDate"
                       value={startDate}
@@ -74,9 +88,9 @@ export const AssignMovieCinema = () => {
                     />
                   </div>
                   <div className="form-group">
-                    <label for="formGroupExampleInput2"><strong>From</strong></label>
+                    <label for="formGroupExampleInput2"><strong>To</strong></label>
                     <input
-                      type="text"
+                      type="date"
                       className="form-control"
                       name="endDate"
                       value={endDate}
@@ -96,5 +110,9 @@ export const AssignMovieCinema = () => {
         </Fragment>
       );
 }
+AssignMovieCinema.propTypes = {
+    setAlert: PropTypes.func.isRequired,
+    assignMovie:PropTypes.func.isRequired,
+  };
 
-export default AssignMovieCinema
+export default connect(null,{setAlert,assignMovie})(AssignMovieCinema)

@@ -196,9 +196,10 @@ footer{
 /* alerts css */
 .alerts {
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 3rem;
-  opacity: 0.9;
+  opacity: 1.9;
+  z-index: 1;
 }
 
 

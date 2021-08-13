@@ -151,10 +151,10 @@ const assignMovieToCinema = async(req, res, next) => {
 
 const getCinema = async(req,res) => {
     try {
-        const cinema = await Cinema.findOne({ adminId: req.user.id }).populate('user', ['name', 'avatar']);
+        const cinema = await Cinema.findOne({ adminId: req.user.id });
 
         if (!cinema) {
-            return res.status(400).json({ msg: "There is no profile for this user" });
+            return res.status(400).json({ msg: "There is no cinema for this user" });
         }
 
         res.json(cinema);

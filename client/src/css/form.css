@@ -5,8 +5,12 @@
 	background-color: rgb(75, 57, 57);
 	 padding: 40px 30px 30px 30px;
 	 border-radius: 10px;
-	 box-shadow: 5px 10px 10px 10px rgba(2, 128, 144, 0.2);
+	 box-shadow: 5px 10px 10px 10px rgba(32, 36, 36, 0.2);
 }
+input:focus{ 
+	border:none;
+}
+
 
 .form-inputs {
 	border-radius: 5px;
@@ -33,7 +37,8 @@
 }
 
 .user-auth {
-	background: #7ceb92;
+	background:url('../images/back-auth.jpg');
+	object-fit: contain;
 	color: black;
   }
 

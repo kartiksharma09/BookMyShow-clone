@@ -200,3 +200,46 @@ footer{
   top: 3rem;
   opacity: 0.9;
 }
+
+
+/* moviecard css */
+.movie-image {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 55vh;
+  border-radius: 25px;
+}
+.movie-title {
+  color: #FFFFFF;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.movie-genro {
+  color: #FFFFFF;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.movie-details_sec {
+  height: 55vh;
+  background: transparent;
+}
+.movie-bg-sec {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  object-fit: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5));
+}
+.duration_sec,
+.genre_sec,
+.language_sec {
+  color: #FFFFFF;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.actor_img_sec {
+  border-radius: 100px;
+  height: 23vh;
+  width: 11vw;
+}
+.release_details_sec {
+  border: 2px dashed yellow;
+  background-color: #FFFACD;
+  /* alerts css */
+}

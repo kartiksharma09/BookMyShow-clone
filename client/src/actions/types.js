@@ -10,6 +10,7 @@ export const LOGOUT = 'LOGOUT';
 export const BOOKING_SUCCESS = 'BOOKING_SUCCESS';
 export const BOOKING_FAIL = 'BOOKING_FAIL';
 export const GET_MOVIE = 'GET_MOVIE';
+export const GET_MOVIES = 'GET_MOVIES';
 export const MOVIE_ERROR = 'MOVIE_ERROR';
 export const GET_CINEMA = "GET_CINEMA"
 export const MOVIE_ASSIGNED = "MOVIE_ASSIGNED"

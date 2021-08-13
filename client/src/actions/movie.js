@@ -2,9 +2,30 @@ import axios from "axios";
 import { setAlert } from "./alerts";
 import {
 GET_MOVIE,
-  MOVIE_ERROR
+  MOVIE_ERROR,
+  GET_MOVIES
 } from "./types";
 
+// /api/users/movies/allmovies
+//Get all Movies
+export const getAllMovies = () => async dispatch => {
+
+  try{
+      const res = await axios.get('/api/users/movies/allmovies'); 
+      // console.log(res.data)
+      dispatch({
+          type: GET_MOVIES,
+          payload: res.data
+      });
+
+  }catch(err){
+      console.log(err)
+      dispatch({
+          type: MOVIE_ERROR,
+          payload: { msg: err.response.statusText, status: err.response.status }
+      });
+  }
+}
 
 
 // Register Action //

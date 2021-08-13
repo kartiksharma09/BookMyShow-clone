@@ -20,22 +20,31 @@ const { validationResult } = require('express-validator');
 const cinema = async(req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ msg: "checking" });
+        return res.status(400).json({ msg: "Please Fill all the details" });
     }
 
-    const cinemas = new Cinema(req.body);
-
+    const {locationOfCinema} = req.body
     try {
 
+        let cinemas = await Cinema.findOne( {adminId: req.user.id})
+        if(cinemas){
+            return res.status(400).json({ msg: "You can't add more then one cinema" });
+        }
+        cinemas = await Cinema.findOne( {locationOfCinema: locationOfCinema})
+        if(cinemas){
+            return res.status(400).json({ msg: "Cinema already exist at this place" });
+        }
+        cinemas = new Cinema(req.body);
 
         cinemas.adminId = req.user.id;
 
         await cinemas.save();
-        res.status(200).json({ msg: "your cinemaHall is added..." });
+        res.status(200).json(cinemas);
 
 
 
     } catch (err) {
+        console.log(err)
         res.status(500).json({ msg: "server error....." });
     }
 };
@@ -153,4 +162,19 @@ const searchCinema = async(req, res, next) => {
 
 };
 
-module.exports = { cinema,searchCinema, assignMovieToCinema };
+
+const getCinema = async(req,res) => {
+    try {
+        const cinema = await Cinema.findOne({ adminId: req.user.id }).populate('user', ['name', 'avatar']);
+
+        if (!cinema) {
+            return res.status(400).json({ msg: "There is no profile for this user" });
+        }
+
+        res.json(cinema);
+    } catch (err) {
+        res.status(500).send("Server error")
+    }
+}
+
+module.exports = { cinema,searchCinema, assignMovieToCinema ,getCinema};

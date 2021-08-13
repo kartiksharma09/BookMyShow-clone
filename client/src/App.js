@@ -9,7 +9,7 @@ import store from './store';
 import { loadUser } from './actions/auth'
 import setAuthToken from './utils/setAuthToken'
 import Footer from './component/layout/footer';
-import { AdminDashBoard } from './component/Admin/adminDashBoard';
+import  AdminDashBoard  from './component/Admin/adminDashBoard';
 import Alerts from "./component/layout/Alerts";
 
 
@@ -17,6 +17,7 @@ import  Adminlanding  from './component/Admin/Adminlandin';
 import  AdminRegister  from './component/Admin-auth/AdminRegister'
 import AdminLogin from './component/Admin-auth/AdminLogin';
 import AddMovie from './component/Admin/AddMovie';
+import AddCinema from './component/Admin/AddCineme';
 
 import AdminRoute from "./component/routing/AdminRoute";
 
@@ -48,6 +49,7 @@ function App() {
           <Route exact path='/admin-register' component={AdminRegister} />
           <Route exact path='/admin-login' component={AdminLogin} />
           <AdminRoute exact path='/addMovie' component={AddMovie} />
+          <AdminRoute exact path='/addCinema' component={AddCinema} />
           <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />
 
         </Switch>

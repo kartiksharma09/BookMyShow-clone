@@ -19,6 +19,7 @@ const movie = (state = initialState, action) => {
             return { 
                 ...state,
                 movie: payload,
+                movies:[payload,...state.movies],
                 loading: false
             }
         case MOVIE_ERROR:

@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react';
 import {Link} from 'react-router-dom'
+import {connect} from "react-redux"
 import AddCinema from './AddCineme'
 
-export const AdminDashBoard = () => {
+const AdminDashBoard = () => {
   return (
     <Fragment>
       <div className='col-12 '>
@@ -101,3 +102,11 @@ export const AdminDashBoard = () => {
     </Fragment>
   );
 };
+
+const mapStateToProps = state => ({
+  auth:state.auth,
+  cinema:state.cinema
+})
+
+
+export default  connect(mapStateToProps)(AdminDashBoard)

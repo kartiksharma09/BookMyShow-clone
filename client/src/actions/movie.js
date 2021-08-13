@@ -70,3 +70,37 @@ export const getAllMovies = () => async dispatch => {
         });
     }
 };
+
+
+//search a movie by name
+
+
+
+export const searchMovieByName = ({ movieName }) => async dispatch => {
+
+    const config = {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    };
+
+    const body = JSON.stringify(movieName);
+
+
+    try {
+        const res = await axios.post("/api/users/movies/searchmovie", body, config);
+
+    } catch (err) {
+        console.log(err);
+        const errors = err.response.data.errors;
+        if (errors) {
+            errors.forEach((error) => {
+                dispatch(setAlert(error.msg, "danger"));
+            });
+        }
+
+    }
+
+
+
+};

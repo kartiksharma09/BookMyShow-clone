@@ -12,14 +12,14 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 const Footer = () => {
   return (
     <Fragment>
-      <footer className='page-footer font-small'>
+      <footer className='page-footer font-small '>
         {/* 1 */}
 
-        <div className='container text-center text-md-left'>
-          <div className='row'>
+        <div className='container text-center text-md-left '>
+          <div className='row '>
             <hr className='clearfix w-100 d-md-none pb-3' />
 
-            <div className='col-md-2  my-5'>
+            <div className='col-md-2  my-5 '>
               <h5 className='text-light'>About us</h5>
 
               <ul className='list-unstyled'>

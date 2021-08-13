@@ -60,7 +60,7 @@ const addMovie = async(req, res, next) => {
 const getAllMovies = async(req, res, next) => {
     const movies = await movieModel.find();
     res.status(200).json({
-        msg: movies
+        movies
     });
 };
 

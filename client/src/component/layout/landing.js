@@ -1,7 +1,14 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import propTypes from 'prop-types'
 
-const Landing = () => {
+import {getAllMovies} from '../../actions/movie';
+const Landing = ({isAuthenticated,getAllMovies}) => {
+  getAllMovies()
+  if(isAuthenticated){
+    return <Redirect to="/adminDashBoard" />
+  }
   return (
     <Fragment>
       <div className='col-12'>
@@ -17,16 +24,6 @@ const Landing = () => {
                   filmmaker intended: inside a large movie theater with great
                   sound and pristine picture.
                 </p>
-                {/* <Route exact path='/' component={ticket} /> */}
-              </div>
-              <div className='form-group mt-1 d-flex justify-content-center'>
-                <input
-                  placeholder='search by movie name'
-                  type='text'
-                  className='form-control nav-search'
-                  id='usr'
-                />
-                <p className='btn btn-danger ml-1'>submit</p>
               </div>
             </div>
           </section>
@@ -38,4 +35,13 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+Landing.propTypes = {
+  isAuthenticated:propTypes.bool,
+  getAllMovies: propTypes.func
+}
+
+const mapStateToProps = state => ({
+  isAuthenticated:state.auth.isAuthenticated
+})
+
+export default connect(mapStateToProps,{getAllMovies})(Landing);

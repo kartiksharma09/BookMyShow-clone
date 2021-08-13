@@ -32,8 +32,6 @@ const Landing = () => {
           </section>
         </div>
       </div>
-
-    
     </Fragment>
   );
 };

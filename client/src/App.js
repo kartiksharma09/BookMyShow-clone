@@ -7,7 +7,7 @@ import Cards from './component/layout/card';
 import {Provider} from 'react-redux';
 import store from './store';
 import { loadUser } from './actions/auth'
-import setAuthToken from './utils/setAuthToken'
+import setAuthToken from './utils/setAuthToken' 
 import Footer from './component/layout/footer';
 import { AdminDashBoard } from './component/Admin/adminDashBoard';
 import Alerts from "./component/layout/Alerts";

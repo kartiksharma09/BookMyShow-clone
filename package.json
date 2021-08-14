@@ -1,0 +1,38 @@
+{
+  "name": "hva_hackathon_bookmyshow",
+  "version": "1.0.0",
+  "description": "Movies ticket booking application",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "script":"nodemon index.js",
+
+    "test": "jest --testEnvironment=node --runInBand --watchAll --coverage --notify ./tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kartiksharma09/HVA_Hackathon_BookMyShow.git"
+  },
+  "author": "SDE_Trainer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kartiksharma09/HVA_Hackathon_BookMyShow/issues"
+  },
+  "homepage": "https://github.com/kartiksharma09/HVA_Hackathon_BookMyShow#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "concurrently": "^6.2.1",
+    "config": "^3.3.6",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "jest": "^26.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb-memory-server": "^7.3.6",
+    "mongoose": "^5.13.6",
+    "node-notifier": "^10.0.0",
+    "nodemon": "^2.0.12",
+    "supertest": "^6.1.4"
+  }
+}

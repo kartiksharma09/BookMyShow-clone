@@ -1,0 +1,33 @@
+.login {
+	display: flex;
+	flex-direction: column;
+	width: 25rem;
+	background-color: gray;
+	 padding: 40px 30px 30px 30px;
+	 border-radius: 10px;
+	 box-shadow: 5px 10px 10px 10px rgba(2, 128, 144, 0.2);
+}
+
+.form-inputs {
+	border-radius: 5px;
+	 font-size: 16px;
+	 background: white;
+	 width: 100%;
+	 border: 0;
+	 padding: 10px 10px;
+	 margin: 15px -10px;
+}
+
+.form-submit {
+	text-transform: uppercase;
+	width: 100px;
+	border: 0;
+	padding: 10px 0;
+	margin-top: 10px;
+	margin-left: -5px;
+	border-radius: 5px;
+}
+
+.forms-row {
+	height: 43rem;
+}

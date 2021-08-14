@@ -9,12 +9,12 @@ import { Spinner } from "../layout/Spinner";
 import AssignMovieCinema from "./AssignMovieCinema"
 
 
-const AdminDashBoard = ({ auth: { user }, Mycinema: { cinema, loading,movies }, getCurrentCinema }) => {
+const AdminDashBoard = ({ auth: { user }, Mycinema: { cinema, loading }, getCurrentCinema }) => {
   useEffect(() => {
     getCurrentCinema();
   }, [getCurrentCinema]);
 
-  return loading && cinema === null ? (
+  return loading && cinema == null ? (
     <Spinner />
   ) : (
     <Fragment>
@@ -50,7 +50,7 @@ const AdminDashBoard = ({ auth: { user }, Mycinema: { cinema, loading,movies }, 
                   </button>
               </div>
                   <div class="collapse mt-4" id="collapseExample1">
-                   <MovieCard movies={movies}/>
+                   <MovieCard movies={cinema.Movies}/>
                   </div>
                   <div class="collapse mt-4" id="collapseExample2">
                    <AssignMovieCinema cinemaId={cinema._id} />

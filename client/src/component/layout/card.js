@@ -72,15 +72,15 @@ const History = useHistory()
             Recommanded Movies
           </div>
           <div className="row">
-            {movies[0].movies.map(
-              movies=>
+            {movies.map(
+              Mapmovie=>
               (<Fragment>
                    <div className="col-3">
-                      <div className="card movie-image my-3" style={{backgroundImage: `url(${movies.posterUrl})`}}  onClick={()=>SearchMovie(movies.movieName)}>
+                      <div className="card movie-image my-3" style={{backgroundImage: `url(${Mapmovie.posterUrl})`}}  onClick={()=>SearchMovie(Mapmovie.movieName)}>
                           <div className="card-body"></div>
                           <div className="card-footer">
-                            <h5 className="movie-title">{movies.movieName}</h5>
-                            <p className="card-text movie-genro">{movies.genre}</p>
+                            <h5 className="movie-title">{Mapmovie.movieName}</h5>
+                            <p className="card-text movie-genro">{Mapmovie.genre}</p>
                           </div>
                       </div>
                     </div>

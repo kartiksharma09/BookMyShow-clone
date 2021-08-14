@@ -15,13 +15,12 @@ const initialState = {
 
 export default (state = initialState, action) => {
     const { type, payload } = action;
-    
+    console.log(action)
     switch (type) {
         case GET_CINEMA:
             return { 
                 ...state,
                 cinema: payload,
-                movies:[...payload.Movies],
                 loading: false
             }
         case MOVIE_ASSIGNED:

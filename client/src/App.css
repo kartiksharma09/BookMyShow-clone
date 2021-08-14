@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+html {
+    height: 100vh;
+}
+
 .icon-main {
     width: 8rem;
     height: 3rem;
@@ -94,6 +98,12 @@ footer {
     text-decoration: none;
     color: #ccc;
 }
+
+
+/* .page-footer {
+    position: fixed;
+    bottom: 0;
+} */
 
 
 /* vvv */
@@ -361,4 +371,65 @@ button {
     border: 2px dashed yellow;
     background-color: #FFFACD;
     /* alerts css */
+}
+
+.landing_carousal {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+
+/*homepage*/
+
+.landing_sec {
+    height: 100vh;
+}
+
+.carousel-inner .carousel-item {
+    height: 100vh !important;
+}
+
+.banner {
+    height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.main-menu-logo {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: #b1b1b14f;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.nav-item a {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px 20px !important;
+    color: #fff !important;
+}
+
+.nav-item a:hover {
+    color: #000 !important;
+}
+
+.carousel-caption {
+    bottom: 40%;
+    display: block !important;
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+    .carousel-caption {
+        bottom: 30%;
+        display: block !important;
+    }
 }

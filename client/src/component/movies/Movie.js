@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import {Spinner} from '../layout/Spinner';
 import {searchMovieByName} from '../../actions/movie';
 import {useParams} from 'react-router-dom';
-
+import {NotFound} from '../layout/NotFound';
 const Movie = ({movie:{movie,loading},searchMovieByName}) => {
+
     let {movieName} = useParams();
    
     useEffect(()=>{
@@ -145,7 +146,7 @@ Not Available in theaters</p> : (
                </div>
            </div>
         </Fragment> 
-    ) : (<Fragment><Spinner/></Fragment>)
+    ) : (<Fragment><NotFound/></Fragment>)
 }
 
 Movie.propTypes = {

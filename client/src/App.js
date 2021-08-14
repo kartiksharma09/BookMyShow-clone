@@ -21,7 +21,8 @@ import AdminRoute from "./component/routing/AdminRoute";
 import Movie from './component/movies/Movie';
 import AddCinema from './component/Admin/AddCineme';
 import UserSignup from './component/user-auth/UserSignup';
-import UserLogin from './component/user-auth/UserLogin'
+import UserLogin from './component/user-auth/UserLogin';
+import PrivateRoute from './component/routing/PrivateRoute';
 
 
 if(localStorage.token){
@@ -42,19 +43,20 @@ function App() {
         <Navbar />
         <Route exact path='/' component={Landing} />
         <Route exact path='/' component={Cards} />
+        <Route exact path='/' component={Footer} />
         <Switch>
           <Route exact path='/admin-landing' component={Adminlanding} />
           <Route exact path='/admin-register' component={AdminRegister} />
           <Route exact path='/admin-login' component={AdminLogin} />
-          <Route exact path="/movie/:movieName" component={Movie} />
-          <Route exact path="/homepage" component={HomePage} />
+          <PrivateRoute exact path="/movie/:movieName" component={Movie} />
+          <PrivateRoute exact path="/search-movies" component={HomePage} />
           <Route exact path='/user-register' component={UserSignup} />
           <Route exact path='/user-login' component={UserLogin} />
           <AdminRoute exact path='/addMovie' component={AddMovie} />
           <AdminRoute exact path='/addCinema' component={AddCinema} />
           <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />
         </Switch>
-        <Footer/>
+        
       </Fragment>
     </Router>
     </Provider>

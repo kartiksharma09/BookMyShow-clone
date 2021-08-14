@@ -157,26 +157,8 @@ const getCinema = async(req, res) => {
             return res.status(400).json({ msg: "There is no cinema for this user" });
         }
 
-
-        const movieList = [];
-        for (var i of cinema.Movies) {
-            const movie = await movieModel.findById(i.movieId);
-            movieList.push(movie);
-        }
-        // console.log(movieList);
-        // const movies = await Cinema.find()
-
-        // console.log('cin', cinema);
-        const newData = {...cinema };
-        console.log(movieList);
-        newData.Movie = movieList;
-        // cinema.Movies = movieList;
-        // console.log("bakcend", newData);
-        return res.status(200).json({
-            a: newData,
-            b: movieList,
-            c: cinema
-        });
+        return res.status(200).json(
+            cinema);
     } catch (err) {
         res.status(500).send("Server error");
     }

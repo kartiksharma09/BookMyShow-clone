@@ -59,9 +59,9 @@ const addMovie = async(req, res, next) => {
 
 const getAllMovies = async(req, res, next) => {
     const movies = await movieModel.find();
-    res.status(200).json({
+    res.status(200).json(
         movies
-    });
+    );
 };
 
 
@@ -75,7 +75,14 @@ const searchMovie = async(req, res, next) => {
     }
 
     const { movieName } = req.body;
+
     const searchedMovie = await movieModel.findOne({ movieName: movieName });
+    if (!searchedMovie) {
+        return next({
+            status: 404,
+            errors: "movie not found"
+        });
+    }
     const searchCinema = await cinemaModel.find({
         "Movies.movieId": searchedMovie._id
     });

@@ -29,7 +29,7 @@ const movie = (state = initialState, action) => {
         case GET_MOVIES:
             return {
                 ...state,
-                movies: [payload],
+                movies: payload,
                 loading: false
             }
 
@@ -37,6 +37,7 @@ const movie = (state = initialState, action) => {
         case NO_MOVIE:
             return {
                 ...state,
+                movie:null,
                 error: payload,
                 loading: false
             }

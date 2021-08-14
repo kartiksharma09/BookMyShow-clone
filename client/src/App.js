@@ -14,8 +14,8 @@ import Alerts from "./component/layout/Alerts";
 import HomePage from './component/User/HomePage';
 import {getAllMovies} from './actions/movie';
 import Adminlanding  from './component/Admin/Adminlandin';
-import AdminRegister  from './component/admin-auth/AdminRegister'
-import AdminLogin from './component/admin-auth/AdminLogin';
+import AdminRegister  from './component/Admin-auth/AdminRegister'
+import AdminLogin from './component/Admin-auth/AdminLogin';
 import AddMovie from './component/Admin/AddMovie';
 import AdminRoute from "./component/routing/AdminRoute";
 import Movie from './component/movies/Movie';

@@ -73,7 +73,7 @@ const searchMovie = async(req, res, next) => {
             errors: errors.array()
         });
     }
-
+    
     const { movieName } = req.body;
 
     const searchedMovie = await movieModel.find({ movieName: movieName });

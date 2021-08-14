@@ -23,6 +23,7 @@ import AddCinema from './component/Admin/AddCineme';
 import UserSignup from './component/user-auth/UserSignup';
 import UserLogin from './component/user-auth/UserLogin';
 import PrivateRoute from './component/routing/PrivateRoute';
+import {About} from './component/layout/About';
 
 
 if(localStorage.token){
@@ -48,6 +49,7 @@ function App() {
           <Route exact path='/admin-landing' component={Adminlanding} />
           <Route exact path='/admin-register' component={AdminRegister} />
           <Route exact path='/admin-login' component={AdminLogin} />
+          <Route exact path="/about" component={About} />
           <PrivateRoute exact path="/movie/:movieName" component={Movie} />
           <PrivateRoute exact path="/search-movies" component={HomePage} />
           <Route exact path='/user-register' component={UserSignup} />
@@ -56,7 +58,6 @@ function App() {
           <AdminRoute exact path='/addCinema' component={AddCinema} />
           <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />
         </Switch>
-        
       </Fragment>
     </Router>
     </Provider>

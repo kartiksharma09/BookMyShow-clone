@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -10,6 +10,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 
 
 const Footer = () => {
+
   return (
     <Fragment>
       <footer className='page-footer font-small w-100'>
@@ -24,7 +25,7 @@ const Footer = () => {
 
               <ul className='list-unstyled'>
                 <li>
-                  <Link to='#!' className='footer_info'>
+                  <Link to='/about' className='footer_info'>
                     About Us
                   </Link>
                 </li>

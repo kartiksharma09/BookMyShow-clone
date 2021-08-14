@@ -21,14 +21,16 @@ const adminLogin = async(req, res, next) => {
         });
     }
     const { email, password } = req.body;
+    console.log(req.body);
 
     let user = await User.findOne({ email });
+    console.log(user);
     if (!user) {
         return next({
             status: 400,
             errors: "Invalid Credentials"
         });
-    } else if (user.isAdmin !== true){
+    } else if (user.isAdmin !== true) {
 
         return next({
             status: 400,
@@ -36,6 +38,7 @@ const adminLogin = async(req, res, next) => {
         });
     }
     const isMatch = await bcrypt.compare(password, user.password);
+    console.log(isMatch);
     if (!isMatch) {
         return next({
             status: 400,

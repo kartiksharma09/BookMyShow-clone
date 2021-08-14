@@ -1,10 +1,11 @@
 import React, { Fragment } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 
-
-const Landing = ({isAuthenticated}) => {
+import {getAllMovies} from '../../actions/movie';
+const Landing = ({isAuthenticated,getAllMovies}) => {
+  getAllMovies()
   if(isAuthenticated){
     return <Redirect to="/adminDashBoard" />
   }
@@ -36,12 +37,12 @@ const Landing = ({isAuthenticated}) => {
 };
 
 Landing.propTypes = {
-  isAuthenticated:PropTypes.bool,
+  isAuthenticated:propTypes.bool,
+  getAllMovies: propTypes.func
 }
-
 
 const mapStateToProps = state => ({
   isAuthenticated:state.auth.isAuthenticated
 })
 
-export default connect(mapStateToProps)(Landing);
+export default connect(mapStateToProps,{getAllMovies})(Landing);

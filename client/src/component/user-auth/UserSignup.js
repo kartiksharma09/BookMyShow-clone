@@ -36,7 +36,7 @@ const UserSignup = ({ setAlert, RegisterAction, auth:{loading, isAuthenticated} 
   };
 
   if (!loading && isAuthenticated ){
-    return <Redirect to="/userDashboard" />;
+    return <Redirect to="/search-movies" />;
   }
 
   return (

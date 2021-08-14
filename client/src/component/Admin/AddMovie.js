@@ -15,6 +15,7 @@ const AddMovie = ({setAlert,addMovieAction}) => {
     language: "",
     genre: "",
     price:""
+
   });
 
   const [actors, setActor] = useState([]);
@@ -28,6 +29,7 @@ const AddMovie = ({setAlert,addMovieAction}) => {
   const { actor, character, characterImg } = actorData;
 
   const { aboutTheMovie, language, movieName, posterUrl, price, timeDuration } =
+
     formData;
 
   const onChange = (e) =>
@@ -229,6 +231,7 @@ const AddMovie = ({setAlert,addMovieAction}) => {
               <div className="form-group">
                 <textarea
                   placeholder="write the discription of your movie"
+
                   name="aboutTheMovie"
                   value={aboutTheMovie}
                   onChange={(e) => onChange(e)}
@@ -344,3 +347,4 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps,{setAlert,addMovieAction})(AddMovie);
+

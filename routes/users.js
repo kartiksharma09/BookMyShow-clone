@@ -6,7 +6,7 @@ const { bookTickets } = require('../controllers/tickets');
 const isVerify = require('../middleware/auth');
 const { cancelTicket, GetTickets } = require('../controllers/tickets');
 const { getAllMovies, searchMovie } = require('../controllers/movies');
-const {searchCinema} = require('../controllers/cinema');
+
 
 //@route  POST api/users/signup
 //desc    Register user
@@ -47,14 +47,14 @@ router.post("/tickets/:cinemaId/:movieId", isVerify, [
         check("bookingDate", "bookingDate is required").not().isEmpty()
     ],
     bookTickets
-)
+);
 
 //@route  DELETE /api/users/tickets/ticketId
 //desc    cancel tickets
 //access  public
 
-router.delete("/tickets/:ticketId", isVerify, cancelTicket)
-router.get("/tickets", isVerify, GetTickets)
+router.delete("/tickets/:ticketId", isVerify, cancelTicket);
+router.get("/tickets", isVerify, GetTickets);
 
 
 //@route  GET /api/users/movies/allmovies
@@ -63,9 +63,7 @@ router.get("/tickets", isVerify, GetTickets)
 
 router
     .get(
-        '/movies/allmovies',
-        getAllMovies
-    );
+        '/movies/allmovies', getAllMovies);
 
 
 //@route  POST /api/users/movies/searchMovie
@@ -74,18 +72,12 @@ router
 
 router
     .post(
-        '/movies/searchMovie', [
+        '/movies/searchmovie', [
+            // isVerify,
             check('movieName', 'movie name is required').not().isEmpty()
         ], searchMovie
     );
 
-//@route  GET /api/users/cinemas/cinema
-//desc    get Cinema details by CinemaName
-//access private
 
-router.get('/cinemas/searchCinema',[
-    check('cinemaName', 'cinema name is required').not().isEmpty()
-], searchCinema
-);
 
 module.exports = router;

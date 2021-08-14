@@ -6,6 +6,7 @@ import {assignMovie} from "../../actions/cinema"
 
 
 export const AssignMovieCinema = ({setAlert,cinemaId, assignMovie}) => {
+  console.log("cinema", cinemaId);
     const [formData, setFormData] = useState({
         movieName: "",
         from: "",

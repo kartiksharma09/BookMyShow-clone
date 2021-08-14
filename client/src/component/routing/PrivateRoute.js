@@ -5,7 +5,7 @@ import { Redirect, Route } from "react-router";
 
 const PrivateRoute = ({
   component: Component,
-  auth: { isAuthenticated, loading, user },
+  auth: { isAuthenticated, loading},
   ...rest
 }) => (
   <Route
@@ -20,7 +20,7 @@ const PrivateRoute = ({
   />
 );
 
-AdminRoute.propTypes = {
+PrivateRoute.propTypes = {
   auth: PropTypes.object.isRequired,
 };
 

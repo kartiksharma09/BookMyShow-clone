@@ -16,7 +16,7 @@ const user = require('./routes/users');
 
 const admin = require('./routes/admin');
 
-const auth = require("./routes/auth")
+const auth = require("./routes/auth");
 
 app.use('/api/users', user);
 app.use('/api/admins', admin);

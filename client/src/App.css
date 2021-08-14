@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+html {
+    height: 100vh;
+}
+
 .icon-main {
     width: 8rem;
     height: 3rem;
@@ -94,6 +98,12 @@ footer {
     text-decoration: none;
     color: #ccc;
 }
+
+
+/* .page-footer {
+    position: fixed;
+    bottom: 0;
+} */
 
 
 /* vvv */
@@ -271,13 +281,155 @@ footer {
 
 .alerts {
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 3rem;
-    opacity: 0.9;
+    opacity: 1.9;
+    z-index: 1;
+}
+
+
+/* user form css */
+
+.user_form .userFormGroup {
+    margin: 1.2rem 0;
+}
+
+.user_form .form-text {
+    display: block;
+    margin-top: 0.3rem;
+    color: #888;
+}
+
+.user_form input[type='text'],
+.user_form input[type='email'],
+.user_form input[type='password'],
+.user_form input[type='date'],
+.user_form select,
+.user_form textarea {
+    display: block;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+}
+
+.user_form input[type='submit'],
+button {
+    font: inherit;
+}
+
+
+/* moviecard css */
+
+.admin_movies_card:hover {
+    cursor: pointer;
+}
+
+.movie-image {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 55vh;
+    border-radius: 25px;
+}
+
+.movie-title {
+    color: #FFFFFF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.movie-genro {
+    color: #FFFFFF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.movie-details_sec {
+    height: 55vh;
+    background: transparent;
+}
+
+.movie-bg-sec {
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    object-fit: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5));
+}
+
+.duration_sec,
+.genre_sec,
+.language_sec {
+    color: #FFFFFF;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.actor_img_sec {
+    border-radius: 100px;
+    height: 23vh;
+    width: 11vw;
+}
+
+.release_details_sec {
+    border: 2px dashed yellow;
+    background-color: #FFFACD;
+    /* alerts css */
 }
 
 .landing_carousal {
-    transform: scale(1);
-    transition: transform 0.5s;
-    height: 35rem;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
+
+
+/*homepage*/
+
+.landing_sec {
+    height: 100vh;
+}
+
+.carousel-inner .carousel-item {
+    height: 100vh !important;
+}
+
+.banner {
+    height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.main-menu-logo {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: #b1b1b14f;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff !important;
+}
+
+.nav-item a {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0px 20px !important;
+    color: #fff !important;
+}
+
+.nav-item a:hover {
+    color: #000 !important;
+}
+
+.carousel-caption {
+    bottom: 40%;
+    display: block !important;
+}
+
+@media (min-width: 0px) and (max-width: 768px) {
+    .carousel-caption {
+        bottom: 30%;
+        display: block !important;
+    }
 }

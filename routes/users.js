@@ -6,7 +6,7 @@ const { bookTickets } = require('../controllers/tickets');
 const isVerify = require('../middleware/auth');
 const { cancelTicket, GetTickets } = require('../controllers/tickets');
 const { getAllMovies, searchMovie } = require('../controllers/movies');
-const { searchCinema } = require('../controllers/cinema');
+
 
 //@route  POST api/users/signup
 //desc    Register user
@@ -28,11 +28,11 @@ router.post(
 //access  public
 
 router.post(
-    "/login", [check("email", "please include a valid email").not().isEmail(),
+    "/login", [check("email", "please include a valid email").isEmail(),
         check(
             "password",
             "please enter a password with 8 or more characters"
-        ).not().isLength({ min: 8 })
+        ).isLength({ min: 8 })
     ],
     loginUser
 );
@@ -78,12 +78,6 @@ router
         ], searchMovie
     );
 
-//@route  GET /api/users/cinemas/cinema
-//desc    get Cinema details by CinemaName
-//access private
 
-router.get('/cinemas/searchCinema', [
-    check('cinemaName', 'cinema name is required').not().isEmpty()
-], searchCinema);
 
 module.exports = router;

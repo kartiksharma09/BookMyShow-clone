@@ -1,13 +1,36 @@
 import axios from "axios";
 import { setAlert } from "./alerts";
 import {
+
     GET_MOVIE,
     MOVIE_ERROR,
-    SEARCH_MOVIES,
-    SEARCH_MOVIES_FAIL,
     SEARCH_MOVIE,
-    NO_MOVIE
+    NO_MOVIE,
+    GET_MOVIES
 } from "./types";
+
+// /api/users/movies/allmovies
+//Get all Movies
+export const getAllMovies = () => async dispatch => {
+
+    try {
+        const res = await axios.get('/api/users/movies/allmovies');
+        // console.log(res.data)
+        dispatch({
+            type: GET_MOVIES,
+            payload: res.data
+        });
+
+    } catch (err) {
+        console.log(err);
+        dispatch({
+            type: MOVIE_ERROR,
+            payload: { msg: err.response.statusText, status: err.response.status }
+        });
+    }
+}
+
+
 
 
 
@@ -46,38 +69,6 @@ export const addMovieAction =
     };
 
 
-
-
-//search for all movies
-export const getAllMovies = () => async dispatch => {
-    try {
-        const res = await axios.get('/api/users/movies/allmovies');
-        dispatch({
-            type: SEARCH_MOVIES,
-            payload: res.data
-        });
-
-    } catch (err) {
-        console.log(err);
-        const errors = err.response.data.errors;
-        if (errors) {
-            errors.forEach((error) => {
-                dispatch(setAlert(error.msg, "danger"));
-            });
-        }
-
-        dispatch({
-            type: SEARCH_MOVIES_FAIL,
-            payload: { msg: err.response.statusText, status: err.response.status }
-        });
-    }
-};
-
-
-//search a movie by name
-
-
-
 export const searchMovieByName = (
     movieName
 ) => async dispatch => {
@@ -113,4 +104,4 @@ export const searchMovieByName = (
             payload: { msg: err.response.statusText, status: err.response.status }
         });
     }
-};
+}

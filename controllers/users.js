@@ -63,6 +63,7 @@ const createUser = async(req, res, next) => {
 
 
 const loginUser = async(req, res, next) => {
+    console.log(res.body)
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return next({

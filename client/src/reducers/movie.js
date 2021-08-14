@@ -1,10 +1,13 @@
-import {REGISTER_FAIL,
+import {
     MOVIE_ERROR,
     GET_MOVIE,
+    GET_MOVIES,
+    SEARCH_MOVIE,
+    NO_MOVIE
 } from "../actions/types";
 
 const initialState = {
-    movie:null,
+    movie: null,
     movies: [],
     loading: true,
     error: {}
@@ -13,17 +16,28 @@ const initialState = {
 
 const movie = (state = initialState, action) => {
     const { type, payload } = action;
-    
+
     switch (type) {
         case GET_MOVIE:
-            return { 
-                ...state,
-                movie: payload,
-                loading: false
-            }
-        case MOVIE_ERROR:
+        case SEARCH_MOVIE:
             return {
                 ...state,
+                movie: payload,
+                movies: [payload, ...state.movies],
+                loading: false
+            };
+        case GET_MOVIES:
+            return {
+                ...state,
+                movies: payload,
+                loading: false
+            }
+
+        case MOVIE_ERROR:
+        case NO_MOVIE:
+            return {
+                ...state,
+                movie:null,
                 error: payload,
                 loading: false
             }

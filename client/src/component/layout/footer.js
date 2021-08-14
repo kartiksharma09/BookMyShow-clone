@@ -10,7 +10,7 @@ import YouTubeIcon from '@material-ui/icons/YouTube';
 const Footer = () => {
   return (
     <Fragment>
-      <footer className='page-footer font-small '>
+      <footer className='page-footer font-small w-100'>
         {/* 1 */}
 
         <div className='container text-center text-md-left '>
@@ -196,12 +196,7 @@ const Footer = () => {
         {/* 2 */}
         <div className='footer-copyright bg-dark test-light text-center py-3'>
           © 2021 Copyright:
-          <Link
-            to={{ pathname: 'https://www.linkedin.com/in/rohitsharma7065/' }}
-            target='_blank'
-          >
-            Rohit
-          </Link>
+          
         </div>
       </footer>
     </Fragment>

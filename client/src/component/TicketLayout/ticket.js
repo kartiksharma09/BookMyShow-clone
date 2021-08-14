@@ -5,13 +5,16 @@ import bookTickets from '../../actions/tickets';
 import propTypes from 'prop-types'
 import { connect } from 'react-redux';
 
-const Tickets = ({bookTickets}) => {
+const Tickets = ({ bookTickets, Movie}) =>{
     const [name, setName] = useState([]);
     const [age, setAge] = useState([]);
     const [gender, setGender] = useState([]);
     const [seatNumber, setSeatnumber] = useState([]);
     const [isok, setIsok] = useState(false);
     const [Booking, setBookingdate] = useState(new Date());
+
+    const movieId = Movie._id
+    // const cinemaId = Movie.releaseDetails[0]._id
 
     const getSeatNumber = (e) => {
         let newSeat = Number(e.target.id);
@@ -64,7 +67,10 @@ const Tickets = ({bookTickets}) => {
                 watchers.push({ name: name, age: age, gender: gender })
             }
         }
+
         bookTickets({
+            movieId,
+            // cinemaId,
             seatNumber,
             watchers,
             Booking
@@ -362,8 +368,8 @@ const Tickets = ({bookTickets}) => {
 Tickets.propTypes = ({
     bookTickets: propTypes.func.isRequired,
 })
-const mapStateToProps = state => ({
-    
+const mapStateToProps = (state) => ({
+    Movie:state.movie.movie.searchedMovie,
 })
 
 export default connect(mapStateToProps, { bookTickets })(Tickets);

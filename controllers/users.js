@@ -23,6 +23,8 @@ const createUser = async(req, res, next) => {
     }
 
     const { name, email, password, isAdmin } = req.body;
+
+    console.log(req.body);
     // console.log(req.body);
 
     let user = await User.findOne({ email });
@@ -61,6 +63,7 @@ const createUser = async(req, res, next) => {
 
 
 const loginUser = async(req, res, next) => {
+    console.log(res.body)
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return next({

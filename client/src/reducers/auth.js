@@ -1,4 +1,6 @@
-import {REGISTER_FAIL,
+
+import {
+    REGISTER_FAIL,
     REGISTER_SUCCESS,
     AUTH_ERROR,
     USER_LOADED,

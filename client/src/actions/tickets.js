@@ -10,7 +10,7 @@ import {
 } from "./types";
 
 // Register Action //
-const bookTickets = ({ seatNumber, watchers, Booking }) => async (dispatch) => {
+const bookTickets = ({movieId,cinemaId, seatNumber, watchers, Booking }) => async (dispatch) => {
     console.log("enetr the movie")
     const config = {
         headers: {

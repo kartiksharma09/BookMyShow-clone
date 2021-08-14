@@ -3,14 +3,21 @@ import { Link ,useHistory} from 'react-router-dom';
 import propTypes from 'prop-types'
 import { connect } from 'react-redux';
 import {Spinner} from '../layout/Spinner';
+import {searchMovieByName} from '../../actions/movie';
 
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import lead from '../../images/lead.webp'
 
-const Cards = ({movie:{movies,loading}}) => {
-const  a = 0;
-  console.log(movies)
+const Cards = ({movie:{movies,loading},searchMovieByName}) => {
+const History = useHistory()
+
+  const SearchMovie = async(movieName)=>{
+   
+   await searchMovieByName(movieName)
+    History.push(`/movie/${movieName}`)
+  }
+
   return movies !== null  && !loading ? (   
     <Fragment>
       <div className='col-12'>
@@ -69,7 +76,7 @@ const  a = 0;
               movies=>
               (<Fragment>
                    <div className="col-3">
-                      <div className="card movie-image my-3" style={{backgroundImage: `url(${movies.posterUrl})`}}>
+                      <div className="card movie-image my-3" style={{backgroundImage: `url(${movies.posterUrl})`}}  onClick={()=>SearchMovie(movies.movieName)}>
                           <div className="card-body"></div>
                           <div className="card-footer">
                             <h5 className="movie-title">{movies.movieName}</h5>
@@ -89,10 +96,11 @@ const  a = 0;
 };
 
 Cards.propTypes = {
-  movie: propTypes.object
+  movie: propTypes.object,
+  searchMovieByName: propTypes.func
 }
 
 const mapStateToProps = state => ({
   movie: state.movie
 })
-export default connect(mapStateToProps)(Cards);
+export default connect(mapStateToProps,{searchMovieByName})(Cards);

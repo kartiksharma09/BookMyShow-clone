@@ -8,11 +8,11 @@ const CinemaSchema = new mongoose.Schema({
     },
     cinemaName: {
         type: String,
+        index:true,
         required: true
     },
     locationOfCinema: {
         type: String,
-        index: true,
         required: true
     },
     seats: {

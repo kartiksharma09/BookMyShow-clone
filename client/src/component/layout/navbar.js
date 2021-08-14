@@ -9,13 +9,11 @@ import PropTypes from 'prop-types'
 
 const NavBar = ({ auth: { isAuthenticated }, logout }) => {
   const authLinks = (
-    <ul>
-      <li>
+    <div className="mb-4">
         <Link onClick={logout} to="/" className="btn btn-danger">
           Logout
         </Link>
-      </li>
-    </ul>
+    </div>
   );
 
   const guestLink = (
@@ -50,7 +48,7 @@ const NavBar = ({ auth: { isAuthenticated }, logout }) => {
       <div className="dropdown-menu mr-5">
         <p className="ml-5 auth-links">
           <Link
-            to="/register"
+            to="/user-register"
             className="text-dark text-center text-decoration-none"
           >
             Register
@@ -58,7 +56,7 @@ const NavBar = ({ auth: { isAuthenticated }, logout }) => {
         </p>
         <p className="ml-5 auth-links">
           <Link
-            to="/register"
+            to="/user-login"
             className="text-dark text-center text-decoration-none"
           >
             Login
@@ -66,7 +64,7 @@ const NavBar = ({ auth: { isAuthenticated }, logout }) => {
         </p>
         <p className="ml-5 auth-links">
           <Link
-            to="/register"
+            to="/user-register"
             className="text-dark text-center text-decoration-none"
           >
             About us

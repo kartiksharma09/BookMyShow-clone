@@ -28,7 +28,7 @@ export const loadUser = () => async(dispatch) => {
             payload: res.data,
         });
     } catch (err) {
-        console.log(err)
+        console.log(err);
         dispatch({
             type: AUTH_ERROR,
         });
@@ -93,7 +93,7 @@ export const adminLogin = (email, password) => async(dispatch) => {
 
         dispatch(loadUser());
     } catch (err) {
-        console.log(err.response, "errorrdksfls")
+        console.log(err.response, "errorrdksfls");
         const errors = err.response.data.errors;
         if (errors) {
             errors.forEach((error) => {
@@ -107,6 +107,43 @@ export const adminLogin = (email, password) => async(dispatch) => {
         dispatch(setAlert("Invalid creadentials", "danger"));
     }
 };
+
+
+
+// user loging action
+
+export const userLogin = ({ email, password }) => async(dispatch) => {
+    const config = {
+        headers: {
+            "Content-Type": "application/json",
+        },
+    };
+
+    const body = JSON.stringify({ email, password });
+
+    try {
+        const res = await axios.post("api/users/login", body, config);
+        dispatch({
+            type: LOGIN_SUCCESS,
+            payload: res.data,
+        });
+
+        dispatch(loadUser());
+    } catch (err) {
+        const errors = err.response.data.errors;
+        if (errors) {
+            errors.forEach((error) => {
+                dispatch(setAlert(error.msg, "danger"));
+            });
+        }
+        dispatch({
+            type: LOGIN_FAIL,
+        });
+
+        dispatch(setAlert("Invalid creadentials", "danger"));
+    }
+};
+
 
 // LOGOUT//
 export const logout = () => (dispatch) => {

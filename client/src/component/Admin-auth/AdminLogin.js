@@ -29,7 +29,7 @@ const AdminLogin = ({ auth: { user, loading, isAuthenticated },adminLogin }) => 
   return (
     <Fragment>
       <div className="col-12 forms-row">
-        <div class="row p-4 h-100 justify-content-center align-items-center">
+        <div className="row p-4 h-100 justify-content-center align-items-center">
           <form className="login" onSubmit={(e) => onSubmit(e)}>
             <h3 className="text-center">Admin Log In</h3>
             <input

@@ -24,6 +24,8 @@ import AdminRoute from "./component/routing/AdminRoute";
 import UserSignup from './component/user-auth/UserSignup';
 import UserLogin from './component/user-auth/UserLogin'
 
+import OurTeam from './component/layout/OurTeam';
+
 if(localStorage.token){
   setAuthToken(localStorage.token);
 }
@@ -46,6 +48,7 @@ function App() {
 
 
         <Switch>
+        <Route exact path='/our-team' component={OurTeam} />
           <Route exact path='/admin-landing' component={Adminlanding} />
           <Route exact path='/admin-register' component={AdminRegister} />
           <Route exact path='/admin-login' component={AdminLogin} />

@@ -1,12 +1,13 @@
 import React,{Fragment} from "react";
 
-export const MovieCard = ({movies}) => {
+export const MovieCard = ({movies_coming}) => {
+  console.log(movies_coming)
   return (
     <Fragment>
       <div className="col-12">
         <div className="container">
           <div className="row">
-              {movies.length === 0 ? (<Fragment>No Movies Found</Fragment>) : (movies.map(movie=><div className="col-3">
+              {movies_coming.length === 0 ? (<Fragment>No Movies Found</Fragment>) : (movies_coming.map(movie=><div className="col-3">
               <div
                 className="card movie-image admin_movies_card my-3"
                 style={{

@@ -11,8 +11,8 @@ import setAuthToken from './utils/setAuthToken'
 import Footer from './component/layout/footer';
 import { AdminDashBoard } from './component/Admin/adminDashBoard';
 import Alerts from "./component/layout/Alerts";
-
-
+import HomePage from './component/User/HomePage';
+import {getAllMovies} from './actions/movie';
 import Adminlanding  from './component/Admin/Adminlandin';
 import AdminRegister  from './component/admin-auth/AdminRegister'
 import AdminLogin from './component/admin-auth/AdminLogin';
@@ -28,6 +28,7 @@ if(localStorage.token){
 function App() {
   useEffect(() => {
     store.dispatch(loadUser());
+    store.dispatch(getAllMovies());
   },[])
 
   return (
@@ -43,6 +44,7 @@ function App() {
           <Route exact path='/admin-register' component={AdminRegister} />
           <Route exact path='/admin-login' component={AdminLogin} />
           <Route exact path="/movie/:movieName" component={Movie} />
+          <Route exact path="/homepage" component={HomePage} />
           <AdminRoute exact path='/addMovie' component={AddMovie} />
           <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />
         </Switch>

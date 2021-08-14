@@ -19,7 +19,10 @@ const movie = (state = initialState, action) => {
             return { 
                 ...state,
                 movie: payload,
+<<<<<<< HEAD
                 movies:[payload,...state.movies],
+=======
+>>>>>>> ceaead13ea6638bc0ba3664ae0dfeab01ac442b5
                 loading: false
             }
         case MOVIE_ERROR:

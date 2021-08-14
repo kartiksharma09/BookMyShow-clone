@@ -33,11 +33,26 @@ const AdminDashBoard = ({ auth: { user }, Mycinema: { cinema, loading,movies }, 
                 role='tablist'
                 aria-orientation='vertical'
               >
+<<<<<<< HEAD
                 <div className="form-row justify-content-between">
                 <button class="btn btn-primary mt-3" style={{ width: '300px', display: 'block' }} type="button" data-toggle="collapse" data-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample">
                     Assign Movie To Your Cinema
                   </button>
                 <Link
+=======
+                <Link
+                  className='nav-link active btn btn-danger my-1'
+                  id='v-pills-home-tab'
+                  data-toggle='pill'
+                  role='tab'
+                  aria-controls='v-pills-home'
+                  aria-selected='true'
+                >
+                  Home
+                </Link>
+                <Link
+                to="/addMovie"
+>>>>>>> ceaead13ea6638bc0ba3664ae0dfeab01ac442b5
                   className='nav-link btn btn-danger my-1'
                   style={{ width: '200px', display: 'block' }}
                 >
@@ -70,8 +85,69 @@ const AdminDashBoard = ({ auth: { user }, Mycinema: { cinema, loading,movies }, 
                   aria-selected='false'
                   style={{ width: '200px', display: 'block' }}
                 >
+<<<<<<< HEAD
                   ADD CINEMA
                 </Link>
+=======
+                  AddMovie
+                </Link>
+                <Link
+                  className='nav-link btn btn-danger my-1'
+                  id='v-pills-messages-tab'
+                  data-toggle='pill'
+                  role='tab'
+                  aria-controls='v-pills-messages'
+                  aria-selected='false'
+                >
+                  AddCinema
+                </Link>
+                <Link
+                  className='nav-link btn btn-danger my-1'
+                  id='v-pills-settings-tab'
+                  data-toggle='pill'
+                  role='tab'
+                  aria-controls='v-pills-settings'
+                  aria-selected='false'
+                >
+                  Delete your Agency
+                </Link>
+              </div>
+            </div>
+            <div className='col-9'>
+              <div className='tab-content' id='v-pills-tabContent'>
+                <div
+                  className='tab-pane fade show active'
+                  id='v-pills-home'
+                  role='tabpanel'
+                  aria-labelledby='v-pills-home-tab'
+                >
+                  
+                </div>
+                <div
+                  className='tab-pane fade'
+                  id='v-pills-profile'
+                  role='tabpanel'
+                  aria-labelledby='v-pills-profile-tab'
+                >
+                  ...
+                </div>
+                <div
+                  className='tab-pane fade'
+                  id='v-pills-messages'
+                  role='tabpanel'
+                  aria-labelledby='v-pills-messages-tab'
+                >
+                 <AddCinema/>
+                </div>
+                <div
+                  className='tab-pane fade'
+                  id='v-pills-settings'
+                  role='tabpanel'
+                  aria-labelledby='v-pills-settings-tab'
+                >
+                  ...
+                </div>
+>>>>>>> ceaead13ea6638bc0ba3664ae0dfeab01ac442b5
               </div>
             </Fragment>)}
           </div>

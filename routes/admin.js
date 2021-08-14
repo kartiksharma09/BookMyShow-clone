@@ -12,7 +12,7 @@ const { cinema, assignMovieToCinema, getCinema } = require("../controllers/cinem
 // Get the current user profile
 router.get("/my-cinema", isVerify, isAdmin,getCinema)
 
-//@route  POST api/admins/admin/login
+//@route  POST api/admins/login
 //desc    Login admin
 //access  public
 

@@ -39,7 +39,6 @@ const Movie = ({ movie: { movie, loading }, searchMovieByName }) => {
                                     <i className="far fa-dot-circle"></i>
                                     <div>{movie.searchedMovie.genre}</div>
                                     <div>{movie.searchedMovie.language}</div>
-
                                 </div>
                                 <div className="card-footer text-center border-top-0">
                                     <button type="button" className="btn btn-danger btn-lg w-50"

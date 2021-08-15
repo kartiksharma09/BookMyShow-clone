@@ -3,11 +3,13 @@ import propTypes from 'prop-types'
 import { connect } from 'react-redux';
 import {Spinner} from '../layout/Spinner';
 import {searchMovieByName} from '../../actions/movie';
-import {useParams} from 'react-router-dom';
+import {useParams,useHistory} from 'react-router-dom';
 import {NotFound} from '../layout/NotFound';
 const Movie = ({movie:{movie,loading},searchMovieByName}) => {
 
     let {movieName} = useParams();
+
+    let history = useHistory()
    
     useEffect(()=>{
         searchMovieByName(movieName)
@@ -40,7 +42,7 @@ const Movie = ({movie:{movie,loading},searchMovieByName}) => {
                                         
                                 </div>
                                 <div className="card-footer text-center border-top-0">
-                                <button type="button" className="btn btn-danger btn-lg w-50">Book<i className="bi-check2-circle"></i></button>
+                                <button type="button" className="btn btn-danger btn-lg w-50" onClick={()=>{history.push("/movie/cinemas")}}>Book<i className="bi-check2-circle"></i></button>
                                 </div>
                             </div>
                                 
@@ -77,72 +79,6 @@ const Movie = ({movie:{movie,loading},searchMovieByName}) => {
                            </Fragment>
                        ))}
                    </div>
-               </div>
-           </div>
-           <div className="container">
-               <div className="h3">
-                   Release Details
-               </div>
-               <div className="col-12 my-3">
-                   { !movie.searchedMovie.releaseDetails.length ? <p className="h4"><i className="fas fa-sad-tear"></i> {' '}
-
-Not Available in theaters</p> : (
-                       <div className="row">
-                       {movie.searchedMovie.releaseDetails.map(cinema=>(
-                           <Fragment>
-                                <div className="col-3 mb-2">
-                                    <div className="card release_details_sec">
-                                        <div className="card-body">
-                                            <div className="cinemaName_sec">
-                                                <div className="d-flex w-30">
-                                                    <div>
-                                                        <i className="fas fa-film"></i>
-                                                    </div>
-                                                    <div>
-                                                        {cinema.cinemaName}
-                                                    </div>
-                                                </div>
-                                                <div className="d-flex">
-                                                    <div>
-                                                    <i className="fas fa-map-marked-alt"></i>
-                                                    </div>
-                                                    <div>
-                                                    {cinema.locationOfCinema}
-                                                    </div>
-                                                </div>
-                                                <div className="d-flex">
-                                                    <div>
-                                                        <i className="fas fa-stopwatch"></i>
-                                                    </div>
-                                                    <div>
-                                                    {cinema.from}
-                                                    </div>
-                                                    <div>
-                                                    {cinema.to} 
-                                                    </div>
-                                                </div>
-                                                <div className="d-flex">
-                                                    <div>
-                                                        <i className="fas fa-calendar-alt"></i>
-                                                    </div>
-                                                    <div>
-                                                    {cinema.startDate}
-                                                    </div>
-                                                        to
-                                                    <div>
-                                                    {cinema.endDate}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                           </Fragment>
-                       ))}
-                   </div>
-
-                   )}
-                              
                </div>
            </div>
         </Fragment> 

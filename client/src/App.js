@@ -23,9 +23,10 @@ import AddCinema from './component/Admin/AddCineme';
 import UserSignup from './component/user-auth/UserSignup';
 import UserLogin from './component/user-auth/UserLogin';
 import PrivateRoute from './component/routing/PrivateRoute';
-
-
+import Cinemas from './component/User/Cinemas';
 import OurTeam from './component/layout/OurTeam';
+
+
 
 if(localStorage.token){
   setAuthToken(localStorage.token);
@@ -47,14 +48,15 @@ function App() {
         <Route exact path='/' component={Cards} />
         <Route exact path='/' component={Footer} />
         <Switch>
-        <Route exact path='/our-team' component={OurTeam} />
           <Route exact path='/admin-landing' component={Adminlanding} />
           <Route exact path='/admin-register' component={AdminRegister} />
           <Route exact path='/admin-login' component={AdminLogin} />
-          <PrivateRoute exact path="/movie/:movieName" component={Movie} />
-          <PrivateRoute exact path="/search-movies" component={HomePage} />
           <Route exact path='/user-register' component={UserSignup} />
           <Route exact path='/user-login' component={UserLogin} />
+          <Route exact path='/about' component={OurTeam} />
+          <PrivateRoute exact path='/movie/cinemas' component={Cinemas} />
+          <PrivateRoute exact path="/search-movies" component={HomePage} />
+          <PrivateRoute exact path="/movie/:movieName" component={Movie} />
           <AdminRoute exact path='/addMovie' component={AddMovie} />
           <AdminRoute exact path='/addCinema' component={AddCinema} />
           <AdminRoute exact path='/adminDashBoard' component={AdminDashBoard} />

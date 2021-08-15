@@ -24,7 +24,7 @@ const Footer = () => {
 
               <ul className='list-unstyled'>
                 <li>
-                  <Link to='#!' className='footer_info'>
+                  <Link to='/about' className='footer_info'>
                     About Us
                   </Link>
                 </li>

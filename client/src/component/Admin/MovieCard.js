@@ -10,8 +10,7 @@ export const MovieCard = ({ movies, Movies }) => {
     moviesId.push(movie.movieId);
   }
 
-  // console.log(moviesId)
-  // const movieId;
+
   return (
     <Fragment>
       <div className="col-12">

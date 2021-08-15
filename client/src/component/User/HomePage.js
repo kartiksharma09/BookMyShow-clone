@@ -8,7 +8,7 @@ const HomePage = ({movie:{movies,loading},getAllMovies}) => {
 
   useEffect(() => {
     getAllMovies()
-  }, [getAllMovies])
+  }, [])
 
     const posters = [];
     

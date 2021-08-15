@@ -98,7 +98,6 @@ const AddMovie = ({setAlert,addMovieAction}) => {
                   value={timeDuration}
                   onChange={(e) => onChange(e)}
                   required
-                  required
                 />
               </div>
               <div className="form-group">

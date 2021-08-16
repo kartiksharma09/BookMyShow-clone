@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { useHistory } from "react-router";
 
 const Cinemas = ({searchedMovie:{releaseDetails,price}}) => {
+  let history = useHistory()
   return (
     <Fragment>
       <div className="container">
@@ -16,7 +18,7 @@ const Cinemas = ({searchedMovie:{releaseDetails,price}}) => {
             <div className="row">
               {releaseDetails.map((cinema) => (
                 <Fragment>
-                  <div className="col-3 mb-2">
+                  <div className="col-3 mb-2" id={cinema._id} onClick={()=>{history.push(`/movie/cinemas/${cinema._id}`)}}>
                     <div className="card release_details_sec">
                       <div className="card-body">
                         <div className="cinemaName_sec">
@@ -43,9 +45,8 @@ const Cinemas = ({searchedMovie:{releaseDetails,price}}) => {
                             <div>
                               <i className="fas fa-calendar-alt"></i>
                             </div>
-                            <div>{cinema.startDate}</div>
-                            <div>to</div>
-                            <div>{cinema.endDate}</div>
+                            <div>{cinema.startDate} to {cinema.endDate}
+                            </div>
                           </div>
                         </div>
                         <div><i class="fas fa-dollar-sign"></i> {price}</div>

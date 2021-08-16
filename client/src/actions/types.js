@@ -20,3 +20,7 @@ export const ASSIGN_ERROR = "ASSIGN_ERROR";
 export const CINEMA_ERROR = "CINEMA_ERROR";
 export const NO_MOVIE = 'NO_MOVIE';
 export const SEARCH_MOVIE = 'SEARCH_MOVIE';
+export const TICKETS_NOTFOUND = 'TICKETS_NOTFOUND'
+export const TICKETS = 'TICKETS'
+export const CANCEL_TICKET_FAIL = 'CANCEL_TICKET_FAIL'
+export const CANCEL_TICKET = 'CANCEL_TICKET'

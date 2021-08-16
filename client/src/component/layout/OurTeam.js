@@ -1,5 +1,10 @@
 import React, { Fragment } from "react";
 import "../../css/ourteam.css"
+import rohit from "../../images/rohit-image.jpeg"
+import kartik from "../../images/newkartikphot.jpeg"
+import deepak from "../../images/deepak-image.PNG"
+import sonu from "../../images/sonu.jpeg"
+import rani from "../../images/rani.jpeg"
 const OurTeam = () => {
     return (
         <Fragment>
@@ -8,11 +13,11 @@ const OurTeam = () => {
                     <div className="col-md-4 col-sm-6">
                         <div className="our-team">
                             <div className="team-img">
-                                <img style={{ maxHeight: "450px" }} src="https://lh3.googleusercontent.com/LZzOTvvJ0tOVEWj4LStsZLPyyRcODCVnp5zyAiQ1iCyWMY28-eR8nOOxymA3OSg-amNyWkwtHY6RyGQn_KzZOukFECwvBz7Pc2o37vjH23y64JgQWJ1EGSvWbEbo9iKmgK_mOAGl3oM2NjfTcAyCftzyMYLhw4qdbc1yNYcDtm6r3LVXtcQxxV0onql9VHTWwhEQ1VZK9MBLKVBSMxXQlj2JDRDorGNSQpozhLSlzi-pETSntI_x-8RIDK8S7aPrgbiNJI7ArYV2Zudynyhz5NwOLI3OvZBPDzd0nMWj_pRavoMFsIjH_PlTtLRKaH_1_szMXf2Ak5YdKnG3rQFhUUeoiw6PHnxVIUatcOWuz5snRir5D72hi8n2rBU7J3SypEgiw4_Ylr0skEghlEkkxJ3c4UKY-6DMNIgLTv_Jr9varXAchGWmM77wUgMoz1VNmSscdgyk4tVYYTi0OhnOmfQYBjDaEmXbZyO3XY4gn_64f5DmWm-h0JOVEBBi7EqvAb2CTxECQwlSWOoXFkD0RWd6-_EeBNJeY47ZLHv14BTRxD3WFWJEIdffkQ8WkogtwGhIkpYHJ8h2E_Vk3ddbavVhIpVbjHRHzz_QzSfufY9eQj3Mx4S4nCilpcuf3hunQQ5w8Pmgshh401G1VIEn_qNFAE7brgIvDmiW9nFlpCp3ls_E2be4zjUBpw_8Bu7t-AYCHevN0p9VzPaIIsg1dRrq=w668-h890-no?authuser=0" />
+                                <img style={{ maxHeight: "350px" }} src={sonu} />
                             </div>
                             <div className="team-content">
                                 <h3 className="name">Sonu Shakya</h3>
-                                <span className="post">web designer</span>
+                                <span className="post">Full Stack Developer</span>
                             </div>
                             <ul className="social">
                                 <li><a href="https://github.com/sonushakya9717"><i class="fab fa-github"></i></a></li>
@@ -25,11 +30,11 @@ const OurTeam = () => {
                     <div className="col-md-4 col-sm-6">
                         <div className="our-team">
                             <div className="team-img">
-                                <img style={{ maxHeight: "450px" }} src="https://lh3.googleusercontent.com/LZzOTvvJ0tOVEWj4LStsZLPyyRcODCVnp5zyAiQ1iCyWMY28-eR8nOOxymA3OSg-amNyWkwtHY6RyGQn_KzZOukFECwvBz7Pc2o37vjH23y64JgQWJ1EGSvWbEbo9iKmgK_mOAGl3oM2NjfTcAyCftzyMYLhw4qdbc1yNYcDtm6r3LVXtcQxxV0onql9VHTWwhEQ1VZK9MBLKVBSMxXQlj2JDRDorGNSQpozhLSlzi-pETSntI_x-8RIDK8S7aPrgbiNJI7ArYV2Zudynyhz5NwOLI3OvZBPDzd0nMWj_pRavoMFsIjH_PlTtLRKaH_1_szMXf2Ak5YdKnG3rQFhUUeoiw6PHnxVIUatcOWuz5snRir5D72hi8n2rBU7J3SypEgiw4_Ylr0skEghlEkkxJ3c4UKY-6DMNIgLTv_Jr9varXAchGWmM77wUgMoz1VNmSscdgyk4tVYYTi0OhnOmfQYBjDaEmXbZyO3XY4gn_64f5DmWm-h0JOVEBBi7EqvAb2CTxECQwlSWOoXFkD0RWd6-_EeBNJeY47ZLHv14BTRxD3WFWJEIdffkQ8WkogtwGhIkpYHJ8h2E_Vk3ddbavVhIpVbjHRHzz_QzSfufY9eQj3Mx4S4nCilpcuf3hunQQ5w8Pmgshh401G1VIEn_qNFAE7brgIvDmiW9nFlpCp3ls_E2be4zjUBpw_8Bu7t-AYCHevN0p9VzPaIIsg1dRrq=w668-h890-no?authuser=0" />
+                                <img style={{ maxHeight: "350px" }} src={kartik} />
                             </div>
                             <div className="team-content">
                                 <h3 className="name">Katik Sharma</h3>
-                                <span className="post">web designer</span>
+                                <span className="post">Full Stack Developer</span>
                             </div>
                             <ul className="social">
                                 <li><a href="https://github.com/kartiksharma09"><i class="fab fa-github"></i></a></li>
@@ -41,24 +46,56 @@ const OurTeam = () => {
                     <div className="col-md-4 col-sm-6">
                         <div className="our-team">
                             <div className="team-img">
-                                <img style={{ maxHeight: "450px" }} src="https://lh3.googleusercontent.com/LZzOTvvJ0tOVEWj4LStsZLPyyRcODCVnp5zyAiQ1iCyWMY28-eR8nOOxymA3OSg-amNyWkwtHY6RyGQn_KzZOukFECwvBz7Pc2o37vjH23y64JgQWJ1EGSvWbEbo9iKmgK_mOAGl3oM2NjfTcAyCftzyMYLhw4qdbc1yNYcDtm6r3LVXtcQxxV0onql9VHTWwhEQ1VZK9MBLKVBSMxXQlj2JDRDorGNSQpozhLSlzi-pETSntI_x-8RIDK8S7aPrgbiNJI7ArYV2Zudynyhz5NwOLI3OvZBPDzd0nMWj_pRavoMFsIjH_PlTtLRKaH_1_szMXf2Ak5YdKnG3rQFhUUeoiw6PHnxVIUatcOWuz5snRir5D72hi8n2rBU7J3SypEgiw4_Ylr0skEghlEkkxJ3c4UKY-6DMNIgLTv_Jr9varXAchGWmM77wUgMoz1VNmSscdgyk4tVYYTi0OhnOmfQYBjDaEmXbZyO3XY4gn_64f5DmWm-h0JOVEBBi7EqvAb2CTxECQwlSWOoXFkD0RWd6-_EeBNJeY47ZLHv14BTRxD3WFWJEIdffkQ8WkogtwGhIkpYHJ8h2E_Vk3ddbavVhIpVbjHRHzz_QzSfufY9eQj3Mx4S4nCilpcuf3hunQQ5w8Pmgshh401G1VIEn_qNFAE7brgIvDmiW9nFlpCp3ls_E2be4zjUBpw_8Bu7t-AYCHevN0p9VzPaIIsg1dRrq=w668-h890-no?authuser=0" />
+                                <img style={{ maxHeight: "350px" }} src={rohit} />
                             </div>
                             <div className="team-content">
-                                <h3 className="name">Sonu Shakya</h3>
-                                <span className="post">web designer</span>
+                                <h3 className="name">Rohit Sharma</h3>
+                                <span className="post">Full Stack Developer</span>
                             </div>
                             <ul className="social">
-                                <li><a href="https://github.com/sonushakya9717"><i class="fab fa-github"></i></a></li>
-                                <li><a href="https://www.instagram.com/sonushakya9717/"><i className="fa fa-instagram"></i></a></li>
-                                <li><a href="https://www.linkedin.com/in/sonu-shakya/"><i className="fa fa-linkedin"></i></a></li>
+                                <li><a href="https://github.com/Rohit-Sharma-Dev"><i class="fab fa-github"></i></a></li>
+                                <li><a href="https://www.instagram.com/rohit_sharma9811/"><i className="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/rohitsharma7065/"><i className="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div>
+                    </div>
+                    <div className="col-md-4 col-sm-6">
+                        <div className="our-team">
+                            <div className="team-img">
+                                <img style={{ maxHeight: "350px" }} src={deepak} />
+                            </div>
+                            <div className="team-content">
+                                <h3 className="name">Deepak Sharma</h3>
+                                <span className="post">Full Stack Developer</span>
+                            </div>
+                            <ul className="social">
+                                <li><a href="https://github.com/deepaksharma9dev"><i class="fab fa-github"></i></a></li>
+                                <li><a href="https://www.instagram.com/_itz_me_deepak.007/"><i className="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/deepak-sharma-2319601b7/"><i className="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div className="col-md-4 col-sm-6">
+                        <div className="our-team">
+                            <div className="team-img">
+                                <img style={{ maxHeight: "350px" }} src={rani} />
+                            </div>
+                            <div className="team-content">
+                                <h3 className="name">Rani Solanki</h3>
+                                <span className="post">Full Stack Developer</span>
+                            </div>
+                            <ul className="social">
+                                <li><a href="https://github.com/rani-solanki?tab=repositories"><i class="fab fa-github"></i></a></li>
+                                <li><a href="https://www.instagram.com/ranisolanki308/"><i className="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/in/rani-solanki-65a2a2207/"><i className="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
         </Fragment>
-
-
     )
 }
 

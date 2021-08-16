@@ -35,24 +35,36 @@ const bookTickets = async(req, res, next) => {
         })
     }
 
+    console.log(cinemaId,"hello")
+
     const cinema = await Cinema.findById(cinemaId)
+    console.log(cinema,"Cinema")
+    if(!cinema){
+        return next({
+            status: 400,
+            errors: "Cinema not found"
+        });
+    }
     let seats = cinema.seats;
 
-    const Tickets = await Ticket.findOne({ cinemaId })
-    if (Tickets) {
-        const BookedTickets = Tickets.Seats
+    const Tickets = await Ticket.find({ cinemaId })
+    if (Tickets.length) {
         for (var index = 0; index < seats; index++) {
-            if (BookedTickets.includes(Seats[index])) {
-                return next({
-                    status: 400,
-                    errors: ["These tickets are already book", Seats[index]]
-                });
-            }
             if (Seats[index] > seats) {
                 return next({
-                    status: 404,
-                    errors: ["These seat not Found", Seats[index]]
+                    status: 400,
+                    errors: "Invalid seat no."
                 });
+            }else{
+                for(var ticket = 0; ticket<Tickets.length; ticket++){
+                    const BookedTickets = Tickets[ticket].Seats
+                    if (BookedTickets.includes(Seats[index])) {
+                        return next({
+                            status: 400,
+                            errors:"These tickets are already book"
+                        });
+                    }
+                    }
             }
         }
     }

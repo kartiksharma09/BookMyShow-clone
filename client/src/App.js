@@ -20,11 +20,13 @@ import AddMovie from './component/Admin/AddMovie';
 import AdminRoute from "./component/routing/AdminRoute";
 import Movie from './component/movies/Movie';
 import AddCinema from './component/Admin/AddCineme';
+import Tickets from './component/TicketLayout/ticket';
 import UserSignup from './component/user-auth/UserSignup';
 import UserLogin from './component/user-auth/UserLogin';
 import PrivateRoute from './component/routing/PrivateRoute';
 import Cinemas from './component/User/Cinemas';
 import OurTeam from './component/layout/OurTeam';
+import Ticket  from './component/layout/ticket';
 
 
 
@@ -54,7 +56,10 @@ function App() {
           <Route exact path='/user-register' component={UserSignup} />
           <Route exact path='/user-login' component={UserLogin} />
           <Route exact path='/about' component={OurTeam} />
+          <PrivateRoute exact path='/my-tickets' component={Ticket} />
+
           <PrivateRoute exact path='/movie/cinemas' component={Cinemas} />
+          <PrivateRoute exact path="/movie/cinemas/:cinemaId" component={Tickets} />
           <PrivateRoute exact path="/search-movies" component={HomePage} />
           <PrivateRoute exact path="/movie/:movieName" component={Movie} />
           <AdminRoute exact path='/addMovie' component={AddMovie} />

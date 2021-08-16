@@ -19,11 +19,16 @@ const movie = (state = initialState, action) => {
 
     switch (type) {
         case GET_MOVIE:
-        case SEARCH_MOVIE:
             return {
                 ...state,
                 movie: payload,
                 movies: [payload, ...state.movies],
+                loading: false
+            };
+        case SEARCH_MOVIE:
+            return {
+                ...state,
+                movie: payload,
                 loading: false
             };
         case GET_MOVIES:
